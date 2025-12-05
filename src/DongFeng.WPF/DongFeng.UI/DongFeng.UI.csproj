@@ -10,7 +10,7 @@
 		<Version>1.0.0</Version>
 		<Authors>YourName</Authors>
 		<Company>YourCompany</Company>
-		<Description>A modern, lightweight, and feature-rich WPF UI control library. Contains various controls like Avatar, ToggleSwitch, TagInput, and more with theming support.</Description>
+		<Description>A modern, lightweight, and feature-rich WPF UI control library. Contains various controls like DFAvatar, DFToggleSwitch, DFTagInput, and more with theming support.</Description>
 		<PackageTags>WPF;UI;Controls;Modern;Theme;Library;DongFeng</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

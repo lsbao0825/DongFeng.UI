@@ -43,11 +43,11 @@ namespace DongFeng
                 FilteredIcons.Add(icon);
             }
             
-            if (IconPagination != null)
+            if (IconDFPagination != null)
             {
-                IconPagination.TotalCount = AllIcons.Count;
-                IconPagination.CurrentPage = _currentPage;
-                IconPagination.PageSize = _pageSize;
+                IconDFPagination.TotalCount = AllIcons.Count;
+                IconDFPagination.CurrentPage = _currentPage;
+                IconDFPagination.PageSize = _pageSize;
             }
         }
 
@@ -72,7 +72,7 @@ namespace DongFeng
             UpdateIconPage();
         }
 
-        private void IconPagination_PageChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
+        private void IconDFPagination_PageChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
         {
             _currentPage = e.NewValue;
             UpdateIconPage();
@@ -83,7 +83,7 @@ namespace DongFeng
             if (sender is Button btn && btn.DataContext is string iconName)
             {
                 Clipboard.SetText($"<iconPacks:PackIconMaterial Kind=\"{iconName}\" />");
-                Message.Success($"Copied to clipboard: {iconName}");
+                DFToast.Success($"Copied to clipboard: {iconName}");
             }
         }
 

@@ -11,7 +11,7 @@
     Title="DongFeng Gallery"
     Width="1200"
     Height="800"
-    LoadingCancelled="MainLoading_Cancel"
+    DFLoadingCancelled="MainDFLoading_Cancel"
     Style="{StaticResource DFWindowStyle}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -20,8 +20,8 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <Button
                 Margin="0,0,10,0"
-                Click="BtnOpenDrawer_Click"
-                Content="Settings Drawer" />
+                Click="BtnOpenDFDrawer_Click"
+                Content="Settings DFDrawer" />
             <TextBlock
                 Margin="0,0,20,0"
                 VerticalAlignment="Center"
@@ -70,7 +70,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <controls:ToggleSwitch
+                <controls:DFToggleSwitch
                     x:Name="ThemeToggle"
                     Checked="ThemeToggle_Checked"
                     Content="Dark Mode"
@@ -85,65 +85,65 @@
             <TabItem Header="New">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <controls:CodeExample Code="&lt;controls:BreadcrumbBar Separator=&quot; / &quot;&gt;&#xA;    &lt;sys:String&gt;Home&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Section&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Page&lt;/sys:String&gt;&#xA;&lt;/controls:BreadcrumbBar&gt;" Header="Breadcrumb Navigation">
-                            <controls:BreadcrumbBar>
+                        <controls:DFCodeExample Code="&lt;controls:DFBreadcrumbBar Separator=&quot; / &quot;&gt;&#xA;    &lt;sys:String&gt;Home&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Section&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Page&lt;/sys:String&gt;&#xA;&lt;/controls:DFBreadcrumbBar&gt;" Header="Breadcrumb Navigation">
+                            <controls:DFBreadcrumbBar>
                                 <sys:String>Home</sys:String>
                                 <sys:String>UI Components</sys:String>
                                 <sys:String>New Features</sys:String>
-                            </controls:BreadcrumbBar>
-                        </controls:CodeExample>
+                            </controls:DFBreadcrumbBar>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:Avatar Text=&quot;JD&quot; /&gt;&#xA;&lt;controls:Avatar&gt;...&lt;Icon /&gt;...&lt;/controls:Avatar&gt;&#xA;&lt;controls:Avatar Source=&quot;...&quot; /&gt;" Header="Avatar">
+                        <controls:DFCodeExample Code="&lt;controls:DFAvatar Text=&quot;JD&quot; /&gt;&#xA;&lt;controls:DFAvatar&gt;...&lt;Icon /&gt;...&lt;/controls:DFAvatar&gt;&#xA;&lt;controls:DFAvatar Source=&quot;...&quot; /&gt;" Header="DFAvatar">
                             <StackPanel Orientation="Horizontal">
-                                <controls:Avatar
+                                <controls:DFAvatar
                                     Margin="0,0,20,0"
                                     Text="A"
                                     ToolTip="Text Fallback" />
-                                <controls:Avatar
+                                <controls:DFAvatar
                                     Margin="0,0,20,0"
                                     Background="#2080f0"
                                     Foreground="White"
-                                    ToolTip="Icon Avatar">
-                                    <controls:Avatar.Icon>
+                                    ToolTip="Icon DFAvatar">
+                                    <controls:DFAvatar.Icon>
                                         <iconPacks:PackIconMaterial
                                             Width="24"
                                             Height="24"
                                             Kind="Account" />
-                                    </controls:Avatar.Icon>
-                                </controls:Avatar>
-                                <controls:Avatar
+                                    </controls:DFAvatar.Icon>
+                                </controls:DFAvatar>
+                                <controls:DFAvatar
                                     Margin="0,0,20,0"
                                     CornerRadius="4"
                                     Text="SQ"
                                     ToolTip="Square Radius" />
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:Badge Value=&quot;5&quot;&gt;...&lt;/controls:Badge&gt;&#xA;&lt;controls:Badge Value=&quot;100&quot; Maximum=&quot;99&quot;&gt;...&lt;/controls:Badge&gt;&#xA;&lt;controls:Badge IsDot=&quot;True&quot;&gt;...&lt;/controls:Badge&gt;" Header="Badge">
+                        <controls:DFCodeExample Code="&lt;controls:DFBadge Value=&quot;5&quot;&gt;...&lt;/controls:DFBadge&gt;&#xA;&lt;controls:DFBadge Value=&quot;100&quot; Maximum=&quot;99&quot;&gt;...&lt;/controls:DFBadge&gt;&#xA;&lt;controls:DFBadge IsDot=&quot;True&quot;&gt;...&lt;/controls:DFBadge&gt;" Header="DFBadge">
                             <controls:DFUniformGrid
                                 Margin="0,10,0,0"
                                 VerticalAlignment="Top"
                                 Columns="1">
-                                <controls:Badge Margin="0,0,30,0" Value="5">
+                                <controls:DFBadge Margin="0,0,30,0" Value="5">
                                     <Button Content="Messages" />
-                                </controls:Badge>
+                                </controls:DFBadge>
 
-                                <controls:Badge
+                                <controls:DFBadge
                                     Margin="0,0,30,0"
                                     Maximum="99"
                                     Value="120">
                                     <Button Content="Emails" />
-                                </controls:Badge>
+                                </controls:DFBadge>
 
-                                <controls:Badge Margin="0,0,30,0" IsDot="True">
+                                <controls:DFBadge Margin="0,0,30,0" IsDot="True">
                                     <Button Content="Updates" />
-                                </controls:Badge>
+                                </controls:DFBadge>
                             </controls:DFUniformGrid>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:ColorPicker /&gt;" Header="Color Picker">
-                            <controls:ColorPicker HorizontalAlignment="Left" />
-                        </controls:CodeExample>
+                        <controls:DFCodeExample Code="&lt;controls:DFColorPicker /&gt;" Header="Color Picker">
+                            <controls:DFColorPicker HorizontalAlignment="Left" />
+                        </controls:DFCodeExample>
                     </controls:DFUniformGrid>
                 </ScrollViewer>
             </TabItem>
@@ -152,7 +152,7 @@
             <TabItem Header="Basic">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <controls:CodeExample Code="&lt;Button Content=&quot;Default Button&quot; /&gt;&#xA;&lt;Button Content=&quot;Primary Button&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot; /&gt;&#xA;&lt;Button Content=&quot;Disabled&quot; IsEnabled=&quot;False&quot; /&gt;" Header="Standard Buttons">
+                        <controls:DFCodeExample Code="&lt;Button Content=&quot;Default Button&quot; /&gt;&#xA;&lt;Button Content=&quot;Primary Button&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot; /&gt;&#xA;&lt;Button Content=&quot;Disabled&quot; IsEnabled=&quot;False&quot; /&gt;" Header="Standard Buttons">
                             <WrapPanel>
                                 <Button Margin="0,0,10,10" Content="Default Button" />
                                 <Button
@@ -164,9 +164,9 @@
                                     Content="Disabled"
                                     IsEnabled="False" />
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;Button Content=&quot;Search&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Magnify&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;&#xA;&#xA;&lt;Button Style=&quot;{DynamicResource DFVerticalButton}&quot; Content=&quot;Save&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;ContentSave&quot; Width=&quot;24&quot; Height=&quot;24&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;" Header="Buttons with Icons">
+                        <controls:DFCodeExample Code="&lt;Button Content=&quot;Search&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Magnify&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;&#xA;&#xA;&lt;Button Style=&quot;{DynamicResource DFVerticalButton}&quot; Content=&quot;Save&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;ContentSave&quot; Width=&quot;24&quot; Height=&quot;24&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;" Header="Buttons with Icons">
                             <WrapPanel>
                                 <Button
                                     Margin="0,0,10,10"
@@ -193,17 +193,17 @@
                                     </helpers:ControlAttach.Icon>
                                 </Button>
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:ToggleSwitch Content=&quot;Switch me&quot; /&gt;&#xA;&lt;controls:ToggleSwitch IsChecked=&quot;True&quot;&gt;&#xA;    &lt;controls:ToggleSwitch.OnContent&gt;ON&lt;/controls:ToggleSwitch.OnContent&gt;&#xA;    &lt;controls:ToggleSwitch.OffContent&gt;OFF&lt;/controls:ToggleSwitch.OffContent&gt;&#xA;&lt;/controls:ToggleSwitch&gt;" Header="Toggle Switch">
+                        <controls:DFCodeExample Code="&lt;controls:DFToggleSwitch Content=&quot;Switch me&quot; /&gt;&#xA;&lt;controls:DFToggleSwitch IsChecked=&quot;True&quot;&gt;&#xA;    &lt;controls:DFToggleSwitch.OnContent&gt;ON&lt;/controls:DFToggleSwitch.OnContent&gt;&#xA;    &lt;controls:DFToggleSwitch.OffContent&gt;OFF&lt;/controls:DFToggleSwitch.OffContent&gt;&#xA;&lt;/controls:DFToggleSwitch&gt;" Header="Toggle Switch">
                             <StackPanel Orientation="Horizontal">
-                                <controls:ToggleSwitch Margin="0,0,20,0" Content="Standard Switch" />
-                                <controls:ToggleSwitch Content="With State Text" IsChecked="True">
-                                    <controls:ToggleSwitch.OnContent>ON</controls:ToggleSwitch.OnContent>
-                                    <controls:ToggleSwitch.OffContent>OFF</controls:ToggleSwitch.OffContent>
-                                </controls:ToggleSwitch>
+                                <controls:DFToggleSwitch Margin="0,0,20,0" Content="Standard Switch" />
+                                <controls:DFToggleSwitch Content="With State Text" IsChecked="True">
+                                    <controls:DFToggleSwitch.OnContent>ON</controls:DFToggleSwitch.OnContent>
+                                    <controls:DFToggleSwitch.OffContent>OFF</controls:DFToggleSwitch.OffContent>
+                                </controls:DFToggleSwitch>
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
                     </controls:DFUniformGrid>
                 </ScrollViewer>
             </TabItem>
@@ -212,7 +212,7 @@
             <TabItem Header="Inputs">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <controls:CodeExample Code="&lt;TextBox helpers:ControlAttach.Watermark=&quot;Enter text...&quot; /&gt;&#xA;&lt;TextBox helpers:ControlAttach.Watermark=&quot;With Icon&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Account&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/TextBox&gt;" Header="TextBox">
+                        <controls:DFCodeExample Code="&lt;TextBox helpers:ControlAttach.Watermark=&quot;Enter text...&quot; /&gt;&#xA;&lt;TextBox helpers:ControlAttach.Watermark=&quot;With Icon&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Account&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/TextBox&gt;" Header="TextBox">
                             <StackPanel>
                                 <TextBox helpers:ControlAttach.Watermark="Enter text..." />
                                 <TextBox helpers:ControlAttach.Watermark="With Icon">
@@ -224,47 +224,47 @@
                                     </helpers:ControlAttach.Icon>
                                 </TextBox>
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;PasswordBox helpers:ControlAttach.Watermark=&quot;Password&quot; /&gt;" Header="PasswordBox">
+                        <controls:DFCodeExample Code="&lt;PasswordBox helpers:ControlAttach.Watermark=&quot;Password&quot; /&gt;" Header="PasswordBox">
 
                             <StackPanel>
                                 <PasswordBox helpers:ControlAttach.Watermark="Password" />
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:NumericUpDown Value=&quot;5&quot; Maximum=&quot;10&quot; /&gt;&#xA;&lt;controls:DateTimePicker SelectedDate=&quot;{x:Static sys:DateTime.Now}&quot; /&gt;" Header="Numeric &amp; Date">
+                        <controls:DFCodeExample Code="&lt;controls:DFNumericUpDown Value=&quot;5&quot; Maximum=&quot;10&quot; /&gt;&#xA;&lt;controls:DFDateTimePicker SelectedDate=&quot;{x:Static sys:DateTime.Now}&quot; /&gt;" Header="Numeric &amp; Date">
                             <controls:DFUniformGrid Columns="1">
-                                <controls:NumericUpDown
+                                <controls:DFNumericUpDown
                                     Maximum="100"
                                     Minimum="0"
                                     Value="10" />
-                                <controls:DateTimePicker SelectedDate="{x:Static sys:DateTime.Now}" />
+                                <controls:DFDateTimePicker SelectedDate="{x:Static sys:DateTime.Now}" />
                             </controls:DFUniformGrid>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Header="Tag Input">
-                            <controls:TagInput
+                        <controls:DFCodeExample Header="Tag Input">
+                            <controls:DFTagInput
                                 x:Name="OrderTags"
                                 Width="400"
                                 HorizontalAlignment="Left" />
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:Rating Value=&quot;3&quot; /&gt;&#xA;&lt;controls:Rating IsReadOnly=&quot;True&quot; Value=&quot;4&quot; /&gt;" Header="Rating">
+                        <controls:DFCodeExample Code="&lt;controls:DFRating Value=&quot;3&quot; /&gt;&#xA;&lt;controls:DFRating IsReadOnly=&quot;True&quot; Value=&quot;4&quot; /&gt;" Header="DFRating">
                             <StackPanel Orientation="Horizontal">
-                                <controls:Rating Margin="0,0,20,0" Value="3" />
-                                <controls:Rating
+                                <controls:DFRating Margin="0,0,20,0" Value="3" />
+                                <controls:DFRating
                                     Margin="0,0,20,0"
                                     IsReadOnly="True"
                                     ToolTip="Read Only"
                                     Value="4" />
-                                <controls:Rating
+                                <controls:DFRating
                                     ItemSize="16"
                                     Maximum="10"
                                     ToolTip="Max 10, Small"
                                     Value="7" />
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
                     </controls:DFUniformGrid>
                 </ScrollViewer>
             </TabItem>
@@ -281,62 +281,62 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <!--  Statistic & Divider Examples  -->
+                        <!--  DFStatistic & DFDivider Examples  -->
                         <controls:DFUniformGrid Grid.Row="0" Margin="0,0,0,20">
-                            <controls:CodeExample Header="Statistic">
+                            <controls:DFCodeExample Header="DFStatistic">
                                 <StackPanel Orientation="Horizontal">
-                                    <controls:Statistic
+                                    <controls:DFStatistic
                                         Margin="0,0,40,0"
                                         Label="Active Users"
                                         Value="1,234" />
-                                    <controls:Statistic
+                                    <controls:DFStatistic
                                         Margin="0,0,40,0"
                                         Foreground="#18a058"
                                         Label="Growth"
                                         Suffix="%"
                                         Value="12.5">
-                                        <controls:Statistic.Icon>
+                                        <controls:DFStatistic.Icon>
                                             <iconPacks:PackIconMaterial
                                                 Width="24"
                                                 Height="24"
                                                 Foreground="#18a058"
                                                 Kind="ArrowUp" />
-                                        </controls:Statistic.Icon>
-                                    </controls:Statistic>
-                                    <controls:Statistic
+                                        </controls:DFStatistic.Icon>
+                                    </controls:DFStatistic>
+                                    <controls:DFStatistic
                                         Margin="0,0,40,0"
                                         Label="Revenue"
                                         Prefix="$"
                                         Value="9,876" />
                                 </StackPanel>
-                            </controls:CodeExample>
+                            </controls:DFCodeExample>
 
-                            <controls:CodeExample Header="Divider">
+                            <controls:DFCodeExample Header="DFDivider">
                                 <StackPanel>
-                                    <controls:Divider />
-                                    <controls:Divider Content="Center Text" />
-                                    <controls:Divider HorizontalContentAlignment="Left" Content="Left Text" />
-                                    <controls:Divider HorizontalContentAlignment="Right" Content="Right Text" />
+                                    <controls:DFDivider />
+                                    <controls:DFDivider Content="Center Text" />
+                                    <controls:DFDivider HorizontalContentAlignment="Left" Content="Left Text" />
+                                    <controls:DFDivider HorizontalContentAlignment="Right" Content="Right Text" />
                                 </StackPanel>
-                            </controls:CodeExample>
+                            </controls:DFCodeExample>
 
-                            <controls:CodeExample Header="Description List">
-                                <controls:DescriptionList>
+                            <controls:DFCodeExample Header="Description List">
+                                <controls:DFDescriptionList>
                                     <controls:DescriptionItem Content="John Doe" Label="User" />
                                     <controls:DescriptionItem Content="Developer" Label="Role" />
                                     <controls:DescriptionItem Content="john@example.com" Label="Email" />
                                     <controls:DescriptionItem Content="Active" Label="Status" />
                                     <controls:DescriptionItem Content="New York, USA" Label="Location" />
                                     <controls:DescriptionItem Content="Frontend" Label="Team" />
-                                </controls:DescriptionList>
-                            </controls:CodeExample>
+                                </controls:DFDescriptionList>
+                            </controls:DFCodeExample>
                         </controls:DFUniformGrid>
 
-                        <controls:CodeExample
+                        <controls:DFCodeExample
                             Grid.Row="1"
                             VerticalAlignment="Stretch"
-                            Code="&lt;DataGrid ... /&gt;&#xA;&lt;controls:Pagination TotalCount=&quot;100&quot; /&gt;"
-                            Header="DataGrid with Pagination">
+                            Code="&lt;DataGrid ... /&gt;&#xA;&lt;controls:DFPagination TotalCount=&quot;100&quot; /&gt;"
+                            Header="DataGrid with DFPagination">
                             <Grid Height="400">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -373,7 +373,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
 
-                                <controls:Pagination
+                                <controls:DFPagination
                                     Grid.Row="2"
                                     Margin="0,10,0,0"
                                     HorizontalAlignment="Right"
@@ -381,7 +381,7 @@
                                     PageSize="10"
                                     TotalCount="100" />
                             </Grid>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
                     </Grid>
                 </ScrollViewer>
             </TabItem>
@@ -390,7 +390,7 @@
             <TabItem Header="Feedback">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <controls:CodeExample Code="Message.Info(&quot;Info message&quot;);&#xA;Message.Success(&quot;Success message&quot;);&#xA;Message.Warning(&quot;Warning message&quot;);&#xA;Message.Error(&quot;Error message&quot;);" Header="Message (Toast)">
+                        <controls:DFCodeExample Code="Message.Info(&quot;Info message&quot;);&#xA;Message.Success(&quot;Success message&quot;);&#xA;Message.Warning(&quot;Warning message&quot;);&#xA;Message.Error(&quot;Error message&quot;);" Header="Message (Toast)">
                             <WrapPanel>
                                 <Button
                                     Margin="0,0,10,10"
@@ -409,52 +409,52 @@
                                     Click="BtnError_Click"
                                     Content="Error" />
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:CircleProgressBar Value=&quot;75&quot; /&gt;" Header="Circle Progress">
+                        <controls:DFCodeExample Code="&lt;controls:DFCircleProgressBar Value=&quot;75&quot; /&gt;" Header="Circle Progress">
                             <WrapPanel>
-                                <controls:CircleProgressBar Margin="0,0,20,0" Value="25" />
-                                <controls:CircleProgressBar
+                                <controls:DFCircleProgressBar Margin="0,0,20,0" Value="25" />
+                                <controls:DFCircleProgressBar
                                     Width="80"
                                     Height="80"
                                     Margin="0,0,20,0"
                                     IsPie="True"
                                     StrokeThickness="0"
                                     Value="75" />
-                                <controls:CircleProgressBar
+                                <controls:DFCircleProgressBar
                                     Width="60"
                                     Height="60"
                                     Foreground="#18a058"
                                     StrokeThickness="4"
                                     Value="100" />
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:Skeleton Width=&quot;200&quot; /&gt;" Header="Skeleton (Loading)">
+                        <controls:DFCodeExample Code="&lt;controls:DFSkeleton Width=&quot;200&quot; /&gt;" Header="DFSkeleton (DFLoading)">
                             <StackPanel>
-                                <controls:Skeleton
+                                <controls:DFSkeleton
                                     Width="100"
                                     Height="30"
                                     Margin="0,0,0,10" />
-                                <controls:Skeleton Width="300" Margin="0,0,0,10" />
-                                <controls:Skeleton Width="250" Margin="0,0,0,10" />
+                                <controls:DFSkeleton Width="300" Margin="0,0,0,10" />
+                                <controls:DFSkeleton Width="250" Margin="0,0,0,10" />
                                 <StackPanel Orientation="Horizontal">
-                                    <controls:Skeleton
+                                    <controls:DFSkeleton
                                         Width="50"
                                         Height="50"
                                         Margin="0,0,10,0"
                                         CornerRadius="25" />
                                     <StackPanel VerticalAlignment="Center">
-                                        <controls:Skeleton Width="120" Margin="0,0,0,5" />
-                                        <controls:Skeleton Width="80" Height="12" />
+                                        <controls:DFSkeleton Width="120" Margin="0,0,0,5" />
+                                        <controls:DFSkeleton Width="80" Height="12" />
                                     </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:Carousel AutoPlay=&quot;True&quot;&gt;...&lt;/controls:Carousel&gt;" Header="Carousel (Banner)">
-                            <controls:Carousel Height="200" AutoPlay="True">
-                                <controls:CarouselItem>
+                        <controls:DFCodeExample Code="&lt;controls:DFCarousel AutoPlay=&quot;True&quot;&gt;...&lt;/controls:DFCarousel&gt;" Header="DFCarousel (Banner)">
+                            <controls:DFCarousel Height="200" AutoPlay="True">
+                                <controls:DFCarouselItem>
                                     <Grid Background="#18a058">
                                         <TextBlock
                                             HorizontalAlignment="Center"
@@ -463,8 +463,8 @@
                                             Foreground="White"
                                             Text="Slide 1" />
                                     </Grid>
-                                </controls:CarouselItem>
-                                <controls:CarouselItem>
+                                </controls:DFCarouselItem>
+                                <controls:DFCarouselItem>
                                     <Grid Background="#2080f0">
                                         <TextBlock
                                             HorizontalAlignment="Center"
@@ -473,8 +473,8 @@
                                             Foreground="White"
                                             Text="Slide 2" />
                                     </Grid>
-                                </controls:CarouselItem>
-                                <controls:CarouselItem>
+                                </controls:DFCarouselItem>
+                                <controls:DFCarouselItem>
                                     <Grid Background="#f0a020">
                                         <TextBlock
                                             HorizontalAlignment="Center"
@@ -483,15 +483,15 @@
                                             Foreground="White"
                                             Text="Slide 3" />
                                     </Grid>
-                                </controls:CarouselItem>
-                            </controls:Carousel>
-                        </controls:CodeExample>
+                                </controls:DFCarouselItem>
+                            </controls:DFCarousel>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="var result = DFMessageBox.Show(&quot;Are you sure?&quot;, &quot;Confirm&quot;, MessageBoxButton.YesNo);" Header="Dialog (Modal)">
+                        <controls:DFCodeExample Code="var result = DFMessageBox.Show(&quot;Are you sure?&quot;, &quot;Confirm&quot;, MessageBoxButton.YesNo);" Header="Dialog (Modal)">
                             <Button Click="BtnDialog_Click" Content="Open Confirmation Dialog" />
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="// Simple&#xA;await StartLoading(async () =&gt; await Task.Delay(2000), &quot;Loading...&quot;);&#xA;&#xA;// Cancellable&#xA;await StartLoading(async (ct) =&gt; await Task.Delay(5000, ct), &quot;Processing...&quot;, true);" Header="Loading (Async Tasks)">
+                        <controls:DFCodeExample Code="// Simple&#xA;await StartDFLoading(async () =&gt; await Task.Delay(2000), &quot;DFLoading...&quot;);&#xA;&#xA;// Cancellable&#xA;await StartDFLoading(async (ct) =&gt; await Task.Delay(5000, ct), &quot;Processing...&quot;, true);" Header="DFLoading (Async Tasks)">
                             <WrapPanel>
                                 <Button
                                     Margin="0,0,10,10"
@@ -506,15 +506,15 @@
                                     Click="BtnLoadResult_Click"
                                     Content="With Result" />
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;controls:StepBar StepIndex=&quot;1&quot;&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 1&quot; /&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 2&quot; /&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 3&quot; /&gt;&#xA;&lt;/controls:StepBar&gt;" Header="Step Bar">
-                            <controls:StepBar StepIndex="1">
-                                <controls:StepBarItem Content="Step 1" />
-                                <controls:StepBarItem Content="Step 2" />
-                                <controls:StepBarItem Content="Step 3" />
-                            </controls:StepBar>
-                        </controls:CodeExample>
+                        <controls:DFCodeExample Code="&lt;controls:DFStepBar StepIndex=&quot;1&quot;&gt;&#xA;    &lt;controls:DFStepBarItem Content=&quot;Step 1&quot; /&gt;&#xA;    &lt;controls:DFStepBarItem Content=&quot;Step 2&quot; /&gt;&#xA;    &lt;controls:DFStepBarItem Content=&quot;Step 3&quot; /&gt;&#xA;&lt;/controls:DFStepBar&gt;" Header="Step Bar">
+                            <controls:DFStepBar StepIndex="1">
+                                <controls:DFStepBarItem Content="Step 1" />
+                                <controls:DFStepBarItem Content="Step 2" />
+                                <controls:DFStepBarItem Content="Step 3" />
+                            </controls:DFStepBar>
+                        </controls:DFCodeExample>
                     </controls:DFUniformGrid>
                 </ScrollViewer>
             </TabItem>
@@ -523,33 +523,33 @@
             <TabItem Header="Advanced">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <!--  Timeline  -->
-                        <controls:CodeExample Code="&lt;controls:Timeline&gt;&#xA;    &lt;controls:TimelineItem Header=&quot;2023-10-01&quot; Content=&quot;Start&quot; Color=&quot;Green&quot;/&gt;&#xA;    &lt;controls:TimelineItem Content=&quot;Process&quot; LineType=&quot;Dashed&quot;/&gt;&#xA;&lt;/controls:Timeline&gt;" Header="Timeline">
-                            <controls:Timeline>
-                                <controls:TimelineItem
+                        <!--  DFTimeline  -->
+                        <controls:DFCodeExample Code="&lt;controls:DFTimeline&gt;&#xA;    &lt;controls:DFTimelineItem Header=&quot;2023-10-01&quot; Content=&quot;Start&quot; Color=&quot;Green&quot;/&gt;&#xA;    &lt;controls:DFTimelineItem Content=&quot;Process&quot; LineType=&quot;Dashed&quot;/&gt;&#xA;&lt;/controls:DFTimeline&gt;" Header="DFTimeline">
+                            <controls:DFTimeline>
+                                <controls:DFTimelineItem
                                     Content="Project Started"
                                     Header="2023-10-01 09:00"
                                     Color="#18a058" />
-                                <controls:TimelineItem
+                                <controls:DFTimelineItem
                                     Content="Design Review"
                                     Header="2023-10-02"
                                     LineType="Dashed" />
-                                <controls:TimelineItem Content="Development" Header="2023-10-05" />
-                                <controls:TimelineItem
+                                <controls:DFTimelineItem Content="Development" Header="2023-10-05" />
+                                <controls:DFTimelineItem
                                     Content="Testing"
                                     Header="2023-10-10"
                                     Color="#f0a020" />
-                                <controls:TimelineItem
+                                <controls:DFTimelineItem
                                     Content="Release"
                                     Header="2023-10-20"
                                     Color="#d03050" />
-                            </controls:Timeline>
-                        </controls:CodeExample>
+                            </controls:DFTimeline>
+                        </controls:DFCodeExample>
 
-                        <!--  RangeSlider  -->
-                        <controls:CodeExample Code="&lt;controls:RangeSlider Minimum=&quot;0&quot; Maximum=&quot;100&quot; LowerValue=&quot;20&quot; UpperValue=&quot;80&quot;/&gt;" Header="Range Slider">
+                        <!--  DFRangeSlider  -->
+                        <controls:DFCodeExample Code="&lt;controls:DFRangeSlider Minimum=&quot;0&quot; Maximum=&quot;100&quot; LowerValue=&quot;20&quot; UpperValue=&quot;80&quot;/&gt;" Header="Range Slider">
                             <StackPanel>
-                                <controls:RangeSlider
+                                <controls:DFRangeSlider
                                     Width="300"
                                     Margin="0,0,0,20"
                                     HorizontalAlignment="Left"
@@ -557,7 +557,7 @@
                                     Maximum="100"
                                     Minimum="0"
                                     UpperValue="80" />
-                                <controls:RangeSlider
+                                <controls:DFRangeSlider
                                     Width="300"
                                     HorizontalAlignment="Left"
                                     IsSnapToTickEnabled="True"
@@ -572,14 +572,14 @@
                                     Foreground="{DynamicResource Brush_Text_Secondary}"
                                     Text="With Tick Snapping (10)" />
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <!--  Popover  -->
-                        <controls:CodeExample Code="&lt;controls:Popover Title=&quot;Title&quot;&gt;&#xA;   &lt;Button Content=&quot;Click Me&quot;/&gt;&#xA;   &lt;controls:Popover.PopupContent&gt;...&lt;/controls:Popover.PopupContent&gt;&#xA;&lt;/controls:Popover&gt;" Header="Popover">
+                        <!--  DFPopover  -->
+                        <controls:DFCodeExample Code="&lt;controls:DFPopover Title=&quot;Title&quot;&gt;&#xA;   &lt;Button Content=&quot;Click Me&quot;/&gt;&#xA;   &lt;controls:DFPopover.PopupContent&gt;...&lt;/controls:DFPopover.PopupContent&gt;&#xA;&lt;/controls:DFPopover&gt;" Header="DFPopover">
                             <WrapPanel>
-                                <controls:Popover Title="User Details" Margin="0,0,20,0">
-                                    <Button Content="Click Me (Popover)" Style="{DynamicResource DFPrimaryButton}" />
-                                    <controls:Popover.PopupContent>
+                                <controls:DFPopover Title="User Details" Margin="0,0,20,0">
+                                    <Button Content="Click Me (DFPopover)" Style="{DynamicResource DFPrimaryButton}" />
+                                    <controls:DFPopover.PopupContent>
                                         <StackPanel Width="200">
                                             <TextBlock Margin="0,0,0,5" Text="Name: John Doe" />
                                             <TextBlock Margin="0,0,0,10" Text="Role: Administrator" />
@@ -588,36 +588,36 @@
                                                 HorizontalAlignment="Left"
                                                 Content="View Profile" />
                                         </StackPanel>
-                                    </controls:Popover.PopupContent>
-                                </controls:Popover>
+                                    </controls:DFPopover.PopupContent>
+                                </controls:DFPopover>
 
-                                <controls:Popover
+                                <controls:DFPopover
                                     Title="Hover Me"
                                     Placement="Right"
                                     Trigger="Hover">
                                     <Button Content="Hover Me" />
-                                    <controls:Popover.PopupContent>
+                                    <controls:DFPopover.PopupContent>
                                         <TextBlock Text="This appears on hover!" />
-                                    </controls:Popover.PopupContent>
-                                </controls:Popover>
+                                    </controls:DFPopover.PopupContent>
+                                </controls:DFPopover>
                             </WrapPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <!--  Empty  -->
-                        <controls:CodeExample Code="&lt;controls:Empty Description=&quot;No Data&quot;&gt;&#xA;    &lt;Button Content=&quot;Refresh&quot;/&gt;&#xA;&lt;/controls:Empty&gt;" Header="Empty State">
+                        <!--  DFEmpty  -->
+                        <controls:DFCodeExample Code="&lt;controls:DFEmpty Description=&quot;No Data&quot;&gt;&#xA;    &lt;Button Content=&quot;Refresh&quot;/&gt;&#xA;&lt;/controls:DFEmpty&gt;" Header="DFEmpty State">
                             <Border
                                 Padding="20"
                                 BorderBrush="{DynamicResource Brush_Border}"
                                 BorderThickness="1"
                                 CornerRadius="4">
-                                <controls:Empty Description="No Data Found">
+                                <controls:DFEmpty Description="No Data Found">
                                     <Button
                                         Margin="0,10,0,0"
                                         Content="Create New"
                                         Style="{DynamicResource DFPrimaryButton}" />
-                                </controls:Empty>
+                                </controls:DFEmpty>
                             </Border>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
                     </controls:DFUniformGrid>
                 </ScrollViewer>
@@ -627,9 +627,9 @@
             <TabItem Header="Layout">
                 <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
                     <controls:DFUniformGrid>
-                        <controls:CodeExample Header="Layout">
+                        <controls:DFCodeExample Header="Layout">
                             <StackPanel>
-                                <controls:CodeExample Code="&lt;controls:DFcontrols:DFUniformGrid Rows=&quot;2&quot; Columns=&quot;3&quot; RowSpacing=&quot;10&quot; ColumnSpacing=&quot;10&quot;&gt;...&lt;/controls:DFcontrols:DFUniformGrid&gt;" Header="controls:DFUniformGrid with Spacing">
+                                <controls:DFCodeExample Code="&lt;controls:DFcontrols:DFUniformGrid Rows=&quot;2&quot; Columns=&quot;3&quot; RowSpacing=&quot;10&quot; ColumnSpacing=&quot;10&quot;&gt;...&lt;/controls:DFcontrols:DFUniformGrid&gt;" Header="controls:DFUniformGrid with Spacing">
                                     <controls:DFUniformGrid
                                         ColumnSpacing="10"
                                         Columns="3"
@@ -642,9 +642,9 @@
                                         <Button Content="5" />
                                         <Button Content="6" />
                                     </controls:DFUniformGrid>
-                                </controls:CodeExample>
+                                </controls:DFCodeExample>
 
-                                <controls:CodeExample Code="&lt;GroupBox Header=&quot;Header&quot;&gt;...&lt;/GroupBox&gt;&#xA;&lt;Expander Header=&quot;Header&quot;&gt;...&lt;/Expander&gt;" Header="Containers">
+                                <controls:DFCodeExample Code="&lt;GroupBox Header=&quot;Header&quot;&gt;...&lt;/GroupBox&gt;&#xA;&lt;Expander Header=&quot;Header&quot;&gt;...&lt;/Expander&gt;" Header="Containers">
                                     <StackPanel>
                                         <GroupBox Margin="0,0,0,10" Header="GroupBox Example">
                                             <TextBlock Text="Content goes here." />
@@ -653,11 +653,11 @@
                                             <TextBlock Margin="10" Text="Hidden content revealed." />
                                         </Expander>
                                     </StackPanel>
-                                </controls:CodeExample>
+                                </controls:DFCodeExample>
                             </StackPanel>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
 
-                        <controls:CodeExample Code="&lt;TabControl&gt;...&lt;/TabControl&gt;" Header="TabControl">
+                        <controls:DFCodeExample Code="&lt;TabControl&gt;...&lt;/TabControl&gt;" Header="TabControl">
                             <TabControl Height="150">
                                 <TabItem Header="Tab 1">
                                     <Grid Margin="{DynamicResource Margin_Large}">
@@ -670,7 +670,7 @@
                                     </Grid>
                                 </TabItem>
                             </TabControl>
-                        </controls:CodeExample>
+                        </controls:DFCodeExample>
                     </controls:DFUniformGrid>
                 </ScrollViewer>
             </TabItem>
@@ -702,20 +702,20 @@
                                 Color="Black" />
                         </Border.Effect>
                         <StackPanel>
-                            <controls:Avatar
+                            <controls:DFAvatar
                                 Width="80"
                                 Height="80"
                                 Margin="0,0,0,20"
                                 HorizontalAlignment="Center"
                                 Background="{DynamicResource Brush_Primary}"
                                 Foreground="White">
-                                <controls:Avatar.Icon>
+                                <controls:DFAvatar.Icon>
                                     <iconPacks:PackIconMaterial
                                         Width="40"
                                         Height="40"
                                         Kind="Account" />
-                                </controls:Avatar.Icon>
-                            </controls:Avatar>
+                                </controls:DFAvatar.Icon>
+                            </controls:DFAvatar>
 
                             <TextBlock
                                 Margin="0,0,0,5"
@@ -978,7 +978,7 @@
                                 VerticalAlignment="Bottom"
                                 DockPanel.Dock="Right"
                                 Orientation="Horizontal">
-                                <controls:DateTimePicker
+                                <controls:DFDateTimePicker
                                     Width="200"
                                     Margin="0,0,10,0"
                                     SelectedDate="{x:Static sys:DateTime.Now}" />
@@ -997,46 +997,46 @@
                             Columns="4"
                             RowSpacing="20">
                             <Border Padding="20" Style="{DynamicResource DFCard}">
-                                <controls:Statistic
+                                <controls:DFStatistic
                                     Foreground="#18a058"
                                     Label="Total Revenue"
                                     Prefix="$"
                                     Value="45,231">
-                                    <controls:Statistic.Icon>
+                                    <controls:DFStatistic.Icon>
                                         <iconPacks:PackIconMaterial Foreground="#18a058" Kind="CurrencyUsd" />
-                                    </controls:Statistic.Icon>
-                                </controls:Statistic>
+                                    </controls:DFStatistic.Icon>
+                                </controls:DFStatistic>
                             </Border>
                             <Border Padding="20" Style="{DynamicResource DFCard}">
-                                <controls:Statistic
+                                <controls:DFStatistic
                                     Foreground="#2080f0"
                                     Label="Active Users"
                                     Value="2,405">
-                                    <controls:Statistic.Icon>
+                                    <controls:DFStatistic.Icon>
                                         <iconPacks:PackIconMaterial Foreground="#2080f0" Kind="AccountGroup" />
-                                    </controls:Statistic.Icon>
-                                </controls:Statistic>
+                                    </controls:DFStatistic.Icon>
+                                </controls:DFStatistic>
                             </Border>
                             <Border Padding="20" Style="{DynamicResource DFCard}">
-                                <controls:Statistic
+                                <controls:DFStatistic
                                     Foreground="#f0a020"
                                     Label="New Orders"
                                     Value="125">
-                                    <controls:Statistic.Icon>
+                                    <controls:DFStatistic.Icon>
                                         <iconPacks:PackIconMaterial Foreground="#f0a020" Kind="Shopping" />
-                                    </controls:Statistic.Icon>
-                                </controls:Statistic>
+                                    </controls:DFStatistic.Icon>
+                                </controls:DFStatistic>
                             </Border>
                             <Border Padding="20" Style="{DynamicResource DFCard}">
-                                <controls:Statistic
+                                <controls:DFStatistic
                                     Foreground="#d03050"
                                     Label="Conversion Rate"
                                     Suffix="%"
                                     Value="3.2">
-                                    <controls:Statistic.Icon>
+                                    <controls:DFStatistic.Icon>
                                         <iconPacks:PackIconMaterial Foreground="#d03050" Kind="ChartLine" />
-                                    </controls:Statistic.Icon>
-                                </controls:Statistic>
+                                    </controls:DFStatistic.Icon>
+                                </controls:DFStatistic>
                             </Border>
                         </controls:DFUniformGrid>
 
@@ -1227,7 +1227,7 @@
                                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <!--  Layered Pies for visual effect (simple overlapping)  -->
                                         <!--  Outer Pie (Background/Base)  -->
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="200"
                                             Height="200"
                                             Background="Transparent"
@@ -1238,7 +1238,7 @@
                                         <!--  100% Base  -->
 
                                         <!--  Middle Pie  -->
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="200"
                                             Height="200"
                                             Foreground="#2080f0"
@@ -1246,14 +1246,14 @@
                                             RenderTransformOrigin="0.5,0.5"
                                             ToolTip="Mobile: 35%"
                                             Value="35">
-                                            <controls:CircleProgressBar.RenderTransform>
+                                            <controls:DFCircleProgressBar.RenderTransform>
                                                 <RotateTransform Angle="0" /> 
                                                 <!--  Start from top  -->
-                                            </controls:CircleProgressBar.RenderTransform>
-                                        </controls:CircleProgressBar>
+                                            </controls:DFCircleProgressBar.RenderTransform>
+                                        </controls:DFCircleProgressBar>
 
                                         <!--  Inner Pie (Small segment)  -->
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="200"
                                             Height="200"
                                             Foreground="#f0a020"
@@ -1261,11 +1261,11 @@
                                             RenderTransformOrigin="0.5,0.5"
                                             ToolTip="Tablet: 10%"
                                             Value="10">
-                                            <controls:CircleProgressBar.RenderTransform>
+                                            <controls:DFCircleProgressBar.RenderTransform>
                                                 <RotateTransform Angle="126" /> 
                                                 <!--  Offset: 35% * 360 = 126 deg  -->
-                                            </controls:CircleProgressBar.RenderTransform>
-                                        </controls:CircleProgressBar>
+                                            </controls:DFCircleProgressBar.RenderTransform>
+                                        </controls:DFCircleProgressBar>
 
                                         <!--  Overlay for Donut Hole if needed, or Legend on side  -->
                                     </Grid>
@@ -1319,21 +1319,21 @@
                                         Text="Storage Usage (Ring)" />
                                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <!--  Concentric Rings with different sizes  -->
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="200"
                                             Height="200"
                                             Foreground="#d03050"
                                             StrokeThickness="10"
                                             ToolTip="System: 85%"
                                             Value="85" />
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="160"
                                             Height="160"
                                             Foreground="#f0a020"
                                             StrokeThickness="10"
                                             ToolTip="Media: 60%"
                                             Value="60" />
-                                        <controls:CircleProgressBar
+                                        <controls:DFCircleProgressBar
                                             Width="120"
                                             Height="120"
                                             Foreground="#2080f0"
@@ -1478,7 +1478,7 @@
                                 Foreground="{DynamicResource Brush_Text_Secondary}"
                                 Text="Manage your personal information and security." />
 
-                            <controls:Divider
+                            <controls:DFDivider
                                 Margin="0,0,0,20"
                                 HorizontalContentAlignment="Left"
                                 Content="Profile" />
@@ -1488,7 +1488,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <controls:Avatar
+                                <controls:DFAvatar
                                     Width="80"
                                     Height="80"
                                     Margin="0,0,30,0"
@@ -1531,7 +1531,7 @@
                                 </controls:DescriptionItem>
                             </controls:DFUniformGrid>
 
-                            <controls:Divider
+                            <controls:DFDivider
                                 Margin="0,10,0,20"
                                 HorizontalContentAlignment="Left"
                                 Content="Preferences" />
@@ -1550,7 +1550,7 @@
                                             Foreground="{DynamicResource Brush_Text_Secondary}"
                                             Text="Receive daily summary emails about activity" />
                                     </StackPanel>
-                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="True" />
+                                    <controls:DFToggleSwitch Grid.Column="1" IsChecked="True" />
                                 </Grid>
 
                                 <Grid Margin="0,0,0,20">
@@ -1566,7 +1566,7 @@
                                             Foreground="{DynamicResource Brush_Text_Secondary}"
                                             Text="Add an extra layer of security to your account" />
                                     </StackPanel>
-                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="False" />
+                                    <controls:DFToggleSwitch Grid.Column="1" IsChecked="False" />
                                 </Grid>
 
                                 <Grid Margin="0,0,0,20">
@@ -1582,7 +1582,7 @@
                                             Foreground="{DynamicResource Brush_Text_Secondary}"
                                             Text="Use dark theme for the application interface" />
                                     </StackPanel>
-                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
+                                    <controls:DFToggleSwitch Grid.Column="1" IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
                                 </Grid>
                             </StackPanel>
 
@@ -1680,15 +1680,15 @@
                         </ItemsControl>
                     </ScrollViewer>
 
-                    <!--  Pagination  -->
+                    <!--  DFPagination  -->
                     <StackPanel Grid.Row="2">
                         <Border
                             Grid.Row="2"
                             Margin="0,20,0,0"
                             Style="{DynamicResource DFCard}">
-                            <controls:Pagination
-                                x:Name="IconPagination"
-                                PageChanged="IconPagination_PageChanged"
+                            <controls:DFPagination
+                                x:Name="IconDFPagination"
+                                PageChanged="IconDFPagination_PageChanged"
                                 PageSize="100" />
                         </Border>
                     </StackPanel>
@@ -1697,9 +1697,9 @@
 
         </TabControl>
 
-        <!--  Global Drawer  -->
-        <controls:Drawer
-            x:Name="SettingsDrawer"
+        <!--  Global DFDrawer  -->
+        <controls:DFDrawer
+            x:Name="SettingsDFDrawer"
             Header="Global Settings"
             Position="Right">
             <Grid Margin="20">
@@ -1759,11 +1759,11 @@
                             FontWeight="Bold"
                             Foreground="{DynamicResource Brush_Text_Primary}"
                             Text="Appearance" />
-                        <controls:ToggleSwitch
+                        <controls:DFToggleSwitch
                             Margin="0,0,0,10"
                             Content="Dark Mode"
                             IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
-                        <controls:ToggleSwitch Margin="0,0,0,10" Content="Compact Mode" />
+                        <controls:DFToggleSwitch Margin="0,0,0,10" Content="Compact Mode" />
 
                         <TextBlock
                             Margin="0,5,0,5"
@@ -1821,11 +1821,11 @@
                             FontWeight="Bold"
                             Foreground="{DynamicResource Brush_Text_Primary}"
                             Text="Notifications" />
-                        <controls:ToggleSwitch
+                        <controls:DFToggleSwitch
                             Margin="0,0,0,10"
                             Content="Enable Push Notifications"
                             IsChecked="True" />
-                        <controls:ToggleSwitch
+                        <controls:DFToggleSwitch
                             Margin="0,0,0,20"
                             Content="Email Digest"
                             IsChecked="False" />
@@ -1863,6 +1863,6 @@
                         Style="{DynamicResource DFPrimaryButton}" />
                 </StackPanel>
             </Grid>
-        </controls:Drawer>
+        </controls:DFDrawer>
     </Grid>
 </controls:DFWindow>

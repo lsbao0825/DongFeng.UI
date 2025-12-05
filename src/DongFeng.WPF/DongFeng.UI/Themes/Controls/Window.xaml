@@ -193,13 +193,13 @@
 
                             <!--  Client Area  -->
                             <AdornerDecorator x:Name="ClientAreaDecorator" Grid.Row="1">
-                                <controls:Loading
-                                    x:Name="PART_WindowLoading"
-                                    IsCancellable="{TemplateBinding IsLoadingCancellable}"
-                                    IsLoading="{TemplateBinding IsLoading}"
-                                    LoadingText="{TemplateBinding LoadingText}">
+                                <controls:DFLoading
+                                    x:Name="PART_WindowDFLoading"
+                                    IsCancellable="{TemplateBinding IsDFLoadingCancellable}"
+                                    IsDFLoading="{TemplateBinding IsDFLoading}"
+                                    DFLoadingText="{TemplateBinding DFLoadingText}">
                                     <ContentPresenter x:Name="PART_MainContent" ClipToBounds="True" />
-                                </controls:Loading>
+                                </controls:DFLoading>
                             </AdornerDecorator>
 
                             <!--  Message Container  -->

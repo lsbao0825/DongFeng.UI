@@ -44,22 +44,22 @@ namespace DongFeng
 
         private void BtnInfo_Click(object sender, RoutedEventArgs e)
         {
-            Message.Info("This is an info message.");
+            DFToast.Info("This is an info message.");
         }
 
         private void BtnSuccess_Click(object sender, RoutedEventArgs e)
         {
-            Message.Success("Operation completed successfully!");
+            DFToast.Success("Operation completed successfully!");
         }
 
         private void BtnWarn_Click(object sender, RoutedEventArgs e)
         {
-            Message.Warning("Please check your input carefully.");
+            DFToast.Warning("Please check your input carefully.");
         }
 
         private void BtnError_Click(object sender, RoutedEventArgs e)
         {
-            Message.Error("An unexpected error occurred.");
+            DFToast.Error("An unexpected error occurred.");
         }
 
         private void BtnDialog_Click(object sender, RoutedEventArgs e)
@@ -68,47 +68,47 @@ namespace DongFeng
             
             if (result == MessageBoxResult.Yes)
             {
-                Message.Success("Thanks! We appreciate it.");
+                DFToast.Success("Thanks! We appreciate it.");
             }
             else if (result == MessageBoxResult.No)
             {
-                Message.Warning("We will try harder next time.");
+                DFToast.Warning("We will try harder next time.");
             }
             else
             {
-                Message.Info("You cancelled the dialog.");
+                DFToast.Info("You cancelled the dialog.");
             }
         }
 
-        private void BtnOpenDrawer_Click(object sender, RoutedEventArgs e)
+        private void BtnOpenDFDrawer_Click(object sender, RoutedEventArgs e)
         {
-            SettingsDrawer.IsOpen = true;
+            SettingsDFDrawer.IsOpen = true;
         }
 
-        private System.Threading.CancellationTokenSource _loadingCts;
+        private System.Threading.CancellationTokenSource _DFLoadingCts;
 
-        private async void BtnLoading_Click(object sender, RoutedEventArgs e)
+        private async void BtnDFLoading_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                await StartLoading(async (token) =>
+                await StartDFLoading(async (token) =>
                 {
                     // 模拟耗时操作，传入 token 支持取消
                     await System.Threading.Tasks.Task.Delay(3000, token);
-                    Message.Success("Loading Completed!");
+                    DFToast.Success("DFLoading Completed!");
                 }, "Processing...", true);
             }
             catch (OperationCanceledException)
             {
-                Message.Warning("Loading Cancelled!");
+                DFToast.Warning("DFLoading Cancelled!");
             }
         }
 
         private async void BtnLoadSimple_Click(object sender, RoutedEventArgs e)
         {
             // Simple task without cancellation
-            await StartLoading(async () => await System.Threading.Tasks.Task.Delay(2000), "Simple Loading...");
-            Message.Success("Done!");
+            await StartDFLoading(async () => await System.Threading.Tasks.Task.Delay(2000), "Simple DFLoading...");
+            DFToast.Success("Done!");
         }
 
         private async void BtnLoadCancel_Click(object sender, RoutedEventArgs e)
@@ -116,30 +116,30 @@ namespace DongFeng
             // Long running task with cancellation support
             try
             {
-                await StartLoading(async (ct) => await System.Threading.Tasks.Task.Delay(5000, ct), "Long Task (Click X to cancel)", true);
-                Message.Success("Long task finished.");
+                await StartDFLoading(async (ct) => await System.Threading.Tasks.Task.Delay(5000, ct), "Long Task (Click X to cancel)", true);
+                DFToast.Success("Long task finished.");
             }
             catch (OperationCanceledException)
             {
-                Message.Info("Task was cancelled.");
+                DFToast.Info("Task was cancelled.");
             }
         }
 
         private async void BtnLoadResult_Click(object sender, RoutedEventArgs e)
         {
             // Task that returns a value
-            var result = await StartLoading(async () =>
+            var result = await StartDFLoading(async () =>
             {
                 await System.Threading.Tasks.Task.Delay(1500);
                 return 42;
             }, "Calculating...");
 
-            Message.Info($"Calculation Result: {result}");
+            DFToast.Info($"Calculation Result: {result}");
         }
 
-        private void MainLoading_Cancel(object sender, RoutedEventArgs e)
+        private void MainDFLoading_Cancel(object sender, RoutedEventArgs e)
         {
-            _loadingCts?.Cancel();
+            _DFLoadingCts?.Cancel();
         }
 
         private void ThemeToggle_Checked(object sender, RoutedEventArgs e)

@@ -32,36 +32,36 @@
         <!--  New Popups & Menus  -->
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Menu.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/ToolTip.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Message.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFToast.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/MessageBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/NumericUpDown.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFNumericUpDown.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Calendar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DatePicker.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DateTimePicker.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Loading.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/TagInput.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Pagination.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/StepBar.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Drawer.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/ToggleSwitch.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/CodeExample.xaml" />
-        
-        <!-- New Components -->
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Avatar.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Badge.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/BreadcrumbBar.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/ColorPicker.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Timeline.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Popover.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Empty.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/RangeSlider.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Rating.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/CircleProgressBar.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Skeleton.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Carousel.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Divider.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Statistic.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DescriptionList.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDateTimePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFLoading.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFTagInput.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFPagination.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFStepBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDrawer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFToggleSwitch.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFCodeExample.xaml" />
+
+        <!--  New Components  -->
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFAvatar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFBadge.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFBreadcrumbBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFColorPicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFTimeline.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFPopover.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFEmpty.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFRangeSlider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFRating.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFCircleProgressBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFSkeleton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFCarousel.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDivider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFStatistic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDescriptionList.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  Global Styles to apply automatically  -->

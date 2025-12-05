@@ -9,7 +9,7 @@ using System.Windows.Shell;
 namespace DongFeng.UI.Controls
 {
     [TemplatePart(Name = "PART_MessageContainer", Type = typeof(StackPanel))]
-    [TemplatePart(Name = "PART_WindowLoading", Type = typeof(Loading))]
+    [TemplatePart(Name = "PART_WindowDFLoading", Type = typeof(DFLoading))]
     public class DFWindow : Window
     {
         static DFWindow()
@@ -32,34 +32,34 @@ namespace DongFeng.UI.Controls
 
         #region Dependency Properties
 
-        // IsLoading
-        public static readonly DependencyProperty IsLoadingProperty =
-            DependencyProperty.Register("IsLoading", typeof(bool), typeof(DFWindow), new PropertyMetadata(false));
+        // IsDFLoading
+        public static readonly DependencyProperty IsDFLoadingProperty =
+            DependencyProperty.Register("IsDFLoading", typeof(bool), typeof(DFWindow), new PropertyMetadata(false));
 
-        public bool IsLoading
+        public bool IsDFLoading
         {
-            get { return (bool)GetValue(IsLoadingProperty); }
-            set { SetValue(IsLoadingProperty, value); }
+            get { return (bool)GetValue(IsDFLoadingProperty); }
+            set { SetValue(IsDFLoadingProperty, value); }
         }
 
-        // LoadingText
-        public static readonly DependencyProperty LoadingTextProperty =
-            DependencyProperty.Register("LoadingText", typeof(string), typeof(DFWindow), new PropertyMetadata("Loading..."));
+        // DFLoadingText
+        public static readonly DependencyProperty DFLoadingTextProperty =
+            DependencyProperty.Register("DFLoadingText", typeof(string), typeof(DFWindow), new PropertyMetadata("DFLoading..."));
 
-        public string LoadingText
+        public string DFLoadingText
         {
-            get { return (string)GetValue(LoadingTextProperty); }
-            set { SetValue(LoadingTextProperty, value); }
+            get { return (string)GetValue(DFLoadingTextProperty); }
+            set { SetValue(DFLoadingTextProperty, value); }
         }
 
-        // IsLoadingCancellable
-        public static readonly DependencyProperty IsLoadingCancellableProperty =
-            DependencyProperty.Register("IsLoadingCancellable", typeof(bool), typeof(DFWindow), new PropertyMetadata(false));
+        // IsDFLoadingCancellable
+        public static readonly DependencyProperty IsDFLoadingCancellableProperty =
+            DependencyProperty.Register("IsDFLoadingCancellable", typeof(bool), typeof(DFWindow), new PropertyMetadata(false));
 
-        public bool IsLoadingCancellable
+        public bool IsDFLoadingCancellable
         {
-            get { return (bool)GetValue(IsLoadingCancellableProperty); }
-            set { SetValue(IsLoadingCancellableProperty, value); }
+            get { return (bool)GetValue(IsDFLoadingCancellableProperty); }
+            set { SetValue(IsDFLoadingCancellableProperty, value); }
         }
 
         // TitleBarContent
@@ -126,116 +126,116 @@ namespace DongFeng.UI.Controls
 
         #region Events
 
-        public static readonly RoutedEvent LoadingCancelledEvent = EventManager.RegisterRoutedEvent(
-            "LoadingCancelled", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(DFWindow));
+        public static readonly RoutedEvent DFLoadingCancelledEvent = EventManager.RegisterRoutedEvent(
+            "DFLoadingCancelled", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(DFWindow));
 
-        public event RoutedEventHandler LoadingCancelled
+        public event RoutedEventHandler DFLoadingCancelled
         {
-            add { AddHandler(LoadingCancelledEvent, value); }
-            remove { RemoveHandler(LoadingCancelledEvent, value); }
+            add { AddHandler(DFLoadingCancelledEvent, value); }
+            remove { RemoveHandler(DFLoadingCancelledEvent, value); }
         }
 
         #endregion
 
-        #region Loading Helpers
+        #region DFLoading Helpers
 
-        private CancellationTokenSource _activeLoadingCts;
+        private CancellationTokenSource _activeDFLoadingCts;
 
         /// <summary>
-        /// Starts loading, executes the async action, and stops loading automatically.
+        /// Starts DFLoading, executes the async action, and stops DFLoading automatically.
         /// </summary>
-        public async Task StartLoading(Func<Task> action, string text = "Loading...", bool cancellable = false)
+        public async Task StartDFLoading(Func<Task> action, string text = "DFLoading...", bool cancellable = false)
         {
-            await StartLoading(async (_) => await action(), text, cancellable);
+            await StartDFLoading(async (_) => await action(), text, cancellable);
         }
 
         /// <summary>
-        /// Starts loading, executes the async action with cancellation support, and stops loading automatically.
+        /// Starts DFLoading, executes the async action with cancellation support, and stops DFLoading automatically.
         /// </summary>
-        public async Task StartLoading(Func<CancellationToken, Task> action, string text = "Loading...", bool cancellable = false)
+        public async Task StartDFLoading(Func<CancellationToken, Task> action, string text = "DFLoading...", bool cancellable = false)
         {
-            // Prevent concurrent loading overrides if needed, or just overwrite.
+            // Prevent concurrent DFLoading overrides if needed, or just overwrite.
             // For simplicity, we overwrite the current state.
 
-            IsLoading = true;
-            LoadingText = text;
-            IsLoadingCancellable = cancellable;
+            IsDFLoading = true;
+            DFLoadingText = text;
+            IsDFLoadingCancellable = cancellable;
 
-            _activeLoadingCts = new CancellationTokenSource();
+            _activeDFLoadingCts = new CancellationTokenSource();
 
             // Handler to cancel the token when user clicks cancel
             RoutedEventHandler cancelHandler = (s, e) =>
             {
-                _activeLoadingCts?.Cancel();
+                _activeDFLoadingCts?.Cancel();
             };
 
             if (cancellable)
             {
-                this.LoadingCancelled += cancelHandler;
+                this.DFLoadingCancelled += cancelHandler;
             }
 
             try
             {
-                await action(_activeLoadingCts.Token);
+                await action(_activeDFLoadingCts.Token);
             }
             finally
             {
                 if (cancellable)
                 {
-                    this.LoadingCancelled -= cancelHandler;
+                    this.DFLoadingCancelled -= cancelHandler;
                 }
 
-                IsLoading = false;
-                IsLoadingCancellable = false;
-                _activeLoadingCts?.Dispose();
-                _activeLoadingCts = null;
+                IsDFLoading = false;
+                IsDFLoadingCancellable = false;
+                _activeDFLoadingCts?.Dispose();
+                _activeDFLoadingCts = null;
             }
         }
 
         /// <summary>
-        /// Starts loading, executes the async function returning a value, and stops loading automatically.
+        /// Starts DFLoading, executes the async function returning a value, and stops DFLoading automatically.
         /// </summary>
-        public async Task<T> StartLoading<T>(Func<Task<T>> action, string text = "Loading...", bool cancellable = false)
+        public async Task<T> StartDFLoading<T>(Func<Task<T>> action, string text = "DFLoading...", bool cancellable = false)
         {
-            return await StartLoading(async (_) => await action(), text, cancellable);
+            return await StartDFLoading(async (_) => await action(), text, cancellable);
         }
 
         /// <summary>
-        /// Starts loading, executes the async function returning a value with cancellation support, and stops loading automatically.
+        /// Starts DFLoading, executes the async function returning a value with cancellation support, and stops DFLoading automatically.
         /// </summary>
-        public async Task<T> StartLoading<T>(Func<CancellationToken, Task<T>> action, string text = "Loading...", bool cancellable = false)
+        public async Task<T> StartDFLoading<T>(Func<CancellationToken, Task<T>> action, string text = "DFLoading...", bool cancellable = false)
         {
-            IsLoading = true;
-            LoadingText = text;
-            IsLoadingCancellable = cancellable;
+            IsDFLoading = true;
+            DFLoadingText = text;
+            IsDFLoadingCancellable = cancellable;
 
-            _activeLoadingCts = new CancellationTokenSource();
+            _activeDFLoadingCts = new CancellationTokenSource();
 
             RoutedEventHandler cancelHandler = (s, e) =>
             {
-                _activeLoadingCts?.Cancel();
+                _activeDFLoadingCts?.Cancel();
             };
 
             if (cancellable)
             {
-                this.LoadingCancelled += cancelHandler;
+                this.DFLoadingCancelled += cancelHandler;
             }
 
             try
             {
-                return await action(_activeLoadingCts.Token);
+                return await action(_activeDFLoadingCts.Token);
             }
             finally
             {
                 if (cancellable)
                 {
-                    this.LoadingCancelled -= cancelHandler;
+                    this.DFLoadingCancelled -= cancelHandler;
                 }
 
-                IsLoading = false;
-                IsLoadingCancellable = false;
-                _activeLoadingCts?.Dispose();
-                _activeLoadingCts = null;
+                IsDFLoading = false;
+                IsDFLoadingCancellable = false;
+                _activeDFLoadingCts?.Dispose();
+                _activeDFLoadingCts = null;
             }
         }
 
@@ -248,19 +248,19 @@ namespace DongFeng.UI.Controls
             base.OnApplyTemplate();
             _messageContainer = GetTemplateChild("PART_MessageContainer") as StackPanel;
             
-            if (GetTemplateChild("PART_WindowLoading") is Loading loading)
+            if (GetTemplateChild("PART_WindowDFLoading") is DFLoading DFLoading)
             {
-                loading.Cancel += (s, e) => RaiseEvent(new RoutedEventArgs(LoadingCancelledEvent));
+                DFLoading.Cancel += (s, e) => RaiseEvent(new RoutedEventArgs(DFLoadingCancelledEvent));
             }
         }
 
         private StackPanel _messageContainer;
 
-        public void ShowMessage(string content, MessageType type, TimeSpan duration)
+        public void ShowMessage(string content, DFMessageType type, TimeSpan duration)
         {
             if (_messageContainer == null) return;
 
-            var message = new MessageItem
+            var message = new DFMessageItem
             {
                 Content = content,
                 Type = type,
