@@ -1,0 +1,126 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Tag Item Style (Chip)  -->
+    <DataTemplate x:Key="TagItemTemplate" DataType="{x:Type sys:String}">
+        <Border
+            Margin="0,2,4,2"
+            Padding="8,4"
+            Background="{DynamicResource Brush_Surface}"
+            BorderBrush="{DynamicResource Brush_Border}"
+            BorderThickness="1"
+            CornerRadius="{DynamicResource Radius_Rounded}">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="{DynamicResource Brush_Text_Primary}"
+                    Text="{Binding}" />
+                <Button
+                    Margin="6,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Command="{x:Static controls:TagInput.RemoveTagCommand}"
+                    CommandParameter="{Binding}"
+                    Cursor="Hand"
+                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                    Style="{DynamicResource DFButton}">
+                    <Path
+                        Width="8"
+                        Height="8"
+                        Data="M1,1 L9,9 M1,9 L9,1"
+                        Stretch="Uniform"
+                        Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"
+                        StrokeThickness="1.5" />
+                </Button>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+
+    <!--  Input Item Style  -->
+    <DataTemplate x:Key="TagInputPlaceholderTemplate" DataType="{x:Type controls:TagInputPlaceholder}">
+        <TextBox
+            MinWidth="60"
+            Margin="0,2"
+            VerticalAlignment="Center"
+            Background="Transparent"
+            BorderThickness="0"
+            FontSize="14"
+            Foreground="{DynamicResource Brush_Text_Primary}"
+            Text="{Binding InputText, RelativeSource={RelativeSource AncestorType=controls:TagInput}, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.InputBindings>
+                <KeyBinding Key="Enter" Command="{x:Static controls:TagInput.AddTagCommand}" />
+            </TextBox.InputBindings>
+        </TextBox>
+    </DataTemplate>
+
+    <Style TargetType="{x:Type controls:TagInput}">
+        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:TagInput}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{DynamicResource Radius_Small}">
+                        <Grid>
+                            <!--  Clickable background to focus input  -->
+                            <!-- Removed direct event handler in XAML to avoid ResourceDictionary x:Class error -->
+                            <!-- Instead, we will attach handler in OnApplyTemplate in code-behind, searching for this border by name -->
+                            <Border
+                                x:Name="PART_FocusBorder"
+                                Background="Transparent"
+                                IsHitTestVisible="True" />
+
+                            <ListBox
+                                x:Name="PART_ListBox"
+                                Margin="{TemplateBinding Padding}"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                FocusVisualStyle="{x:Null}"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <ListBox.ItemTemplateSelector>
+                                    <controls:TagInputTemplateSelector InputTemplate="{StaticResource TagInputPlaceholderTemplate}" TagTemplate="{StaticResource TagItemTemplate}" />
+                                </ListBox.ItemTemplateSelector>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                        <Setter Property="Padding" Value="0" />
+                                        <Setter Property="Margin" Value="0" />
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <ContentPresenter />
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,72 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/Sizes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource DFControlBase}" TargetType="{x:Type controls:MessageItem}">
+        <Setter Property="Background" Value="{DynamicResource Brush_Surface}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MessageItem}">
+                    <Border
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{DynamicResource Radius_Medium}"
+                        Effect="{DynamicResource Shadow.Small}">
+                        <StackPanel Orientation="Horizontal">
+                            <!--  Icon  -->
+                            <Path
+                                x:Name="IconPath"
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center"
+                                Stretch="Uniform" />
+
+                            <!--  Content  -->
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Type" Value="Info">
+                            <Setter TargetName="IconPath" Property="Data" Value="M11,9h2V7h-2M11,15h2v-4h-2M12,2A10,10 0 0 0 2,12A10,10 0 0 0 12,22A10,10 0 0 0 22,12A10,10 0 0 0 12,2z" />
+                            <Setter TargetName="IconPath" Property="Fill" Value="{DynamicResource Brush_Info}" />
+                        </Trigger>
+                        <Trigger Property="Type" Value="Success">
+                            <Setter TargetName="IconPath" Property="Data" Value="M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41-1.41z" />
+                            <Setter TargetName="IconPath" Property="Fill" Value="{DynamicResource Brush_Success}" />
+                        </Trigger>
+                        <Trigger Property="Type" Value="Warning">
+                            <Setter TargetName="IconPath" Property="Data" Value="M1,21h22L12,2 1,21z M13,18h-2v-2h2v2z M13,14h-2v-4h2v4z" />
+                            <Setter TargetName="IconPath" Property="Fill" Value="{DynamicResource Brush_Warning}" />
+                        </Trigger>
+                        <Trigger Property="Type" Value="Error">
+                            <Setter TargetName="IconPath" Property="Data" Value="M19,6.41L17.59,5 12,10.59 6.41,5 5,6.41 10.59,12 5,17.59 6.41,19 12,13.41 17.59,19 19,17.59 13.41,12z" />
+                            <Setter TargetName="IconPath" Property="Fill" Value="{DynamicResource Brush_Error}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+

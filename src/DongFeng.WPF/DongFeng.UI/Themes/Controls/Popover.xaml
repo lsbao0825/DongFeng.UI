@@ -1,0 +1,59 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls"
+    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
+
+    <Style TargetType="{x:Type controls:Popover}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:Popover}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <!-- The Anchor Content -->
+                        <ContentPresenter />
+                        
+                        <!-- The Popup -->
+                        <Popup x:Name="PART_Popup"
+                               IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                               PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                               Placement="{TemplateBinding Placement}"
+                               StaysOpen="{TemplateBinding StaysOpen}"
+                               AllowsTransparency="True"
+                               PopupAnimation="Fade">
+                            <Border Background="{DynamicResource Brush_Surface}"
+                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="{DynamicResource Radius_Default}"
+                                    Margin="8"
+                                    Padding="12"
+                                    MinWidth="150"
+                                    MaxWidth="400">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="15" ShadowDepth="3" Opacity="0.15" Color="Black"/>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               FontWeight="Bold"
+                                               Margin="0,0,0,8"
+                                               Foreground="{DynamicResource Brush_Text_Primary}"
+                                               Visibility="{TemplateBinding Title, Converter={StaticResource ObjectToVisibilityConverter}}" />
+                                    <ContentPresenter Content="{TemplateBinding PopupContent}" />
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+

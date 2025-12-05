@@ -1,0 +1,38 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style
+        x:Key="DFProgressBar"
+        BasedOn="{StaticResource DFControlBase}"
+        TargetType="ProgressBar">
+        <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="6" />
+        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource Radius_Small}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Border
+                        x:Name="PART_Track"
+                        Background="{TemplateBinding Background}"
+                        ClipToBounds="True"
+                        CornerRadius="{Binding Path=(helpers:ControlAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                        <Border
+                            x:Name="PART_Indicator"
+                            HorizontalAlignment="Left"
+                            Background="{TemplateBinding Foreground}"
+                            CornerRadius="{Binding Path=(helpers:ControlAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

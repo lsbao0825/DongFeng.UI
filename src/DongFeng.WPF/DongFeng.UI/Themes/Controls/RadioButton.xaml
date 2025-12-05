@@ -1,0 +1,75 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style
+        x:Key="DFRadioButton"
+        BasedOn="{StaticResource DFControlBase}"
+        TargetType="RadioButton">
+        <Setter Property="Padding" Value="8,0,0,0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border
+                            x:Name="border"
+                            Width="18"
+                            Height="18"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource Brush_Border}"
+                            BorderThickness="1"
+                            CornerRadius="9">
+                            <Ellipse
+                                x:Name="dot"
+                                Width="8"
+                                Height="8"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Fill="White"
+                                Visibility="Collapsed" />
+                        </Border>
+
+                        <ContentPresenter
+                            Grid.Column="1"
+                            Margin="{TemplateBinding Padding}"
+                            VerticalAlignment="Center"
+                            RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="dot" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="True" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

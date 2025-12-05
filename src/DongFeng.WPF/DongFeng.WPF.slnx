@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DongFeng.UI/DongFeng.UI.csproj" />
+  <Project Path="DongFeng.WPF/DongFeng.WPF.csproj" />
+</Solution>

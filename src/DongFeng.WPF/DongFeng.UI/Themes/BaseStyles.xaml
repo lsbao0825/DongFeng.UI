@@ -1,0 +1,47 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
+
+    <!--
+        Base Style for all Controls
+        Provides consistent Spacing, Typography and Colors
+    -->
+    <Style x:Key="DFControlBase" TargetType="Control">
+        <Setter Property="Margin" Value="{DynamicResource Margin_Default}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}" />
+        <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
+        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <!--
+        Base Style for Controls with Borders (Inputs, Buttons etc)
+    -->
+    <Style
+        x:Key="DFBorderedControlBase"
+        BasedOn="{StaticResource DFControlBase}"
+        TargetType="Control">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource Radius_Small}" />
+    </Style>
+
+    <!--
+        Base Style for Text Inputs (TextBox, PasswordBox, ComboBox)
+    -->
+    <Style
+        x:Key="DFInputBase"
+        BasedOn="{StaticResource DFBorderedControlBase}"
+        TargetType="Control">
+        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
+        <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" /> 
+        <Setter Property="helpers:ControlAttach.FocusBorderBrush" Value="{DynamicResource Brush_Primary}" />
+    </Style>
+
+</ResourceDictionary>

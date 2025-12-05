@@ -1,0 +1,1868 @@
+﻿<controls:DFWindow
+    x:Class="DongFeng.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls;assembly=DongFeng.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers;assembly=DongFeng.UI"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="DongFeng Gallery"
+    Width="1200"
+    Height="800"
+    LoadingCancelled="MainLoading_Cancel"
+    Style="{StaticResource DFWindowStyle}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <controls:DFWindow.TitleBarContent>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button
+                Margin="0,0,10,0"
+                Click="BtnOpenDrawer_Click"
+                Content="Settings Drawer" />
+            <TextBlock
+                Margin="0,0,20,0"
+                VerticalAlignment="Center"
+                Foreground="{DynamicResource Brush_Text_Secondary}"
+                Text="| DF UI Style" />
+
+            <Menu
+                Margin="0"
+                Padding="0"
+                VerticalAlignment="Center"
+                Style="{DynamicResource DFTitleBarMenu}">
+                <MenuItem Header="File">
+                    <MenuItem Header="New" InputGestureText="Ctrl+N" />
+                    <MenuItem Header="Open" InputGestureText="Ctrl+O" />
+                    <Separator />
+                    <MenuItem Header="Exit" />
+                </MenuItem>
+                <MenuItem Header="Help" />
+            </Menu>
+        </StackPanel>
+    </controls:DFWindow.TitleBarContent>
+
+    <Grid Margin="{DynamicResource Spacing_Large}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Header Area  -->
+        <Grid Grid.Row="0" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock
+                    FontSize="{DynamicResource FontSize_Header}"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource Brush_Primary}"
+                    Text="Component Gallery" />
+                <TextBlock
+                    Margin="0,5,0,0"
+                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                    Text="Explore the DF UI WPF components." />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <controls:ToggleSwitch
+                    x:Name="ThemeToggle"
+                    Checked="ThemeToggle_Checked"
+                    Content="Dark Mode"
+                    Unchecked="ThemeToggle_Unchecked" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Main Content Tabs  -->
+        <TabControl Grid.Row="1" BorderThickness="0">
+
+            <!--  Tab: New Components  -->
+            <TabItem Header="New">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <controls:CodeExample Code="&lt;controls:BreadcrumbBar Separator=&quot; / &quot;&gt;&#xA;    &lt;sys:String&gt;Home&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Section&lt;/sys:String&gt;&#xA;    &lt;sys:String&gt;Page&lt;/sys:String&gt;&#xA;&lt;/controls:BreadcrumbBar&gt;" Header="Breadcrumb Navigation">
+                            <controls:BreadcrumbBar>
+                                <sys:String>Home</sys:String>
+                                <sys:String>UI Components</sys:String>
+                                <sys:String>New Features</sys:String>
+                            </controls:BreadcrumbBar>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:Avatar Text=&quot;JD&quot; /&gt;&#xA;&lt;controls:Avatar&gt;...&lt;Icon /&gt;...&lt;/controls:Avatar&gt;&#xA;&lt;controls:Avatar Source=&quot;...&quot; /&gt;" Header="Avatar">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:Avatar
+                                    Margin="0,0,20,0"
+                                    Text="A"
+                                    ToolTip="Text Fallback" />
+                                <controls:Avatar
+                                    Margin="0,0,20,0"
+                                    Background="#2080f0"
+                                    Foreground="White"
+                                    ToolTip="Icon Avatar">
+                                    <controls:Avatar.Icon>
+                                        <iconPacks:PackIconMaterial
+                                            Width="24"
+                                            Height="24"
+                                            Kind="Account" />
+                                    </controls:Avatar.Icon>
+                                </controls:Avatar>
+                                <controls:Avatar
+                                    Margin="0,0,20,0"
+                                    CornerRadius="4"
+                                    Text="SQ"
+                                    ToolTip="Square Radius" />
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:Badge Value=&quot;5&quot;&gt;...&lt;/controls:Badge&gt;&#xA;&lt;controls:Badge Value=&quot;100&quot; Maximum=&quot;99&quot;&gt;...&lt;/controls:Badge&gt;&#xA;&lt;controls:Badge IsDot=&quot;True&quot;&gt;...&lt;/controls:Badge&gt;" Header="Badge">
+                            <controls:DFUniformGrid
+                                Margin="0,10,0,0"
+                                VerticalAlignment="Top"
+                                Columns="1">
+                                <controls:Badge Margin="0,0,30,0" Value="5">
+                                    <Button Content="Messages" />
+                                </controls:Badge>
+
+                                <controls:Badge
+                                    Margin="0,0,30,0"
+                                    Maximum="99"
+                                    Value="120">
+                                    <Button Content="Emails" />
+                                </controls:Badge>
+
+                                <controls:Badge Margin="0,0,30,0" IsDot="True">
+                                    <Button Content="Updates" />
+                                </controls:Badge>
+                            </controls:DFUniformGrid>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:ColorPicker /&gt;" Header="Color Picker">
+                            <controls:ColorPicker HorizontalAlignment="Left" />
+                        </controls:CodeExample>
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Buttons & Icons  -->
+            <TabItem Header="Basic">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <controls:CodeExample Code="&lt;Button Content=&quot;Default Button&quot; /&gt;&#xA;&lt;Button Content=&quot;Primary Button&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot; /&gt;&#xA;&lt;Button Content=&quot;Disabled&quot; IsEnabled=&quot;False&quot; /&gt;" Header="Standard Buttons">
+                            <WrapPanel>
+                                <Button Margin="0,0,10,10" Content="Default Button" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Content="Primary Button"
+                                    Style="{DynamicResource DFPrimaryButton}" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Content="Disabled"
+                                    IsEnabled="False" />
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;Button Content=&quot;Search&quot; Style=&quot;{DynamicResource DFPrimaryButton}&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Magnify&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;&#xA;&#xA;&lt;Button Style=&quot;{DynamicResource DFVerticalButton}&quot; Content=&quot;Save&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;ContentSave&quot; Width=&quot;24&quot; Height=&quot;24&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/Button&gt;" Header="Buttons with Icons">
+                            <WrapPanel>
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Content="Search"
+                                    Style="{DynamicResource DFPrimaryButton}">
+                                    <helpers:ControlAttach.Icon>
+                                        <iconPacks:PackIconMaterial Kind="Magnify" />
+                                    </helpers:ControlAttach.Icon>
+                                </Button>
+                                <Button Margin="0,0,10,10" Content="Settings">
+                                    <helpers:ControlAttach.Icon>
+                                        <iconPacks:PackIconMaterial Kind="Cog" />
+                                    </helpers:ControlAttach.Icon>
+                                </Button>
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Content="Vertical Layout"
+                                    Style="{DynamicResource DFVerticalButton}">
+                                    <helpers:ControlAttach.Icon>
+                                        <iconPacks:PackIconMaterial
+                                            Width="24"
+                                            Height="24"
+                                            Kind="ViewDashboard" />
+                                    </helpers:ControlAttach.Icon>
+                                </Button>
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:ToggleSwitch Content=&quot;Switch me&quot; /&gt;&#xA;&lt;controls:ToggleSwitch IsChecked=&quot;True&quot;&gt;&#xA;    &lt;controls:ToggleSwitch.OnContent&gt;ON&lt;/controls:ToggleSwitch.OnContent&gt;&#xA;    &lt;controls:ToggleSwitch.OffContent&gt;OFF&lt;/controls:ToggleSwitch.OffContent&gt;&#xA;&lt;/controls:ToggleSwitch&gt;" Header="Toggle Switch">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:ToggleSwitch Margin="0,0,20,0" Content="Standard Switch" />
+                                <controls:ToggleSwitch Content="With State Text" IsChecked="True">
+                                    <controls:ToggleSwitch.OnContent>ON</controls:ToggleSwitch.OnContent>
+                                    <controls:ToggleSwitch.OffContent>OFF</controls:ToggleSwitch.OffContent>
+                                </controls:ToggleSwitch>
+                            </StackPanel>
+                        </controls:CodeExample>
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Inputs  -->
+            <TabItem Header="Inputs">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <controls:CodeExample Code="&lt;TextBox helpers:ControlAttach.Watermark=&quot;Enter text...&quot; /&gt;&#xA;&lt;TextBox helpers:ControlAttach.Watermark=&quot;With Icon&quot;&gt;&#xA;    &lt;helpers:ControlAttach.Icon&gt;&#xA;        &lt;iconPacks:PackIconMaterial Kind=&quot;Account&quot; /&gt;&#xA;    &lt;/helpers:ControlAttach.Icon&gt;&#xA;&lt;/TextBox&gt;" Header="TextBox">
+                            <StackPanel>
+                                <TextBox helpers:ControlAttach.Watermark="Enter text..." />
+                                <TextBox helpers:ControlAttach.Watermark="With Icon">
+                                    <helpers:ControlAttach.Icon>
+                                        <iconPacks:PackIconMaterial
+                                            Width="14"
+                                            Height="14"
+                                            Kind="Account" />
+                                    </helpers:ControlAttach.Icon>
+                                </TextBox>
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;PasswordBox helpers:ControlAttach.Watermark=&quot;Password&quot; /&gt;" Header="PasswordBox">
+
+                            <StackPanel>
+                                <PasswordBox helpers:ControlAttach.Watermark="Password" />
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:NumericUpDown Value=&quot;5&quot; Maximum=&quot;10&quot; /&gt;&#xA;&lt;controls:DateTimePicker SelectedDate=&quot;{x:Static sys:DateTime.Now}&quot; /&gt;" Header="Numeric &amp; Date">
+                            <controls:DFUniformGrid Columns="1">
+                                <controls:NumericUpDown
+                                    Maximum="100"
+                                    Minimum="0"
+                                    Value="10" />
+                                <controls:DateTimePicker SelectedDate="{x:Static sys:DateTime.Now}" />
+                            </controls:DFUniformGrid>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Header="Tag Input">
+                            <controls:TagInput
+                                x:Name="OrderTags"
+                                Width="400"
+                                HorizontalAlignment="Left" />
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:Rating Value=&quot;3&quot; /&gt;&#xA;&lt;controls:Rating IsReadOnly=&quot;True&quot; Value=&quot;4&quot; /&gt;" Header="Rating">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:Rating Margin="0,0,20,0" Value="3" />
+                                <controls:Rating
+                                    Margin="0,0,20,0"
+                                    IsReadOnly="True"
+                                    ToolTip="Read Only"
+                                    Value="4" />
+                                <controls:Rating
+                                    ItemSize="16"
+                                    Maximum="10"
+                                    ToolTip="Max 10, Small"
+                                    Value="7" />
+                            </StackPanel>
+                        </controls:CodeExample>
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Data  -->
+            <TabItem Header="Data Display">
+                <ScrollViewer>
+                    <Grid Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <!--  Examples  -->
+                            <RowDefinition Height="*" />
+                            <!--  DataGrid  -->
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!--  Statistic & Divider Examples  -->
+                        <controls:DFUniformGrid Grid.Row="0" Margin="0,0,0,20">
+                            <controls:CodeExample Header="Statistic">
+                                <StackPanel Orientation="Horizontal">
+                                    <controls:Statistic
+                                        Margin="0,0,40,0"
+                                        Label="Active Users"
+                                        Value="1,234" />
+                                    <controls:Statistic
+                                        Margin="0,0,40,0"
+                                        Foreground="#18a058"
+                                        Label="Growth"
+                                        Suffix="%"
+                                        Value="12.5">
+                                        <controls:Statistic.Icon>
+                                            <iconPacks:PackIconMaterial
+                                                Width="24"
+                                                Height="24"
+                                                Foreground="#18a058"
+                                                Kind="ArrowUp" />
+                                        </controls:Statistic.Icon>
+                                    </controls:Statistic>
+                                    <controls:Statistic
+                                        Margin="0,0,40,0"
+                                        Label="Revenue"
+                                        Prefix="$"
+                                        Value="9,876" />
+                                </StackPanel>
+                            </controls:CodeExample>
+
+                            <controls:CodeExample Header="Divider">
+                                <StackPanel>
+                                    <controls:Divider />
+                                    <controls:Divider Content="Center Text" />
+                                    <controls:Divider HorizontalContentAlignment="Left" Content="Left Text" />
+                                    <controls:Divider HorizontalContentAlignment="Right" Content="Right Text" />
+                                </StackPanel>
+                            </controls:CodeExample>
+
+                            <controls:CodeExample Header="Description List">
+                                <controls:DescriptionList>
+                                    <controls:DescriptionItem Content="John Doe" Label="User" />
+                                    <controls:DescriptionItem Content="Developer" Label="Role" />
+                                    <controls:DescriptionItem Content="john@example.com" Label="Email" />
+                                    <controls:DescriptionItem Content="Active" Label="Status" />
+                                    <controls:DescriptionItem Content="New York, USA" Label="Location" />
+                                    <controls:DescriptionItem Content="Frontend" Label="Team" />
+                                </controls:DescriptionList>
+                            </controls:CodeExample>
+                        </controls:DFUniformGrid>
+
+                        <controls:CodeExample
+                            Grid.Row="1"
+                            VerticalAlignment="Stretch"
+                            Code="&lt;DataGrid ... /&gt;&#xA;&lt;controls:Pagination TotalCount=&quot;100&quot; /&gt;"
+                            Header="DataGrid with Pagination">
+                            <Grid Height="400">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                                    <Button Content="Add New" Style="{DynamicResource DFPrimaryButton}" />
+                                    <Button Margin="10,0,0,0" Content="Refresh" />
+                                </StackPanel>
+
+                                <DataGrid
+                                    x:Name="UserDataGrid"
+                                    Grid.Row="1"
+                                    AutoGenerateColumns="False"
+                                    HeadersVisibility="Column">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn
+                                            Width="80"
+                                            Binding="{Binding ID}"
+                                            Header="ID" />
+                                        <DataGridTextColumn
+                                            Width="200"
+                                            Binding="{Binding Name}"
+                                            Header="Name" />
+                                        <DataGridTextColumn
+                                            Width="150"
+                                            Binding="{Binding Status}"
+                                            Header="Status" />
+                                        <DataGridTextColumn
+                                            Width="*"
+                                            Binding="{Binding Date}"
+                                            Header="Joined Date" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                                <controls:Pagination
+                                    Grid.Row="2"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Right"
+                                    CurrentPage="1"
+                                    PageSize="10"
+                                    TotalCount="100" />
+                            </Grid>
+                        </controls:CodeExample>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Feedback  -->
+            <TabItem Header="Feedback">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <controls:CodeExample Code="Message.Info(&quot;Info message&quot;);&#xA;Message.Success(&quot;Success message&quot;);&#xA;Message.Warning(&quot;Warning message&quot;);&#xA;Message.Error(&quot;Error message&quot;);" Header="Message (Toast)">
+                            <WrapPanel>
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnInfo_Click"
+                                    Content="Info" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnSuccess_Click"
+                                    Content="Success" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnWarn_Click"
+                                    Content="Warning" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnError_Click"
+                                    Content="Error" />
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:CircleProgressBar Value=&quot;75&quot; /&gt;" Header="Circle Progress">
+                            <WrapPanel>
+                                <controls:CircleProgressBar Margin="0,0,20,0" Value="25" />
+                                <controls:CircleProgressBar
+                                    Width="80"
+                                    Height="80"
+                                    Margin="0,0,20,0"
+                                    IsPie="True"
+                                    StrokeThickness="0"
+                                    Value="75" />
+                                <controls:CircleProgressBar
+                                    Width="60"
+                                    Height="60"
+                                    Foreground="#18a058"
+                                    StrokeThickness="4"
+                                    Value="100" />
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:Skeleton Width=&quot;200&quot; /&gt;" Header="Skeleton (Loading)">
+                            <StackPanel>
+                                <controls:Skeleton
+                                    Width="100"
+                                    Height="30"
+                                    Margin="0,0,0,10" />
+                                <controls:Skeleton Width="300" Margin="0,0,0,10" />
+                                <controls:Skeleton Width="250" Margin="0,0,0,10" />
+                                <StackPanel Orientation="Horizontal">
+                                    <controls:Skeleton
+                                        Width="50"
+                                        Height="50"
+                                        Margin="0,0,10,0"
+                                        CornerRadius="25" />
+                                    <StackPanel VerticalAlignment="Center">
+                                        <controls:Skeleton Width="120" Margin="0,0,0,5" />
+                                        <controls:Skeleton Width="80" Height="12" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:Carousel AutoPlay=&quot;True&quot;&gt;...&lt;/controls:Carousel&gt;" Header="Carousel (Banner)">
+                            <controls:Carousel Height="200" AutoPlay="True">
+                                <controls:CarouselItem>
+                                    <Grid Background="#18a058">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="32"
+                                            Foreground="White"
+                                            Text="Slide 1" />
+                                    </Grid>
+                                </controls:CarouselItem>
+                                <controls:CarouselItem>
+                                    <Grid Background="#2080f0">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="32"
+                                            Foreground="White"
+                                            Text="Slide 2" />
+                                    </Grid>
+                                </controls:CarouselItem>
+                                <controls:CarouselItem>
+                                    <Grid Background="#f0a020">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="32"
+                                            Foreground="White"
+                                            Text="Slide 3" />
+                                    </Grid>
+                                </controls:CarouselItem>
+                            </controls:Carousel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="var result = DFMessageBox.Show(&quot;Are you sure?&quot;, &quot;Confirm&quot;, MessageBoxButton.YesNo);" Header="Dialog (Modal)">
+                            <Button Click="BtnDialog_Click" Content="Open Confirmation Dialog" />
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="// Simple&#xA;await StartLoading(async () =&gt; await Task.Delay(2000), &quot;Loading...&quot;);&#xA;&#xA;// Cancellable&#xA;await StartLoading(async (ct) =&gt; await Task.Delay(5000, ct), &quot;Processing...&quot;, true);" Header="Loading (Async Tasks)">
+                            <WrapPanel>
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnLoadSimple_Click"
+                                    Content="Simple (2s)" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnLoadCancel_Click"
+                                    Content="Cancellable (5s)" />
+                                <Button
+                                    Margin="0,0,10,10"
+                                    Click="BtnLoadResult_Click"
+                                    Content="With Result" />
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;controls:StepBar StepIndex=&quot;1&quot;&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 1&quot; /&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 2&quot; /&gt;&#xA;    &lt;controls:StepBarItem Content=&quot;Step 3&quot; /&gt;&#xA;&lt;/controls:StepBar&gt;" Header="Step Bar">
+                            <controls:StepBar StepIndex="1">
+                                <controls:StepBarItem Content="Step 1" />
+                                <controls:StepBarItem Content="Step 2" />
+                                <controls:StepBarItem Content="Step 3" />
+                            </controls:StepBar>
+                        </controls:CodeExample>
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Advanced (New)  -->
+            <TabItem Header="Advanced">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <!--  Timeline  -->
+                        <controls:CodeExample Code="&lt;controls:Timeline&gt;&#xA;    &lt;controls:TimelineItem Header=&quot;2023-10-01&quot; Content=&quot;Start&quot; Color=&quot;Green&quot;/&gt;&#xA;    &lt;controls:TimelineItem Content=&quot;Process&quot; LineType=&quot;Dashed&quot;/&gt;&#xA;&lt;/controls:Timeline&gt;" Header="Timeline">
+                            <controls:Timeline>
+                                <controls:TimelineItem
+                                    Content="Project Started"
+                                    Header="2023-10-01 09:00"
+                                    Color="#18a058" />
+                                <controls:TimelineItem
+                                    Content="Design Review"
+                                    Header="2023-10-02"
+                                    LineType="Dashed" />
+                                <controls:TimelineItem Content="Development" Header="2023-10-05" />
+                                <controls:TimelineItem
+                                    Content="Testing"
+                                    Header="2023-10-10"
+                                    Color="#f0a020" />
+                                <controls:TimelineItem
+                                    Content="Release"
+                                    Header="2023-10-20"
+                                    Color="#d03050" />
+                            </controls:Timeline>
+                        </controls:CodeExample>
+
+                        <!--  RangeSlider  -->
+                        <controls:CodeExample Code="&lt;controls:RangeSlider Minimum=&quot;0&quot; Maximum=&quot;100&quot; LowerValue=&quot;20&quot; UpperValue=&quot;80&quot;/&gt;" Header="Range Slider">
+                            <StackPanel>
+                                <controls:RangeSlider
+                                    Width="300"
+                                    Margin="0,0,0,20"
+                                    HorizontalAlignment="Left"
+                                    LowerValue="20"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    UpperValue="80" />
+                                <controls:RangeSlider
+                                    Width="300"
+                                    HorizontalAlignment="Left"
+                                    IsSnapToTickEnabled="True"
+                                    LowerValue="10"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    TickFrequency="10"
+                                    UpperValue="40" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    FontSize="12"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Text="With Tick Snapping (10)" />
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <!--  Popover  -->
+                        <controls:CodeExample Code="&lt;controls:Popover Title=&quot;Title&quot;&gt;&#xA;   &lt;Button Content=&quot;Click Me&quot;/&gt;&#xA;   &lt;controls:Popover.PopupContent&gt;...&lt;/controls:Popover.PopupContent&gt;&#xA;&lt;/controls:Popover&gt;" Header="Popover">
+                            <WrapPanel>
+                                <controls:Popover Title="User Details" Margin="0,0,20,0">
+                                    <Button Content="Click Me (Popover)" Style="{DynamicResource DFPrimaryButton}" />
+                                    <controls:Popover.PopupContent>
+                                        <StackPanel Width="200">
+                                            <TextBlock Margin="0,0,0,5" Text="Name: John Doe" />
+                                            <TextBlock Margin="0,0,0,10" Text="Role: Administrator" />
+                                            <Button
+                                                Width="100"
+                                                HorizontalAlignment="Left"
+                                                Content="View Profile" />
+                                        </StackPanel>
+                                    </controls:Popover.PopupContent>
+                                </controls:Popover>
+
+                                <controls:Popover
+                                    Title="Hover Me"
+                                    Placement="Right"
+                                    Trigger="Hover">
+                                    <Button Content="Hover Me" />
+                                    <controls:Popover.PopupContent>
+                                        <TextBlock Text="This appears on hover!" />
+                                    </controls:Popover.PopupContent>
+                                </controls:Popover>
+                            </WrapPanel>
+                        </controls:CodeExample>
+
+                        <!--  Empty  -->
+                        <controls:CodeExample Code="&lt;controls:Empty Description=&quot;No Data&quot;&gt;&#xA;    &lt;Button Content=&quot;Refresh&quot;/&gt;&#xA;&lt;/controls:Empty&gt;" Header="Empty State">
+                            <Border
+                                Padding="20"
+                                BorderBrush="{DynamicResource Brush_Border}"
+                                BorderThickness="1"
+                                CornerRadius="4">
+                                <controls:Empty Description="No Data Found">
+                                    <Button
+                                        Margin="0,10,0,0"
+                                        Content="Create New"
+                                        Style="{DynamicResource DFPrimaryButton}" />
+                                </controls:Empty>
+                            </Border>
+                        </controls:CodeExample>
+
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Tab: Layout  -->
+            <TabItem Header="Layout">
+                <ScrollViewer Padding="0,20,20,20" VerticalScrollBarVisibility="Auto">
+                    <controls:DFUniformGrid>
+                        <controls:CodeExample Header="Layout">
+                            <StackPanel>
+                                <controls:CodeExample Code="&lt;controls:DFcontrols:DFUniformGrid Rows=&quot;2&quot; Columns=&quot;3&quot; RowSpacing=&quot;10&quot; ColumnSpacing=&quot;10&quot;&gt;...&lt;/controls:DFcontrols:DFUniformGrid&gt;" Header="controls:DFUniformGrid with Spacing">
+                                    <controls:DFUniformGrid
+                                        ColumnSpacing="10"
+                                        Columns="3"
+                                        RowSpacing="10"
+                                        Rows="2">
+                                        <Button Content="1" />
+                                        <Button Content="2" />
+                                        <Button Content="3" />
+                                        <Button Content="4" />
+                                        <Button Content="5" />
+                                        <Button Content="6" />
+                                    </controls:DFUniformGrid>
+                                </controls:CodeExample>
+
+                                <controls:CodeExample Code="&lt;GroupBox Header=&quot;Header&quot;&gt;...&lt;/GroupBox&gt;&#xA;&lt;Expander Header=&quot;Header&quot;&gt;...&lt;/Expander&gt;" Header="Containers">
+                                    <StackPanel>
+                                        <GroupBox Margin="0,0,0,10" Header="GroupBox Example">
+                                            <TextBlock Text="Content goes here." />
+                                        </GroupBox>
+                                        <Expander Header="Expander Example">
+                                            <TextBlock Margin="10" Text="Hidden content revealed." />
+                                        </Expander>
+                                    </StackPanel>
+                                </controls:CodeExample>
+                            </StackPanel>
+                        </controls:CodeExample>
+
+                        <controls:CodeExample Code="&lt;TabControl&gt;...&lt;/TabControl&gt;" Header="TabControl">
+                            <TabControl Height="150">
+                                <TabItem Header="Tab 1">
+                                    <Grid Margin="{DynamicResource Margin_Large}">
+                                        <TextBlock Text="Content 1" />
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Tab 2">
+                                    <Grid Margin="{DynamicResource Margin_Large}">
+                                        <TextBlock Text="Content 2" />
+                                    </Grid>
+                                </TabItem>
+                            </TabControl>
+                        </controls:CodeExample>
+                    </controls:DFUniformGrid>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Demo: Login  -->
+            <TabItem Header="Demo: Login">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush
+                            ImageSource="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80"
+                            Opacity="0.2"
+                            Stretch="UniformToFill" />
+                    </Grid.Background>
+                    <Border
+                        Width="400"
+                        Padding="40"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Brush_Surface}"
+                        BorderBrush="{DynamicResource Brush_Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius_Large}">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="20"
+                                Direction="270"
+                                Opacity="0.1"
+                                ShadowDepth="4"
+                                Color="Black" />
+                        </Border.Effect>
+                        <StackPanel>
+                            <controls:Avatar
+                                Width="80"
+                                Height="80"
+                                Margin="0,0,0,20"
+                                HorizontalAlignment="Center"
+                                Background="{DynamicResource Brush_Primary}"
+                                Foreground="White">
+                                <controls:Avatar.Icon>
+                                    <iconPacks:PackIconMaterial
+                                        Width="40"
+                                        Height="40"
+                                        Kind="Account" />
+                                </controls:Avatar.Icon>
+                            </controls:Avatar>
+
+                            <TextBlock
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                FontSize="24"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Text="Welcome Back" />
+                            <TextBlock
+                                Margin="0,0,0,30"
+                                HorizontalAlignment="Center"
+                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Text="Please sign in to continue" />
+
+                            <TextBox
+                                Height="40"
+                                Margin="0,0,0,20"
+                                helpers:ControlAttach.Watermark="Username / Email">
+                                <helpers:ControlAttach.Icon>
+                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource Brush_Text_Secondary}" Kind="AccountOutline" />
+                                </helpers:ControlAttach.Icon>
+                            </TextBox>
+
+                            <PasswordBox
+                                Height="40"
+                                Margin="0,0,0,20"
+                                helpers:ControlAttach.Watermark="Password"
+                                helpers:PasswordBoxAttach.ShowEyeButton="True">
+                                <helpers:ControlAttach.Icon>
+                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource Brush_Text_Secondary}" Kind="LockOutline" />
+                                </helpers:ControlAttach.Icon>
+                            </PasswordBox>
+
+                            <DockPanel Margin="0,0,0,30">
+                                <CheckBox Content="Remember me" />
+                                <TextBlock
+                                    Cursor="Hand"
+                                    DockPanel.Dock="Right"
+                                    Foreground="{DynamicResource Brush_Primary}"
+                                    Text="Forgot Password?"
+                                    TextDecorations="Underline" />
+                            </DockPanel>
+
+                            <Button
+                                Height="44"
+                                Margin="0,0,0,20"
+                                Content="Sign In"
+                                FontSize="16"
+                                Style="{DynamicResource DFPrimaryButton}">
+                                <Button.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="15"
+                                        Direction="270"
+                                        Opacity="0.4"
+                                        ShadowDepth="4"
+                                        Color="{StaticResource Color_Primary}" />
+                                </Button.Effect>
+                            </Button>
+
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Don't have an account? " />
+                                <TextBlock
+                                    Cursor="Hand"
+                                    FontWeight="Bold"
+                                    Foreground="{DynamicResource Brush_Primary}"
+                                    Text="Sign Up" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <!--  Demo: Music Player  -->
+            <TabItem Header="Demo: Music">
+                <Grid Background="{DynamicResource Brush_Background}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Sidebar  -->
+                    <Border
+                        Background="{DynamicResource Brush_Surface}"
+                        BorderBrush="{DynamicResource Brush_Border}"
+                        BorderThickness="0,0,1,0">
+                        <DockPanel Margin="0,20,0,0">
+                            <StackPanel Margin="20,0,20,20" DockPanel.Dock="Top">
+                                <TextBlock
+                                    Margin="0,0,0,10"
+                                    FontSize="12"
+                                    FontWeight="Bold"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Text="LIBRARY" />
+                                <ListBox
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Style="{DynamicResource DFListBox}">
+                                    <ListBoxItem Padding="10,8" Content="Recently Played" />
+                                    <ListBoxItem Padding="10,8" Content="Favorites" />
+                                    <ListBoxItem Padding="10,8" Content="Albums" />
+                                    <ListBoxItem Padding="10,8" Content="Artists" />
+                                </ListBox>
+
+                                <TextBlock
+                                    Margin="0,20,0,10"
+                                    FontSize="12"
+                                    FontWeight="Bold"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Text="PLAYLISTS" />
+                                <ListBox Background="Transparent" BorderThickness="0">
+                                    <ListBoxItem Padding="10,8" Content="Chill Vibes" />
+                                    <ListBoxItem Padding="10,8" Content="Workout Mix" />
+                                    <ListBoxItem Padding="10,8" Content="Top 50 Global" />
+                                    <ListBoxItem Padding="10,8" Content="Focus Flow" />
+                                </ListBox>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+
+                    <!--  Player  -->
+                    <Grid Grid.Column="1">
+                        <StackPanel
+                            Width="400"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <Border
+                                Width="240"
+                                Height="240"
+                                Margin="0,0,0,30"
+                                CornerRadius="12">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Offset="0" Color="#FF8E2DE2" />
+                                        <GradientStop Offset="1" Color="#FF4A00E0" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <iconPacks:PackIconMaterial
+                                    Width="100"
+                                    Height="100"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    Kind="MusicNote"
+                                    Opacity="0.5" />
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="30"
+                                        Direction="270"
+                                        Opacity="0.3"
+                                        ShadowDepth="10"
+                                        Color="#FF4A00E0" />
+                                </Border.Effect>
+                            </Border>
+
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Text="Midnight City" />
+                            <TextBlock
+                                Margin="0,8,0,30"
+                                HorizontalAlignment="Center"
+                                FontSize="16"
+                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Text="M83 - Hurry Up, We're Dreaming" />
+
+                            <Grid Margin="0,0,0,10">
+                                <TextBlock
+                                    HorizontalAlignment="Left"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Text="1:45" />
+                                <TextBlock
+                                    HorizontalAlignment="Right"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Text="4:03" />
+                            </Grid>
+                            <Slider
+                                Margin="0,0,0,30"
+                                Maximum="100"
+                                Style="{DynamicResource DFSlider}"
+                                Value="35" />
+
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Button
+                                    Width="40"
+                                    Height="40"
+                                    Margin="0,0,30,0"
+                                    Style="{DynamicResource DFIconButtonStyle}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="20"
+                                        Height="20"
+                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Kind="ShuffleVariant" />
+                                </Button>
+                                <Button
+                                    Width="50"
+                                    Height="50"
+                                    Margin="0,0,20,0"
+                                    Style="{DynamicResource DFIconButtonStyle}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="28"
+                                        Height="28"
+                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Kind="SkipPrevious" />
+                                </Button>
+                                <Button
+                                    Width="70"
+                                    Height="70"
+                                    Margin="0,0,20,0"
+                                    helpers:ControlAttach.CornerRadius="35"
+                                    Style="{DynamicResource DFPrimaryButton}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="36"
+                                        Height="36"
+                                        Kind="Play" />
+                                </Button>
+                                <Button
+                                    Width="50"
+                                    Height="50"
+                                    Margin="0,0,30,0"
+                                    Style="{DynamicResource DFIconButtonStyle}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="28"
+                                        Height="28"
+                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Kind="SkipNext" />
+                                </Button>
+                                <Button
+                                    Width="40"
+                                    Height="40"
+                                    Style="{DynamicResource DFIconButtonStyle}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="20"
+                                        Height="20"
+                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Kind="Repeat" />
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <!--  Demo: Dashboard  -->
+            <TabItem Header="Demo: Dashboard">
+                <ScrollViewer>
+                    <StackPanel Margin="{DynamicResource Spacing_Large}">
+                        <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock
+                                    FontSize="28"
+                                    FontWeight="Bold"
+                                    Foreground="{DynamicResource Brush_Text_Primary}"
+                                    Text="Dashboard" />
+                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Overview of your business performance" />
+                            </StackPanel>
+                            <StackPanel
+                                Margin="{DynamicResource Margin_Default}"
+                                VerticalAlignment="Bottom"
+                                DockPanel.Dock="Right"
+                                Orientation="Horizontal">
+                                <controls:DateTimePicker
+                                    Width="200"
+                                    Margin="0,0,10,0"
+                                    SelectedDate="{x:Static sys:DateTime.Now}" />
+                                <Button Content="Export Report">
+                                    <helpers:ControlAttach.Icon>
+                                        <iconPacks:PackIconMaterial Kind="Download" />
+                                    </helpers:ControlAttach.Icon>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!--  Stats Cards  -->
+                        <controls:DFUniformGrid
+                            Margin="0,0,0,30"
+                            ColumnSpacing="20"
+                            Columns="4"
+                            RowSpacing="20">
+                            <Border Padding="20" Style="{DynamicResource DFCard}">
+                                <controls:Statistic
+                                    Foreground="#18a058"
+                                    Label="Total Revenue"
+                                    Prefix="$"
+                                    Value="45,231">
+                                    <controls:Statistic.Icon>
+                                        <iconPacks:PackIconMaterial Foreground="#18a058" Kind="CurrencyUsd" />
+                                    </controls:Statistic.Icon>
+                                </controls:Statistic>
+                            </Border>
+                            <Border Padding="20" Style="{DynamicResource DFCard}">
+                                <controls:Statistic
+                                    Foreground="#2080f0"
+                                    Label="Active Users"
+                                    Value="2,405">
+                                    <controls:Statistic.Icon>
+                                        <iconPacks:PackIconMaterial Foreground="#2080f0" Kind="AccountGroup" />
+                                    </controls:Statistic.Icon>
+                                </controls:Statistic>
+                            </Border>
+                            <Border Padding="20" Style="{DynamicResource DFCard}">
+                                <controls:Statistic
+                                    Foreground="#f0a020"
+                                    Label="New Orders"
+                                    Value="125">
+                                    <controls:Statistic.Icon>
+                                        <iconPacks:PackIconMaterial Foreground="#f0a020" Kind="Shopping" />
+                                    </controls:Statistic.Icon>
+                                </controls:Statistic>
+                            </Border>
+                            <Border Padding="20" Style="{DynamicResource DFCard}">
+                                <controls:Statistic
+                                    Foreground="#d03050"
+                                    Label="Conversion Rate"
+                                    Suffix="%"
+                                    Value="3.2">
+                                    <controls:Statistic.Icon>
+                                        <iconPacks:PackIconMaterial Foreground="#d03050" Kind="ChartLine" />
+                                    </controls:Statistic.Icon>
+                                </controls:Statistic>
+                            </Border>
+                        </controls:DFUniformGrid>
+
+                        <Grid Height="350" Margin="0,0,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Margin="0,0,20,0"
+                                Padding="20"
+                                Style="{DynamicResource DFCard}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="Sales Analytics" />
+
+                                    <!--  Mock Chart  -->
+                                    <controls:DFUniformGrid
+                                        Grid.Row="1"
+                                        Height="200"
+                                        VerticalAlignment="Bottom"
+                                        ColumnSpacing="10"
+                                        Columns="12">
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.5"
+                                            Orientation="Vertical"
+                                            ToolTip="Jan"
+                                            Value="30" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.6"
+                                            Orientation="Vertical"
+                                            ToolTip="Feb"
+                                            Value="45" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.5"
+                                            Orientation="Vertical"
+                                            ToolTip="Mar"
+                                            Value="35" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.8"
+                                            Orientation="Vertical"
+                                            ToolTip="Apr"
+                                            Value="60" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.7"
+                                            Orientation="Vertical"
+                                            ToolTip="May"
+                                            Value="50" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.9"
+                                            Orientation="Vertical"
+                                            ToolTip="Jun"
+                                            Value="75" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Orientation="Vertical"
+                                            ToolTip="Jul"
+                                            Value="80" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.8"
+                                            Orientation="Vertical"
+                                            ToolTip="Aug"
+                                            Value="70" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.7"
+                                            Orientation="Vertical"
+                                            ToolTip="Sep"
+                                            Value="65" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.6"
+                                            Orientation="Vertical"
+                                            ToolTip="Oct"
+                                            Value="55" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Opacity="0.9"
+                                            Orientation="Vertical"
+                                            ToolTip="Nov"
+                                            Value="85" />
+                                        <ProgressBar
+                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Orientation="Vertical"
+                                            ToolTip="Dec"
+                                            Value="90" />
+                                    </controls:DFUniformGrid>
+                                </Grid>
+                            </Border>
+
+                            <Border
+                                Grid.Column="1"
+                                Padding="20"
+                                Style="{DynamicResource DFCard}">
+                                <StackPanel>
+                                    <TextBlock
+                                        Margin="0,0,0,20"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="Traffic Sources" />
+
+                                    <Grid Margin="0,0,0,15">
+                                        <TextBlock VerticalAlignment="Top" Text="Direct" />
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="45%" />
+                                    </Grid>
+                                    <ProgressBar
+                                        Height="8"
+                                        Margin="0,0,0,20"
+                                        Value="45" />
+
+                                    <Grid Margin="0,0,0,15">
+                                        <TextBlock VerticalAlignment="Top" Text="Social Media" />
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="25%" />
+                                    </Grid>
+                                    <ProgressBar
+                                        Height="8"
+                                        Margin="0,0,0,20"
+                                        Foreground="#2080f0"
+                                        Value="25" />
+
+                                    <Grid Margin="0,0,0,15">
+                                        <TextBlock VerticalAlignment="Top" Text="Referrals" />
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="20%" />
+                                    </Grid>
+                                    <ProgressBar
+                                        Height="8"
+                                        Margin="0,0,0,20"
+                                        Foreground="#f0a020"
+                                        Value="20" />
+
+                                    <Grid Margin="0,0,0,15">
+                                        <TextBlock VerticalAlignment="Top" Text="Organic Search" />
+                                        <TextBlock
+                                            HorizontalAlignment="Right"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="10%" />
+                                    </Grid>
+                                    <ProgressBar
+                                        Height="8"
+                                        Margin="0,0,0,20"
+                                        Foreground="#d03050"
+                                        Value="10" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <!--  Pie & Ring Charts  -->
+                        <Grid Height="300" Margin="0,0,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Margin="0,0,20,0"
+                                Padding="20"
+                                Style="{DynamicResource DFCard}">
+                                <DockPanel>
+                                    <TextBlock
+                                        Margin="0,0,0,20"
+                                        DockPanel.Dock="Top"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="Device Distribution (Pie)" />
+                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <!--  Layered Pies for visual effect (simple overlapping)  -->
+                                        <!--  Outer Pie (Background/Base)  -->
+                                        <controls:CircleProgressBar
+                                            Width="200"
+                                            Height="200"
+                                            Background="Transparent"
+                                            Foreground="#18a058"
+                                            IsPie="True"
+                                            ToolTip="Desktop: 65%"
+                                            Value="100" /> 
+                                        <!--  100% Base  -->
+
+                                        <!--  Middle Pie  -->
+                                        <controls:CircleProgressBar
+                                            Width="200"
+                                            Height="200"
+                                            Foreground="#2080f0"
+                                            IsPie="True"
+                                            RenderTransformOrigin="0.5,0.5"
+                                            ToolTip="Mobile: 35%"
+                                            Value="35">
+                                            <controls:CircleProgressBar.RenderTransform>
+                                                <RotateTransform Angle="0" /> 
+                                                <!--  Start from top  -->
+                                            </controls:CircleProgressBar.RenderTransform>
+                                        </controls:CircleProgressBar>
+
+                                        <!--  Inner Pie (Small segment)  -->
+                                        <controls:CircleProgressBar
+                                            Width="200"
+                                            Height="200"
+                                            Foreground="#f0a020"
+                                            IsPie="True"
+                                            RenderTransformOrigin="0.5,0.5"
+                                            ToolTip="Tablet: 10%"
+                                            Value="10">
+                                            <controls:CircleProgressBar.RenderTransform>
+                                                <RotateTransform Angle="126" /> 
+                                                <!--  Offset: 35% * 360 = 126 deg  -->
+                                            </controls:CircleProgressBar.RenderTransform>
+                                        </controls:CircleProgressBar>
+
+                                        <!--  Overlay for Donut Hole if needed, or Legend on side  -->
+                                    </Grid>
+
+                                    <!--  Legend  -->
+                                    <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+                                        <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#18a058"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Desktop (65%)" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#2080f0"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Mobile (25%)" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#f0a020"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Tablet (10%)" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+
+                            <Border
+                                Grid.Column="1"
+                                Padding="20"
+                                Style="{DynamicResource DFCard}">
+                                <DockPanel>
+                                    <TextBlock
+                                        Margin="0,0,0,20"
+                                        DockPanel.Dock="Top"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="Storage Usage (Ring)" />
+                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <!--  Concentric Rings with different sizes  -->
+                                        <controls:CircleProgressBar
+                                            Width="200"
+                                            Height="200"
+                                            Foreground="#d03050"
+                                            StrokeThickness="10"
+                                            ToolTip="System: 85%"
+                                            Value="85" />
+                                        <controls:CircleProgressBar
+                                            Width="160"
+                                            Height="160"
+                                            Foreground="#f0a020"
+                                            StrokeThickness="10"
+                                            ToolTip="Media: 60%"
+                                            Value="60" />
+                                        <controls:CircleProgressBar
+                                            Width="120"
+                                            Height="120"
+                                            Foreground="#2080f0"
+                                            StrokeThickness="10"
+                                            ToolTip="Docs: 40%"
+                                            Value="40" />
+
+                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock
+                                                HorizontalAlignment="Center"
+                                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                                Text="Total" />
+                                            <TextBlock
+                                                HorizontalAlignment="Center"
+                                                FontSize="24"
+                                                FontWeight="Bold"
+                                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                                Text="85%" />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <!--  Legend on right  -->
+                                    <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+                                        <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#d03050"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="System" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#f0a020"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Media" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Rectangle
+                                                Width="12"
+                                                Height="12"
+                                                Margin="0,0,8,0"
+                                                Fill="#2080f0"
+                                                RadiusX="2"
+                                                RadiusY="2" />
+                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Docs" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+
+                        <!--  Recent Transactions  -->
+                        <Border Padding="0" Style="{DynamicResource DFCard}">
+                            <DockPanel>
+                                <TextBlock
+                                    Margin="20,20,20,10"
+                                    DockPanel.Dock="Top"
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Text="Recent Transactions" />
+                                <DataGrid
+                                    x:Name="DashboardDataGrid"
+                                    Margin="0,10,0,0"
+                                    AutoGenerateColumns="False"
+                                    BorderThickness="0"
+                                    HeadersVisibility="Column">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn
+                                            Width="120"
+                                            Binding="{Binding ID}"
+                                            Header="Transaction ID" />
+                                        <DataGridTextColumn
+                                            Width="*"
+                                            Binding="{Binding Name}"
+                                            Header="Customer" />
+                                        <DataGridTextColumn
+                                            Width="120"
+                                            Binding="{Binding Status}"
+                                            Header="Status" />
+                                        <DataGridTextColumn
+                                            Width="150"
+                                            Binding="{Binding Date}"
+                                            Header="Date" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DockPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!--  Demo: Settings  -->
+            <TabItem Header="Demo: Settings">
+                <Grid Background="{DynamicResource Brush_Background}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Background="{DynamicResource Brush_Surface}"
+                        BorderBrush="{DynamicResource Brush_Border}"
+                        BorderThickness="0,0,1,0">
+                        <StackPanel Margin="0,20,0,0">
+                            <TextBlock
+                                Margin="20,0,0,10"
+                                FontSize="12"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Text="SETTINGS" />
+                            <ListBox
+                                Background="Transparent"
+                                BorderThickness="0"
+                                SelectedIndex="0"
+                                Style="{DynamicResource DFListBox}">
+                                <ListBoxItem Padding="20,10" Content="General" />
+                                <ListBoxItem Padding="20,10" Content="Account" />
+                                <ListBoxItem Padding="20,10" Content="Appearance" />
+                                <ListBoxItem Padding="20,10" Content="Privacy &amp; Security" />
+                                <ListBoxItem Padding="20,10" Content="Notifications" />
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+
+                    <ScrollViewer Grid.Column="1" Padding="40">
+                        <StackPanel MaxWidth="700" HorizontalAlignment="Left">
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Text="Account Settings" />
+                            <TextBlock
+                                Margin="0,0,0,30"
+                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Text="Manage your personal information and security." />
+
+                            <controls:Divider
+                                Margin="0,0,0,20"
+                                HorizontalContentAlignment="Left"
+                                Content="Profile" />
+
+                            <Grid Margin="0,0,0,30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <controls:Avatar
+                                    Width="80"
+                                    Height="80"
+                                    Margin="0,0,30,0"
+                                    CornerRadius="40"
+                                    FontSize="32"
+                                    Text="JD" />
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                                        <Button Margin="0,0,10,0" Content="Upload New Photo" />
+                                        <Button
+                                            Background="Transparent"
+                                            BorderBrush="{DynamicResource Brush_Border}"
+                                            BorderThickness="1"
+                                            Content="Remove"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}" />
+                                    </StackPanel>
+                                    <TextBlock
+                                        FontSize="12"
+                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Text="Recommended size: 256x256px. JPG, PNG allowed." />
+                                </StackPanel>
+                            </Grid>
+
+                            <controls:DFUniformGrid
+                                Margin="0,0,0,30"
+                                ColumnSpacing="20"
+                                Columns="2"
+                                RowSpacing="20">
+                                <controls:DescriptionItem Label="First Name" Orientation="Vertical">
+                                    <TextBox Text="John" />
+                                </controls:DescriptionItem>
+                                <controls:DescriptionItem Label="Last Name" Orientation="Vertical">
+                                    <TextBox Text="Doe" />
+                                </controls:DescriptionItem>
+                                <controls:DescriptionItem Label="Email Address" Orientation="Vertical">
+                                    <TextBox Text="john.doe@example.com" />
+                                </controls:DescriptionItem>
+                                <controls:DescriptionItem Label="Phone Number" Orientation="Vertical">
+                                    <TextBox Text="+1 (555) 123-4567" />
+                                </controls:DescriptionItem>
+                            </controls:DFUniformGrid>
+
+                            <controls:Divider
+                                Margin="0,10,0,20"
+                                HorizontalContentAlignment="Left"
+                                Content="Preferences" />
+
+                            <StackPanel Margin="0,0,0,30">
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold" Text="Email Notifications" />
+                                        <TextBlock
+                                            Margin="0,5,0,0"
+                                            FontSize="12"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="Receive daily summary emails about activity" />
+                                    </StackPanel>
+                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="True" />
+                                </Grid>
+
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold" Text="Two-Factor Authentication" />
+                                        <TextBlock
+                                            Margin="0,5,0,0"
+                                            FontSize="12"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="Add an extra layer of security to your account" />
+                                    </StackPanel>
+                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="False" />
+                                </Grid>
+
+                                <Grid Margin="0,0,0,20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock FontWeight="Bold" Text="Dark Mode" />
+                                        <TextBlock
+                                            Margin="0,5,0,0"
+                                            FontSize="12"
+                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Text="Use dark theme for the application interface" />
+                                    </StackPanel>
+                                    <controls:ToggleSwitch Grid.Column="1" IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <DockPanel>
+                                <Button
+                                    Width="150"
+                                    HorizontalAlignment="Left"
+                                    Content="Save Changes"
+                                    Style="{DynamicResource DFPrimaryButton}" />
+                                <Button
+                                    Margin="10,0,0,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Content="Cancel"
+                                    Foreground="{DynamicResource Brush_Text_Secondary}" />
+                            </DockPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <!--  Tab: Icons (Original)  -->
+            <TabItem Header="Icon Gallery">
+                <Grid Margin="0,20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Search Header  -->
+                    <Border
+                        Grid.Row="0"
+                        Margin="0,0,0,20"
+                        Style="{DynamicResource DFCard}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,0,0,10"
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Text="Material Design Icons" />
+                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Click an icon to copy its XAML code." />
+                            </StackPanel>
+
+                            <TextBox
+                                Grid.Column="1"
+                                Width="300"
+                                VerticalAlignment="Center"
+                                helpers:ControlAttach.Watermark="Search icons..."
+                                TextChanged="IconSearch_TextChanged">
+                                <helpers:ControlAttach.Icon>
+                                    <iconPacks:PackIconMaterial
+                                        Width="14"
+                                        Height="14"
+                                        Kind="Magnify" />
+                                </helpers:ControlAttach.Icon>
+                            </TextBox>
+                        </Grid>
+                    </Border>
+
+                    <!--  Icon Grid  -->
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="IconList">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button
+                                        Width="100"
+                                        Height="80"
+                                        Margin="5"
+                                        helpers:ControlAttach.CornerRadius="10"
+                                        Click="IconItem_Click"
+                                        Content="{Binding}"
+                                        FontSize="11"
+                                        Style="{DynamicResource DFVerticalButton}"
+                                        ToolTip="{Binding}">
+                                        <helpers:ControlAttach.Icon>
+                                            <iconPacks:PackIconMaterial
+                                                Width="24"
+                                                Height="24"
+                                                Kind="{Binding}" />
+                                        </helpers:ControlAttach.Icon>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+
+                    <!--  Pagination  -->
+                    <StackPanel Grid.Row="2">
+                        <Border
+                            Grid.Row="2"
+                            Margin="0,20,0,0"
+                            Style="{DynamicResource DFCard}">
+                            <controls:Pagination
+                                x:Name="IconPagination"
+                                PageChanged="IconPagination_PageChanged"
+                                PageSize="100" />
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+        <!--  Global Drawer  -->
+        <controls:Drawer
+            x:Name="SettingsDrawer"
+            Header="Global Settings"
+            Position="Right">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--  Profile  -->
+                <StackPanel
+                    Grid.Row="0"
+                    Margin="0,0,0,20"
+                    Orientation="Horizontal">
+                    <Border
+                        Width="50"
+                        Height="50"
+                        Margin="0,0,15,0"
+                        Background="{DynamicResource Brush_Primary}"
+                        CornerRadius="25">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="24"
+                            FontWeight="Bold"
+                            Foreground="#FFFFFF"
+                            Text="A" />
+                    </Border>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Text="Admin User" />
+                        <TextBlock
+                            FontSize="12"
+                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Text="admin@DongFeng.com" />
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator
+                    Grid.Row="1"
+                    Margin="0,0,0,20"
+                    Background="{DynamicResource Brush_Border}" />
+
+                <!--  Settings List  -->
+                <ScrollViewer
+                    Grid.Row="2"
+                    Padding="0,0,10,0"
+                    VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <!--  Appearance Group  -->
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Text="Appearance" />
+                        <controls:ToggleSwitch
+                            Margin="0,0,0,10"
+                            Content="Dark Mode"
+                            IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
+                        <controls:ToggleSwitch Margin="0,0,0,10" Content="Compact Mode" />
+
+                        <TextBlock
+                            Margin="0,5,0,5"
+                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Text="Accent Color" />
+                        <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                            <Border
+                                Width="20"
+                                Height="20"
+                                Margin="0,0,10,0"
+                                Background="#18a058"
+                                CornerRadius="10"
+                                ToolTip="Green (Default)" />
+                            <Border
+                                Width="20"
+                                Height="20"
+                                Margin="0,0,10,0"
+                                Background="#2080f0"
+                                CornerRadius="10"
+                                ToolTip="Blue" />
+                            <Border
+                                Width="20"
+                                Height="20"
+                                Margin="0,0,10,0"
+                                Background="#f0a020"
+                                CornerRadius="10"
+                                ToolTip="Orange" />
+                            <Border
+                                Width="20"
+                                Height="20"
+                                Background="#d03050"
+                                CornerRadius="10"
+                                ToolTip="Red" />
+                        </StackPanel>
+
+                        <!--  General Group  -->
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Text="General" />
+
+                        <TextBlock
+                            Margin="0,0,0,5"
+                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Text="Language" />
+                        <ComboBox Margin="0,0,0,15" SelectedIndex="0">
+                            <ComboBoxItem Content="English (US)" />
+                            <ComboBoxItem Content="简体中文" />
+                            <ComboBoxItem Content="日本語" />
+                        </ComboBox>
+
+                        <TextBlock
+                            Margin="0,5,0,10"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Text="Notifications" />
+                        <controls:ToggleSwitch
+                            Margin="0,0,0,10"
+                            Content="Enable Push Notifications"
+                            IsChecked="True" />
+                        <controls:ToggleSwitch
+                            Margin="0,0,0,20"
+                            Content="Email Digest"
+                            IsChecked="False" />
+
+                        <!--  System Group  -->
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Text="System" />
+                        <DockPanel Margin="0,0,0,10" LastChildFill="False">
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Text="Version" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                DockPanel.Dock="Right"
+                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Text="v1.0.2" />
+                        </DockPanel>
+                        <Button Margin="0,0,0,10" Content="Check for Updates" />
+                        <Button Margin="0,0,0,20" Content="Clear Cache" />
+
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!--  Footer  -->
+                <StackPanel Grid.Row="3" Margin="0,20,0,0">
+                    <Button
+                        Background="{DynamicResource Brush_Error}"
+                        BorderBrush="{DynamicResource Brush_Error}"
+                        Content="Log Out"
+                        Foreground="White"
+                        Style="{DynamicResource DFPrimaryButton}" />
+                </StackPanel>
+            </Grid>
+        </controls:Drawer>
+    </Grid>
+</controls:DFWindow>
