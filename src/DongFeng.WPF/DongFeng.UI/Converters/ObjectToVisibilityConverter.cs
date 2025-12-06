@@ -7,11 +7,16 @@ namespace DongFeng.UI.Converters
 {
     public class ObjectToVisibilityConverter : IValueConverter
     {
+        public bool IsInverted { get; set; }
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) return Visibility.Collapsed;
-            if (value is string s && string.IsNullOrEmpty(s)) return Visibility.Collapsed;
-            return Visibility.Visible;
+            bool isVisible = value != null;
+            if (value is string s && string.IsNullOrEmpty(s)) isVisible = false;
+            
+            if (IsInverted) isVisible = !isVisible;
+
+            return isVisible ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -20,4 +25,3 @@ namespace DongFeng.UI.Converters
         }
     }
 }
-

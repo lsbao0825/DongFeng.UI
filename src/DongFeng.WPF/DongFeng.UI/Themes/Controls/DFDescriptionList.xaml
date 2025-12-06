@@ -49,7 +49,7 @@
                             <Setter TargetName="LabelText" Property="Grid.Column" Value="0" />
                             <Setter TargetName="LabelText" Property="Margin" Value="0,0,8,0" />
                             <Setter TargetName="LabelText" Property="VerticalAlignment" Value="Center" />
-                            
+
                             <Setter TargetName="ContentPresenter" Property="Grid.Row" Value="0" />
                             <Setter TargetName="ContentPresenter" Property="Grid.Column" Value="1" />
                             <Setter TargetName="ContentPresenter" Property="VerticalAlignment" Value="Center" />
@@ -60,7 +60,7 @@
                             <Setter TargetName="LabelText" Property="Grid.Column" Value="0" />
                             <Setter TargetName="LabelText" Property="Grid.ColumnSpan" Value="2" />
                             <Setter TargetName="LabelText" Property="Margin" Value="0,0,0,4" />
-                            
+
                             <Setter TargetName="ContentPresenter" Property="Grid.Row" Value="1" />
                             <Setter TargetName="ContentPresenter" Property="Grid.Column" Value="0" />
                             <Setter TargetName="ContentPresenter" Property="Grid.ColumnSpan" Value="2" />

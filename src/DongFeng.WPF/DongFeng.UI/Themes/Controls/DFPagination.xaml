@@ -79,14 +79,15 @@
                             FontSize="16"
                             FontWeight="Bold"
                             Style="{DynamicResource DFButton}" />
-                            
-                        <!-- Page Size Changer (Optional) -->
-                        <!-- Simple ComboBox to select 10, 20, 50, 100 -->
-                        <ComboBox x:Name="PART_PageSizeComboBox"
-                                  Margin="10,0,0,0"
-                                  Width="70"
-                                  SelectedValue="{Binding PageSize, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                  SelectedValuePath="Content">
+
+                        <!--  Page Size Changer (Optional)  -->
+                        <!--  Simple ComboBox to select 10, 20, 50, 100  -->
+                        <ComboBox
+                            x:Name="PART_PageSizeComboBox"
+                            Width="70"
+                            Margin="10,0,0,0"
+                            SelectedValue="{Binding PageSize, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            SelectedValuePath="Content">
                             <ComboBoxItem Content="10" />
                             <ComboBoxItem Content="20" />
                             <ComboBoxItem Content="50" />

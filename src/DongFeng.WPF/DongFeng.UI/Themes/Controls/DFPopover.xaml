@@ -13,39 +13,47 @@
     <Style TargetType="{x:Type controls:DFPopover}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFPopover}">
                     <Grid Background="{TemplateBinding Background}">
-                        <!-- The Anchor Content -->
+                        <!--  The Anchor Content  -->
                         <ContentPresenter />
-                        
-                        <!-- The Popup -->
-                        <Popup x:Name="PART_Popup"
-                               IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                               PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                               Placement="{TemplateBinding Placement}"
-                               StaysOpen="{TemplateBinding StaysOpen}"
-                               AllowsTransparency="True"
-                               PopupAnimation="Fade">
-                            <Border Background="{DynamicResource Brush_Surface}"
-                                    BorderBrush="{DynamicResource Brush_Border}"
-                                    BorderThickness="1"
-                                    CornerRadius="{DynamicResource Radius_Default}"
-                                    Margin="8"
-                                    Padding="12"
-                                    MinWidth="150"
-                                    MaxWidth="400">
+
+                        <!--  The Popup  -->
+                        <Popup
+                            x:Name="PART_Popup"
+                            AllowsTransparency="True"
+                            IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            Placement="{TemplateBinding Placement}"
+                            PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                            PopupAnimation="Fade"
+                            StaysOpen="{TemplateBinding StaysOpen}">
+                            <Border
+                                MinWidth="150"
+                                MaxWidth="400"
+                                Margin="8"
+                                Padding="12"
+                                Background="{DynamicResource Brush_Surface}"
+                                BorderBrush="{DynamicResource Brush_Border}"
+                                BorderThickness="1"
+                                CornerRadius="{DynamicResource Radius_Default}">
                                 <Border.Effect>
-                                    <DropShadowEffect BlurRadius="15" ShadowDepth="3" Opacity="0.15" Color="Black"/>
+                                    <DropShadowEffect
+                                        BlurRadius="15"
+                                        Opacity="0.15"
+                                        ShadowDepth="3"
+                                        Color="Black" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{TemplateBinding Title}"
-                                               FontWeight="Bold"
-                                               Margin="0,0,0,8"
-                                               Foreground="{DynamicResource Brush_Text_Primary}"
-                                               Visibility="{TemplateBinding Title, Converter={StaticResource ObjectToVisibilityConverter}}" />
+                                    <TextBlock
+                                        Margin="0,0,0,8"
+                                        FontWeight="Bold"
+                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Text="{TemplateBinding Title}"
+                                        Visibility="{TemplateBinding Title,
+                                                                     Converter={StaticResource ObjectToVisibilityConverter}}" />
                                     <ContentPresenter Content="{TemplateBinding PopupContent}" />
                                 </StackPanel>
                             </Border>

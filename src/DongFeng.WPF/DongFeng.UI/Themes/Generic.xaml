@@ -62,6 +62,7 @@
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDivider.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFStatistic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFDescriptionList.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/DFIcon.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  Global Styles to apply automatically  -->
@@ -86,7 +87,7 @@
     <Style BasedOn="{StaticResource DFToolTip}" TargetType="ToolTip" />
     <Style BasedOn="{StaticResource DFContextMenu}" TargetType="ContextMenu" />
     <Style BasedOn="{StaticResource DFMenuItem}" TargetType="MenuItem" />
-    <Style BasedOn="{StaticResource DFWindowStyle}" TargetType="{x:Type controls:DFWindow}" />
+    <Style BasedOn="{StaticResource DFWindowStyle}" TargetType="controls:DFWindow" />
     <Style BasedOn="{StaticResource DFCalendar}" TargetType="Calendar" />
     <Style BasedOn="{StaticResource DFDatePicker}" TargetType="DatePicker" />
 

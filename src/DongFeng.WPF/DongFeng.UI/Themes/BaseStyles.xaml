@@ -40,7 +40,7 @@
         TargetType="Control">
         <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
         <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
-        <Setter Property="VerticalContentAlignment" Value="Center" /> 
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="helpers:ControlAttach.FocusBorderBrush" Value="{DynamicResource Brush_Primary}" />
     </Style>
 

@@ -2,11 +2,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:DongFeng.UI.Controls"
-    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers"
+    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
 
     <Style x:Key="TitleBarButtonStyle" TargetType="Button">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
@@ -121,7 +124,8 @@
                                             x:Name="WindowIcon"
                                             Width="16"
                                             Height="16"
-                                            Source="{TemplateBinding Icon}" />
+                                            Source="{TemplateBinding Icon}"
+                                            Visibility="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}"/>
 
                                     </Grid>
 
@@ -195,9 +199,9 @@
                             <AdornerDecorator x:Name="ClientAreaDecorator" Grid.Row="1">
                                 <controls:DFLoading
                                     x:Name="PART_WindowDFLoading"
+                                    DFLoadingText="{TemplateBinding DFLoadingText}"
                                     IsCancellable="{TemplateBinding IsDFLoadingCancellable}"
-                                    IsDFLoading="{TemplateBinding IsDFLoading}"
-                                    DFLoadingText="{TemplateBinding DFLoadingText}">
+                                    IsDFLoading="{TemplateBinding IsDFLoading}">
                                     <ContentPresenter x:Name="PART_MainContent" ClipToBounds="True" />
                                 </controls:DFLoading>
                             </AdornerDecorator>
@@ -228,9 +232,6 @@
                         </Trigger>
                         <Trigger Property="IsActive" Value="False">
                             <Setter Property="Opacity" Value="0.98" />
-                        </Trigger>
-                        <Trigger Property="Icon" Value="{x:Null}">
-                            <Setter TargetName="WindowIcon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

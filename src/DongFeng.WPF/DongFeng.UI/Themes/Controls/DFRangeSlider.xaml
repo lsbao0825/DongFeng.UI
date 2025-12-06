@@ -9,41 +9,49 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFRangeSlider}">
-        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFRangeSlider}">
                     <Grid VerticalAlignment="Center">
-                        <!-- Background Rail -->
-                        <Border Height="4" 
-                                Background="{DynamicResource Brush_Border}" 
-                                CornerRadius="2" 
-                                VerticalAlignment="Center" 
-                                Margin="9,0"/> <!-- Margin 9 to accommodate half thumb width (18/2=9) -->
+                        <!--  Background Rail  -->
+                        <Border
+                            Height="4"
+                            Margin="9,0"
+                            VerticalAlignment="Center"
+                            Background="{DynamicResource Brush_Border}"
+                            CornerRadius="2" />
+                        <!--  Margin 9 to accommodate half thumb width (18/2=9)  -->
 
-                        <!-- Track Canvas -->
-                        <!-- We give it margin so 0 and Width map to the ends of the rail -->
-                        <Canvas x:Name="PART_Track" 
-                                VerticalAlignment="Center" 
-                                Height="30" 
-                                Background="Transparent"
-                                Margin="9,0"> 
-                             
-                             <!-- Selection Range -->
-                             <Border x:Name="PART_Selection" 
-                                     Height="4" 
-                                     Background="{DynamicResource Brush_Primary}" 
-                                     CornerRadius="2"
-                                     Canvas.Top="13"/> <!-- (30 - 4)/2 = 13 -->
+                        <!--  Track Canvas  -->
+                        <!--  We give it margin so 0 and Width map to the ends of the rail  -->
+                        <Canvas
+                            x:Name="PART_Track"
+                            Height="30"
+                            Margin="9,0"
+                            VerticalAlignment="Center"
+                            Background="Transparent">
 
-                             <!-- Thumbs -->
-                             <!-- Initial position handled by code behind -->
-                             <Thumb x:Name="PART_LowerThumb" 
-                                    Style="{StaticResource DFSliderThumb}" 
-                                    Canvas.Top="6"/> <!-- Thumb 18px, (30-18)/2 = 6 -->
-                             <Thumb x:Name="PART_UpperThumb" 
-                                    Style="{StaticResource DFSliderThumb}" 
-                                    Canvas.Top="6"/>
+                            <!--  Selection Range  -->
+                            <Border
+                                x:Name="PART_Selection"
+                                Canvas.Top="13"
+                                Height="4"
+                                Background="{DynamicResource Brush_Primary}"
+                                CornerRadius="2" />
+                            <!--  (30 - 4)/2 = 13  -->
+
+                            <!--  Thumbs  -->
+                            <!--  Initial position handled by code behind  -->
+                            <Thumb
+                                x:Name="PART_LowerThumb"
+                                Canvas.Top="6"
+                                Style="{StaticResource DFSliderThumb}" />
+                            <!--  Thumb 18px, (30-18)/2 = 6  -->
+                            <Thumb
+                                x:Name="PART_UpperThumb"
+                                Canvas.Top="6"
+                                Style="{StaticResource DFSliderThumb}" />
                         </Canvas>
                     </Grid>
                 </ControlTemplate>

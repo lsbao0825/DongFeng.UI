@@ -1,7 +1,8 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:DongFeng.UI.Controls"
-                    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls"
+    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
 
     <converters:HueToColorConverter x:Key="HueToColorConverter" />
 
@@ -11,102 +12,125 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFColorPicker}">
-                    <Border Background="{DynamicResource Brush_Surface}" 
-                            BorderBrush="{DynamicResource Brush_Border}" 
-                            BorderThickness="1" 
-                            CornerRadius="4" 
-                            Padding="10">
+                    <Border
+                        Padding="10"
+                        Background="{DynamicResource Brush_Surface}"
+                        BorderBrush="{DynamicResource Brush_Border}"
+                        BorderThickness="1"
+                        CornerRadius="4">
                         <StackPanel>
-                            <!-- Saturation / Value Canvas -->
+                            <!--  Saturation / Value Canvas  -->
                             <Grid Height="150" Margin="0,0,0,10">
-                                <Canvas x:Name="PART_ColorCanvas" 
-                                        Background="{Binding Hue, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HueToColorConverter}}">
+                                <Canvas x:Name="PART_ColorCanvas" Background="{Binding Hue, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HueToColorConverter}}">
                                     <Canvas.Resources>
-                                        <!-- Gradients -->
+                                        <!--  Gradients  -->
                                     </Canvas.Resources>
                                 </Canvas>
-                                <!-- White Gradient (Left to Right) -->
+                                <!--  White Gradient (Left to Right)  -->
                                 <Border IsHitTestVisible="False">
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                            <GradientStop Color="White" Offset="0" />
-                                            <GradientStop Color="Transparent" Offset="1" />
+                                            <GradientStop Offset="0" Color="White" />
+                                            <GradientStop Offset="1" Color="Transparent" />
                                         </LinearGradientBrush>
                                     </Border.Background>
                                 </Border>
-                                <!-- Black Gradient (Top to Bottom) -->
+                                <!--  Black Gradient (Top to Bottom)  -->
                                 <Border IsHitTestVisible="False">
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                            <GradientStop Color="Transparent" Offset="0" />
-                                            <GradientStop Color="Black" Offset="1" />
+                                            <GradientStop Offset="0" Color="Transparent" />
+                                            <GradientStop Offset="1" Color="Black" />
                                         </LinearGradientBrush>
                                     </Border.Background>
                                 </Border>
-                                
-                                <!-- Thumb -->
+
+                                <!--  Thumb  -->
                                 <Canvas IsHitTestVisible="False">
-                                    <Border x:Name="PART_ColorThumb" Width="10" Height="10" CornerRadius="5" 
-                                            BorderBrush="White" BorderThickness="2" Background="Transparent" />
+                                    <Border
+                                        x:Name="PART_ColorThumb"
+                                        Width="10"
+                                        Height="10"
+                                        Background="Transparent"
+                                        BorderBrush="White"
+                                        BorderThickness="2"
+                                        CornerRadius="5" />
                                 </Canvas>
                             </Grid>
 
-                            <!-- Hue Slider -->
-                            <Slider x:Name="PART_SpectrumSlider" Minimum="0" Maximum="360" 
-                                    Value="{Binding Hue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
-                                    Margin="0,0,0,5" IsMoveToPointEnabled="True">
+                            <!--  Hue Slider  -->
+                            <Slider
+                                x:Name="PART_SpectrumSlider"
+                                Margin="0,0,0,5"
+                                IsMoveToPointEnabled="True"
+                                Maximum="360"
+                                Minimum="0"
+                                Value="{Binding Hue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
                                 <Slider.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="#FF0000" Offset="0.0" />
-                                        <GradientStop Color="#FFFF00" Offset="0.167" />
-                                        <GradientStop Color="#00FF00" Offset="0.333" />
-                                        <GradientStop Color="#00FFFF" Offset="0.5" />
-                                        <GradientStop Color="#0000FF" Offset="0.667" />
-                                        <GradientStop Color="#FF00FF" Offset="0.833" />
-                                        <GradientStop Color="#FF0000" Offset="1.0" />
+                                        <GradientStop Offset="0.0" Color="#FF0000" />
+                                        <GradientStop Offset="0.167" Color="#FFFF00" />
+                                        <GradientStop Offset="0.333" Color="#00FF00" />
+                                        <GradientStop Offset="0.5" Color="#00FFFF" />
+                                        <GradientStop Offset="0.667" Color="#0000FF" />
+                                        <GradientStop Offset="0.833" Color="#FF00FF" />
+                                        <GradientStop Offset="1.0" Color="#FF0000" />
                                     </LinearGradientBrush>
                                 </Slider.Background>
                             </Slider>
 
-                            <!-- Alpha Slider -->
-                            <Slider x:Name="PART_AlphaSlider" Minimum="0" Maximum="255" 
-                                    Value="{Binding A, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
-                                    Margin="0,0,0,10" IsMoveToPointEnabled="True">
+                            <!--  Alpha Slider  -->
+                            <Slider
+                                x:Name="PART_AlphaSlider"
+                                Margin="0,0,0,10"
+                                IsMoveToPointEnabled="True"
+                                Maximum="255"
+                                Minimum="0"
+                                Value="{Binding A, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
                                 <Slider.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="#00000000" Offset="0" />
-                                        <GradientStop Color="#FF000000" Offset="1" />
+                                        <GradientStop Offset="0" Color="#00000000" />
+                                        <GradientStop Offset="1" Color="#FF000000" />
                                     </LinearGradientBrush>
                                 </Slider.Background>
                             </Slider>
 
-                            <!-- Selected Color Preview & Hex -->
+                            <!--  Selected Color Preview & Hex  -->
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="40"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="40" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                
-                                <!-- Checkerboard for Alpha preview -->
-                                <Border CornerRadius="4" BorderBrush="{DynamicResource Brush_Border}" BorderThickness="1" ClipToBounds="True">
+
+                                <!--  Checkerboard for Alpha preview  -->
+                                <Border
+                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    BorderThickness="1"
+                                    ClipToBounds="True"
+                                    CornerRadius="4">
                                     <Grid>
                                         <Canvas Width="100" Height="100">
-                                            <!-- Simple checkerboard pattern can be done with a DrawingBrush, but here's a lazy way or just a gray background -->
-                                            <Rectangle Width="100" Height="100" Fill="#F0F0F0" />
+                                            <!--  Simple checkerboard pattern can be done with a DrawingBrush, but here's a lazy way or just a gray background  -->
+                                            <Rectangle
+                                                Width="100"
+                                                Height="100"
+                                                Fill="#F0F0F0" />
                                         </Canvas>
                                         <Border>
-                                             <Border.Background>
-                                                 <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" />
-                                             </Border.Background>
+                                            <Border.Background>
+                                                <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource TemplatedParent}}" />
+                                            </Border.Background>
                                         </Border>
                                     </Grid>
                                 </Border>
-                                
-                                <TextBox Grid.Column="1" Margin="10,0,0,0" 
-                                         Text="{Binding Color, RelativeSource={RelativeSource TemplatedParent}, StringFormat={}#{0}}"
-                                         Background="{DynamicResource Brush_Fill}"
-                                         Foreground="{DynamicResource Brush_Text_Primary}"
-                                         BorderBrush="{DynamicResource Brush_Border}" />
+
+                                <TextBox
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    Background="{DynamicResource Brush_Fill}"
+                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    Foreground="{DynamicResource Brush_Text_Primary}"
+                                    Text="{Binding Color, RelativeSource={RelativeSource TemplatedParent}, StringFormat={}#{0}}" />
                             </Grid>
                         </StackPanel>
                     </Border>
@@ -116,5 +140,5 @@
     </Style>
 
     <Style BasedOn="{StaticResource DFDFColorPicker}" TargetType="{x:Type controls:DFColorPicker}" />
-    
+
 </ResourceDictionary>

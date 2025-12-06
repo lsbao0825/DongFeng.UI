@@ -9,7 +9,7 @@
 
     <!--  DataGridColumnHeader Style  -->
     <Style x:Key="DFDataGridColumnHeader" TargetType="DataGridColumnHeader">
-        <Setter Property="Background" Value="{DynamicResource Brush_Header}" /> 
+        <Setter Property="Background" Value="{DynamicResource Brush_Header}" />
         <!--  Updated  -->
         <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
@@ -40,7 +40,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="8,6" /> 
+        <Setter Property="Padding" Value="8,6" />
         <!--  Reduced Padding  -->
         <Setter Property="Template">
             <Setter.Value>

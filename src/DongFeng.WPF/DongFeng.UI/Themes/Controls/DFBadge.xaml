@@ -1,6 +1,7 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:DongFeng.UI.Controls">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:DongFeng.UI.Controls">
 
     <Style x:Key="DFDFBadge" TargetType="{x:Type controls:DFBadge}">
         <Setter Property="DFBadgeBackground" Value="{DynamicResource Brush_Error}" />
@@ -12,42 +13,44 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFBadge}">
                     <Grid>
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        
-                        <Border x:Name="DFBadgeBorder"
-                                Background="{TemplateBinding DFBadgeBackground}"
-                                BorderBrush="{DynamicResource Brush_Surface}"
-                                BorderThickness="1"
-                                CornerRadius="10"
-                                MinWidth="20"
-                                Height="20"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top">
+                        <ContentPresenter
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+                        <Border
+                            x:Name="DFBadgeBorder"
+                            Height="20"
+                            MinWidth="20"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Background="{TemplateBinding DFBadgeBackground}"
+                            BorderBrush="{DynamicResource Brush_Surface}"
+                            BorderThickness="1"
+                            CornerRadius="10">
                             <Border.RenderTransform>
-                                <TranslateTransform X="{Binding Offset.X, RelativeSource={RelativeSource TemplatedParent}}"
-                                                    Y="{Binding Offset.Y, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <TranslateTransform X="{Binding Offset.X, RelativeSource={RelativeSource TemplatedParent}}" Y="{Binding Offset.Y, RelativeSource={RelativeSource TemplatedParent}}" />
                             </Border.RenderTransform>
-                            <!-- Default Margin for standard overlap -->
+                            <!--  Default Margin for standard overlap  -->
                             <Border.Style>
                                 <Style TargetType="Border">
                                     <Setter Property="Margin" Value="-10,-10,0,0" />
                                 </Style>
                             </Border.Style>
-                            
-                            <TextBlock x:Name="DFBadgeText" 
-                                       Text="{TemplateBinding DFBadgeText}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       FontSize="{TemplateBinding FontSize}"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
-                                       Padding="6,0" />
+
+                            <TextBlock
+                                x:Name="DFBadgeText"
+                                Padding="6,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding DFBadgeText}" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <!-- Dot Mode -->
+                        <!--  Dot Mode  -->
                         <Trigger Property="IsDot" Value="True">
                             <Setter TargetName="DFBadgeText" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="DFBadgeBorder" Property="MinWidth" Value="8" />
@@ -56,8 +59,8 @@
                             <Setter TargetName="DFBadgeBorder" Property="Padding" Value="0" />
                             <Setter TargetName="DFBadgeBorder" Property="Margin" Value="-4,-4,0,0" />
                         </Trigger>
-                        
-                        <!-- Hide if DFEmpty text (and not dot) -->
+
+                        <!--  Hide if DFEmpty text (and not dot)  -->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="DFBadgeText" Value="" />
@@ -65,8 +68,8 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="DFBadgeBorder" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
-                        
-                        <!-- Hide if null text (and not dot) -->
+
+                        <!--  Hide if null text (and not dot)  -->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="DFBadgeText" Value="{x:Null}" />

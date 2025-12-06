@@ -37,7 +37,7 @@
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Padding" Value="10,8" />
                     <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" /> 
+                    <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
                     <!--  Added Explicit Foreground  -->
                     <Setter Property="BorderThickness" Value="0" />
                     <Setter Property="Template">

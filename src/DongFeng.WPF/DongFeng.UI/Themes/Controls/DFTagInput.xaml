@@ -77,8 +77,8 @@
                         CornerRadius="{DynamicResource Radius_Small}">
                         <Grid>
                             <!--  Clickable background to focus input  -->
-                            <!-- Removed direct event handler in XAML to avoid ResourceDictionary x:Class error -->
-                            <!-- Instead, we will attach handler in OnApplyTemplate in code-behind, searching for this border by name -->
+                            <!--  Removed direct event handler in XAML to avoid ResourceDictionary x:Class error  -->
+                            <!--  Instead, we will attach handler in OnApplyTemplate in code-behind, searching for this border by name  -->
                             <Border
                                 x:Name="PART_FocusBorder"
                                 Background="Transparent"
