@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace DongFeng.UI.Helpers
@@ -21,73 +23,33 @@ namespace DongFeng.UI.Helpers
             var newDict = new ResourceDictionary { Source = uri };
 
             var dictionaries = Application.Current.Resources.MergedDictionaries;
-            ResourceDictionary oldDict = null;
 
-            // Find the existing theme dictionary to replace
-            // We identify it by checking source uri if possible, or content
-            foreach (var dict in dictionaries)
-            {
-                // If the dictionary source matches one of our theme files
-                if (dict.Source != null && 
-                   (dict.Source.ToString().EndsWith("Themes/Theme.Light.xaml") || 
-                    dict.Source.ToString().EndsWith("Themes/Theme.Dark.xaml")))
-                {
-                    oldDict = dict;
-                    break;
-                }
-                
-                // Fallback: check if it contains a specific key unique to our theme files
-                // This is useful if the source URI is lost or if it was merged via Generic.xaml and flattened (though usually MergedDictionaries preserves structure)
-                // But wait, if it's merged in Generic.xaml, Generic.xaml is one dictionary.
-                // If Generic.xaml is merged into App.xaml, App.xaml's MergedDictionaries contains Generic.xaml.
-                // Theme.Light.xaml is inside Generic.xaml's MergedDictionaries.
-                
-                // The hierarchy is:
-                // App.Resources
-                //   MergedDictionaries:
-                //     1. Generic.xaml
-                //          MergedDictionaries:
-                //             a. Colors.xaml
-                //             b. Theme.Light.xaml <--- We want to replace this
-            }
-
-            // If we can't find it at the top level, we might need to dig into Generic.xaml (if we can find it)
-            // OR, we can just Add the new one to App.Resources.MergedDictionaries. 
-            // If we add it at the end, it overrides previous ones.
-            
-            // Better approach:
-            // Since Generic.xaml loads the default theme, and we want to switch it at runtime.
-            // We can add the new theme to App.Resources.MergedDictionaries.
-            // But we should remove the PREVIOUSLY added theme by ThemeManager to avoid accumulation.
-            
-            // Let's try to find the one we added previously.
+            // 收集所有旧的主题字典 (Theme.Light.xaml 或 Theme.Dark.xaml)
+            var oldDicts = new List<ResourceDictionary>();
             
             foreach (var dict in dictionaries)
             {
-                 if (dict.Source != null && 
-                   (dict.Source.ToString().Contains("Theme.Light.xaml") || 
-                    dict.Source.ToString().Contains("Theme.Dark.xaml")))
+                if (dict.Source != null)
                 {
-                    oldDict = dict;
-                    break;
+                    var source = dict.Source.ToString();
+                    // 检查是否是我们管理的主题文件
+                    if (source.EndsWith("Themes/Theme.Light.xaml", StringComparison.OrdinalIgnoreCase) || 
+                        source.EndsWith("Themes/Theme.Dark.xaml", StringComparison.OrdinalIgnoreCase))
+                    {
+                        oldDicts.Add(dict);
+                    }
                 }
             }
 
-            if (oldDict != null)
+            // 移除旧字典
+            foreach (var oldDict in oldDicts)
             {
                 dictionaries.Remove(oldDict);
             }
-            else
-            {
-                // If we didn't find a top-level theme dictionary, it means we are running with the default
-                // embedded in Generic.xaml.
-                // We don't remove Generic.xaml. We just add the new theme at the end of App.Resources.MergedDictionaries.
-                // This will override the keys in Generic.xaml.
-            }
 
+            // 添加新字典到末尾，以覆盖默认样式（如 Generic.xaml 中的）
             dictionaries.Add(newDict);
             CurrentTheme = theme;
         }
     }
 }
-
