@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!--  DF UI Color Palette: Red  -->
+    <!--  DF UI Color Palette: Red (Deep Themed)  -->
 
     <!--  Primary  -->
     <Color x:Key="DF_Color_Primary">#d03050</Color>
@@ -9,36 +9,35 @@
 
     <!--  Semantic Colors  -->
     <Color x:Key="DF_Color_Success">#18a058</Color>
-    <Color x:Key="DF_Color_Info">#d03050</Color> 
-    <!-- Info often follows Primary if blue/cyan, but let's keep standard or link to primary if desired -->
+    <Color x:Key="DF_Color_Info">#d03050</Color>
     <Color x:Key="DF_Color_Warning">#f0a020</Color>
     <Color x:Key="DF_Color_Error">#d03050</Color>
 
-    <!--  Backgrounds (Tinted)  -->
-    <Color x:Key="DF_Color_Background_Light">#fefafb</Color>
-    <Color x:Key="DF_Color_Background_Dark">#191117</Color>
-    <Color x:Key="DF_Color_Surface_Light">#FFFFFF</Color>
-    <Color x:Key="DF_Color_Surface_Dark">#261920</Color>
+    <!--  Backgrounds  -->
+    <Color x:Key="DF_Color_Background_Light">#fcf4f6</Color>
+    <Color x:Key="DF_Color_Background_Dark">#2c141d</Color>
+    <Color x:Key="DF_Color_Surface_Light">#fefafb</Color>
+    <Color x:Key="DF_Color_Surface_Dark">#3c1c26</Color>
 
     <!--  Control Fill  -->
     <Color x:Key="DF_Color_Fill_Light">#fdf8f9</Color>
     <Color x:Key="DF_Color_Fill_Dark">#2c141d</Color>
 
     <!--  Header Background  -->
-    <Color x:Key="DF_Color_Header_Light">#fdf6f7</Color>
-    <Color x:Key="DF_Color_Header_Dark">#302026</Color>
+    <Color x:Key="DF_Color_Header_Light">#fbeef1</Color>
+    <Color x:Key="DF_Color_Header_Dark">#4b232d</Color>
 
-    <!--  Text  -->
-    <Color x:Key="DF_Color_Text_Primary_Light">#333639</Color>
-    <Color x:Key="DF_Color_Text_Primary_Dark">#E6FFFFFF</Color>
-    <Color x:Key="DF_Color_Text_Secondary_Light">#B33C3C3C</Color>
-    <Color x:Key="DF_Color_Text_Secondary_Dark">#99FFFFFF</Color>
-    <Color x:Key="DF_Color_Text_PlaceHolder_Light">#c2c2c2</Color>
-    <Color x:Key="DF_Color_Text_PlaceHolder_Dark">#666666</Color>
+    <!--  Text (Tinted)  -->
+    <Color x:Key="DF_Color_Text_Primary_Light">#62343f</Color>
+    <Color x:Key="DF_Color_Text_Primary_Dark">#faeaed</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Light">#986871</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Dark">#a1dfe4</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Light">#c4a4ab</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Dark">#706063</Color>
 
-    <!--  Border  -->
-    <Color x:Key="DF_Color_Border_Light">#e0e0e6</Color>
-    <Color x:Key="DF_Color_Border_Dark">#26FFFFFF</Color>
+    <!--  Border (Tinted)  -->
+    <Color x:Key="DF_Color_Border_Light">#dcbcc8</Color>
+    <Color x:Key="DF_Color_Border_Dark">#6e3d47</Color>
 
     <!--  SolidColorBrushes (Legacy/Compat)  -->
     <SolidColorBrush x:Key="DF_Primary_Brush" Color="{StaticResource DF_Color_Primary}" />

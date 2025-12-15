@@ -749,7 +749,7 @@
                                 Height="40"
                                 Margin="0,0,0,20"
                                 helpers:ControlAttach.Watermark="Password"
-                                helpers:PasswordBoxAttach.ShowEyeButton="True">
+                                helpers:PasswordBoxAttach.ShowEyeButton="True" Cursor="">
                                 <helpers:ControlAttach.Icon>
                                     <iconPacks:PackIconMaterial Foreground="{DynamicResource DF_Text_Secondary_Brush}" Kind="LockOutline" />
                                 </helpers:ControlAttach.Icon>
@@ -758,6 +758,7 @@
                             <DockPanel Margin="0,0,0,30">
                                 <CheckBox Content="Remember me" />
                                 <TextBlock
+                                    VerticalAlignment="Center"
                                     Cursor="Hand"
                                     DockPanel.Dock="Right"
                                     Foreground="{DynamicResource DF_Primary_Brush}"
@@ -1240,7 +1241,7 @@
                                             Foreground="#18a058"
                                             IsPie="True"
                                             ToolTip="Desktop: 65%"
-                                            Value="100" /> 
+                                            Value="100" />
                                         <!--  100% Base  -->
 
                                         <!--  Middle Pie  -->
@@ -1253,7 +1254,7 @@
                                             ToolTip="Mobile: 35%"
                                             Value="35">
                                             <controls:DFCircleProgressBar.RenderTransform>
-                                                <RotateTransform Angle="0" /> 
+                                                <RotateTransform Angle="0" />
                                                 <!--  Start from top  -->
                                             </controls:DFCircleProgressBar.RenderTransform>
                                         </controls:DFCircleProgressBar>
@@ -1268,7 +1269,7 @@
                                             ToolTip="Tablet: 10%"
                                             Value="10">
                                             <controls:DFCircleProgressBar.RenderTransform>
-                                                <RotateTransform Angle="126" /> 
+                                                <RotateTransform Angle="126" />
                                                 <!--  Offset: 35% * 360 = 126 deg  -->
                                             </controls:DFCircleProgressBar.RenderTransform>
                                         </controls:DFCircleProgressBar>

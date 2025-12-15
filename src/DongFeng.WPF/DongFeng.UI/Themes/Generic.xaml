@@ -4,11 +4,8 @@
     xmlns:controls="clr-namespace:DongFeng.UI.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Colors.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Theme.Light.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Sizes.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/BaseStyles.xaml" />
-
+        <!--  Dependencies moved to App.xaml for ThemeManager control  -->
+        
         <!--  Controls  -->
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Window.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Button.xaml" />

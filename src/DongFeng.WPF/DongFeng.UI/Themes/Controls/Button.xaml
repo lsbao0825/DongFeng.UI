@@ -2,13 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:DongFeng.UI.Controls"
-    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers"
-    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
+    xmlns:converters="clr-namespace:DongFeng.UI.Converters"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/DongFeng.UI;component/Themes/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
 
     <Style
@@ -17,6 +17,7 @@
         TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource DF_Button_Background_Base}" />
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Margin_Large}" />
         <Setter Property="helpers:ControlAttach.HoverBackground" Value="{DynamicResource DF_Button_Background_Hover}" />
         <Setter Property="Template">
             <Setter.Value>
