@@ -15,7 +15,7 @@
 
     <!--  Backgrounds  -->
     <Color x:Key="DF_Color_Background_Light">#FFFFFF</Color>
-    <Color x:Key="DF_Color_Background_Dark">#101014</Color>
+    <Color x:Key="DF_Color_Background_Dark">#FF333333</Color>
     <Color x:Key="DF_Color_Surface_Light">#FFFFFF</Color>
     <Color x:Key="DF_Color_Surface_Dark">#18181c</Color>
 
