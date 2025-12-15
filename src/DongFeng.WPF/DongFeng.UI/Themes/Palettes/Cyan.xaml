@@ -7,27 +7,26 @@
     <Color x:Key="DF_Color_Primary_Hover">#38bcdf</Color>
     <Color x:Key="DF_Color_Primary_Pressed">#0b86a3</Color>
 
-    <!--  Semantic Colors (Defaults, can be overridden if needed)  -->
+    <!--  Semantic Colors  -->
     <Color x:Key="DF_Color_Success">#18a058</Color>
-    <Color x:Key="DF_Color_Info">#2080f0</Color>
+    <Color x:Key="DF_Color_Info">#11a8cd</Color> 
+    <!-- Info often follows Primary if blue/cyan, but let's keep standard or link to primary if desired -->
     <Color x:Key="DF_Color_Warning">#f0a020</Color>
     <Color x:Key="DF_Color_Error">#d03050</Color>
 
-    <!--  Backgrounds  -->
-    <Color x:Key="DF_Color_Background_Light">#FFFFFF</Color>
-    <Color x:Key="DF_Color_Background_Dark">#101014</Color>
+    <!--  Backgrounds (Tinted)  -->
+    <Color x:Key="DF_Color_Background_Light">#fafdfe</Color>
+    <Color x:Key="DF_Color_Background_Dark">#10171d</Color>
     <Color x:Key="DF_Color_Surface_Light">#FFFFFF</Color>
-    <Color x:Key="DF_Color_Surface_Dark">#18181c</Color>
+    <Color x:Key="DF_Color_Surface_Dark">#17232a</Color>
 
-    <!--  Control Fill (Inputs, etc.)  -->
-    <Color x:Key="DF_Color_Fill_Light">#00FFFFFF</Color>
-    <!--  Transparent by default in Light  -->
-    <Color x:Key="DF_Color_Fill_Dark">#0FFFFFFF</Color>
-    <!--  Slight white tint in Dark  -->
+    <!--  Control Fill  -->
+    <Color x:Key="DF_Color_Fill_Light">#f7fcfd</Color>
+    <Color x:Key="DF_Color_Fill_Dark">#10262f</Color>
 
-    <!--  Header Background (DataGrid, Table)  -->
-    <Color x:Key="DF_Color_Header_Light">#FAFAFC</Color>
-    <Color x:Key="DF_Color_Header_Dark">#1F1F22</Color>
+    <!--  Header Background  -->
+    <Color x:Key="DF_Color_Header_Light">#f5fbfc</Color>
+    <Color x:Key="DF_Color_Header_Dark">#1d2c33</Color>
 
     <!--  Text  -->
     <Color x:Key="DF_Color_Text_Primary_Light">#333639</Color>

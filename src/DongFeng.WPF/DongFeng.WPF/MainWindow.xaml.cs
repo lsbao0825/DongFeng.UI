@@ -40,6 +40,10 @@ namespace DongFeng
             // Init Icons
             InitializeIcons();
             IconList.ItemsSource = FilteredIcons;
+
+            // Init Palettes
+            PaletteSelector.ItemsSource = new List<string> { "Default", "Blue", "Red", "Purple", "Orange", "Cyan" };
+            PaletteSelector.SelectedIndex = 0;
         }
 
         private void BtnInfo_Click(object sender, RoutedEventArgs e)
@@ -150,6 +154,14 @@ namespace DongFeng
         private void ThemeToggle_Unchecked(object sender, RoutedEventArgs e)
         {
             ThemeManager.SetTheme(ThemeType.Light);
+        }
+
+        private void PaletteSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PaletteSelector.SelectedItem is string palette)
+            {
+                ThemeManager.SetPalette(palette);
+            }
         }
     }
 }

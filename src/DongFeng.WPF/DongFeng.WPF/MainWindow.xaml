@@ -25,7 +25,7 @@
             <TextBlock
                 Margin="0,0,20,0"
                 VerticalAlignment="Center"
-                Foreground="{DynamicResource Brush_Text_Secondary}"
+                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                 Text="| DF UI Style" />
 
             <Menu
@@ -59,17 +59,23 @@
 
             <StackPanel>
                 <TextBlock
-                    FontSize="{DynamicResource FontSize_Header}"
+                    FontSize="{DynamicResource DF_Header_FontSize}"
                     FontWeight="Bold"
-                    Foreground="{DynamicResource Brush_Primary}"
+                    Foreground="{DynamicResource DF_Primary_Brush}"
                     Text="Component Gallery" />
                 <TextBlock
                     Margin="0,5,0,0"
-                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                     Text="Explore the DF UI WPF components." />
             </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <ComboBox
+                    x:Name="PaletteSelector"
+                    Width="120"
+                    Margin="0,0,10,0"
+                    VerticalAlignment="Center"
+                    SelectionChanged="PaletteSelector_SelectionChanged" />
                 <controls:DFToggleSwitch
                     x:Name="ThemeToggle"
                     Checked="ThemeToggle_Checked"
@@ -569,7 +575,7 @@
                                 <TextBlock
                                     Margin="0,5,0,0"
                                     FontSize="12"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     Text="With Tick Snapping (10)" />
                             </StackPanel>
                         </controls:DFCodeExample>
@@ -607,7 +613,7 @@
                         <controls:DFCodeExample Code="&lt;controls:DFEmpty Description=&quot;No Data&quot;&gt;&#xA;    &lt;Button Content=&quot;Refresh&quot;/&gt;&#xA;&lt;/controls:DFEmpty&gt;" Header="DFEmpty State">
                             <Border
                                 Padding="20"
-                                BorderBrush="{DynamicResource Brush_Border}"
+                                BorderBrush="{DynamicResource DF_Border_Brush}"
                                 BorderThickness="1"
                                 CornerRadius="4">
                                 <controls:DFEmpty Description="No Data Found">
@@ -689,8 +695,8 @@
                         Padding="40"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Background="{DynamicResource Brush_Surface}"
-                        BorderBrush="{DynamicResource Brush_Border}"
+                        Background="{DynamicResource DF_Surface_Brush}"
+                        BorderBrush="{DynamicResource DF_Border_Brush}"
                         BorderThickness="1"
                         CornerRadius="{DynamicResource Radius_Large}">
                         <Border.Effect>
@@ -707,7 +713,7 @@
                                 Height="80"
                                 Margin="0,0,0,20"
                                 HorizontalAlignment="Center"
-                                Background="{DynamicResource Brush_Primary}"
+                                Background="{DynamicResource DF_Primary_Brush}"
                                 Foreground="White">
                                 <controls:DFAvatar.Icon>
                                     <iconPacks:PackIconMaterial
@@ -722,12 +728,12 @@
                                 HorizontalAlignment="Center"
                                 FontSize="24"
                                 FontWeight="Bold"
-                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                 Text="Welcome Back" />
                             <TextBlock
                                 Margin="0,0,0,30"
                                 HorizontalAlignment="Center"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="Please sign in to continue" />
 
                             <TextBox
@@ -735,7 +741,7 @@
                                 Margin="0,0,0,20"
                                 helpers:ControlAttach.Watermark="Username / Email">
                                 <helpers:ControlAttach.Icon>
-                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource Brush_Text_Secondary}" Kind="AccountOutline" />
+                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource DF_Text_Secondary_Brush}" Kind="AccountOutline" />
                                 </helpers:ControlAttach.Icon>
                             </TextBox>
 
@@ -745,7 +751,7 @@
                                 helpers:ControlAttach.Watermark="Password"
                                 helpers:PasswordBoxAttach.ShowEyeButton="True">
                                 <helpers:ControlAttach.Icon>
-                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource Brush_Text_Secondary}" Kind="LockOutline" />
+                                    <iconPacks:PackIconMaterial Foreground="{DynamicResource DF_Text_Secondary_Brush}" Kind="LockOutline" />
                                 </helpers:ControlAttach.Icon>
                             </PasswordBox>
 
@@ -754,7 +760,7 @@
                                 <TextBlock
                                     Cursor="Hand"
                                     DockPanel.Dock="Right"
-                                    Foreground="{DynamicResource Brush_Primary}"
+                                    Foreground="{DynamicResource DF_Primary_Brush}"
                                     Text="Forgot Password?"
                                     TextDecorations="Underline" />
                             </DockPanel>
@@ -771,16 +777,16 @@
                                         Direction="270"
                                         Opacity="0.4"
                                         ShadowDepth="4"
-                                        Color="{StaticResource Color_Primary}" />
+                                        Color="{StaticResource DF_Color_Primary}" />
                                 </Button.Effect>
                             </Button>
 
                             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Don't have an account? " />
+                                <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Don't have an account? " />
                                 <TextBlock
                                     Cursor="Hand"
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Primary}"
+                                    Foreground="{DynamicResource DF_Primary_Brush}"
                                     Text="Sign Up" />
                             </StackPanel>
                         </StackPanel>
@@ -790,7 +796,7 @@
 
             <!--  Demo: Music Player  -->
             <TabItem Header="Demo: Music">
-                <Grid Background="{DynamicResource Brush_Background}">
+                <Grid Background="{DynamicResource DF_Background_Brush}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250" />
                         <ColumnDefinition Width="*" />
@@ -798,8 +804,8 @@
 
                     <!--  Sidebar  -->
                     <Border
-                        Background="{DynamicResource Brush_Surface}"
-                        BorderBrush="{DynamicResource Brush_Border}"
+                        Background="{DynamicResource DF_Surface_Brush}"
+                        BorderBrush="{DynamicResource DF_Border_Brush}"
                         BorderThickness="0,0,1,0">
                         <DockPanel Margin="0,20,0,0">
                             <StackPanel Margin="20,0,20,20" DockPanel.Dock="Top">
@@ -807,7 +813,7 @@
                                     Margin="0,0,0,10"
                                     FontSize="12"
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     Text="LIBRARY" />
                                 <ListBox
                                     Background="Transparent"
@@ -823,7 +829,7 @@
                                     Margin="0,20,0,10"
                                     FontSize="12"
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     Text="PLAYLISTS" />
                                 <ListBox Background="Transparent" BorderThickness="0">
                                     <ListBoxItem Padding="10,8" Content="Chill Vibes" />
@@ -874,23 +880,23 @@
                                 HorizontalAlignment="Center"
                                 FontSize="28"
                                 FontWeight="Bold"
-                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                 Text="Midnight City" />
                             <TextBlock
                                 Margin="0,8,0,30"
                                 HorizontalAlignment="Center"
                                 FontSize="16"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="M83 - Hurry Up, We're Dreaming" />
 
                             <Grid Margin="0,0,0,10">
                                 <TextBlock
                                     HorizontalAlignment="Left"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     Text="1:45" />
                                 <TextBlock
                                     HorizontalAlignment="Right"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     Text="4:03" />
                             </Grid>
                             <Slider
@@ -908,7 +914,7 @@
                                     <iconPacks:PackIconMaterial
                                         Width="20"
                                         Height="20"
-                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                         Kind="ShuffleVariant" />
                                 </Button>
                                 <Button
@@ -919,7 +925,7 @@
                                     <iconPacks:PackIconMaterial
                                         Width="28"
                                         Height="28"
-                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                         Kind="SkipPrevious" />
                                 </Button>
                                 <Button
@@ -941,7 +947,7 @@
                                     <iconPacks:PackIconMaterial
                                         Width="28"
                                         Height="28"
-                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                         Kind="SkipNext" />
                                 </Button>
                                 <Button
@@ -951,7 +957,7 @@
                                     <iconPacks:PackIconMaterial
                                         Width="20"
                                         Height="20"
-                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                         Kind="Repeat" />
                                 </Button>
                             </StackPanel>
@@ -969,9 +975,9 @@
                                 <TextBlock
                                     FontSize="28"
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Text_Primary}"
+                                    Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                     Text="Dashboard" />
-                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Overview of your business performance" />
+                                <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Overview of your business performance" />
                             </StackPanel>
                             <StackPanel
                                 Margin="{DynamicResource Margin_Default}"
@@ -1068,72 +1074,72 @@
                                         ColumnSpacing="10"
                                         Columns="12">
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.5"
                                             Orientation="Vertical"
                                             ToolTip="Jan"
                                             Value="30" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.6"
                                             Orientation="Vertical"
                                             ToolTip="Feb"
                                             Value="45" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.5"
                                             Orientation="Vertical"
                                             ToolTip="Mar"
                                             Value="35" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.8"
                                             Orientation="Vertical"
                                             ToolTip="Apr"
                                             Value="60" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.7"
                                             Orientation="Vertical"
                                             ToolTip="May"
                                             Value="50" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.9"
                                             Orientation="Vertical"
                                             ToolTip="Jun"
                                             Value="75" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Orientation="Vertical"
                                             ToolTip="Jul"
                                             Value="80" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.8"
                                             Orientation="Vertical"
                                             ToolTip="Aug"
                                             Value="70" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.7"
                                             Orientation="Vertical"
                                             ToolTip="Sep"
                                             Value="65" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.6"
                                             Orientation="Vertical"
                                             ToolTip="Oct"
                                             Value="55" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Opacity="0.9"
                                             Orientation="Vertical"
                                             ToolTip="Nov"
                                             Value="85" />
                                         <ProgressBar
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Primary_Brush}"
                                             Orientation="Vertical"
                                             ToolTip="Dec"
                                             Value="90" />
@@ -1156,7 +1162,7 @@
                                         <TextBlock VerticalAlignment="Top" Text="Direct" />
                                         <TextBlock
                                             HorizontalAlignment="Right"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="45%" />
                                     </Grid>
                                     <ProgressBar
@@ -1168,7 +1174,7 @@
                                         <TextBlock VerticalAlignment="Top" Text="Social Media" />
                                         <TextBlock
                                             HorizontalAlignment="Right"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="25%" />
                                     </Grid>
                                     <ProgressBar
@@ -1181,7 +1187,7 @@
                                         <TextBlock VerticalAlignment="Top" Text="Referrals" />
                                         <TextBlock
                                             HorizontalAlignment="Right"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="20%" />
                                     </Grid>
                                     <ProgressBar
@@ -1194,7 +1200,7 @@
                                         <TextBlock VerticalAlignment="Top" Text="Organic Search" />
                                         <TextBlock
                                             HorizontalAlignment="Right"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="10%" />
                                     </Grid>
                                     <ProgressBar
@@ -1280,7 +1286,7 @@
                                                 Fill="#18a058"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Desktop (65%)" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Desktop (65%)" />
                                         </StackPanel>
                                         <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
                                             <Rectangle
@@ -1290,7 +1296,7 @@
                                                 Fill="#2080f0"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Mobile (25%)" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Mobile (25%)" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Rectangle
@@ -1300,7 +1306,7 @@
                                                 Fill="#f0a020"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Tablet (10%)" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Tablet (10%)" />
                                         </StackPanel>
                                     </StackPanel>
                                 </DockPanel>
@@ -1344,13 +1350,13 @@
                                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <TextBlock
                                                 HorizontalAlignment="Center"
-                                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                                 Text="Total" />
                                             <TextBlock
                                                 HorizontalAlignment="Center"
                                                 FontSize="24"
                                                 FontWeight="Bold"
-                                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                                Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                                 Text="85%" />
                                         </StackPanel>
                                     </Grid>
@@ -1365,7 +1371,7 @@
                                                 Fill="#d03050"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="System" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="System" />
                                         </StackPanel>
                                         <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
                                             <Rectangle
@@ -1375,7 +1381,7 @@
                                                 Fill="#f0a020"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Media" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Media" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Rectangle
@@ -1385,7 +1391,7 @@
                                                 Fill="#2080f0"
                                                 RadiusX="2"
                                                 RadiusY="2" />
-                                            <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Docs" />
+                                            <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Docs" />
                                         </StackPanel>
                                     </StackPanel>
                                 </DockPanel>
@@ -1434,22 +1440,22 @@
 
             <!--  Demo: Settings  -->
             <TabItem Header="Demo: Settings">
-                <Grid Background="{DynamicResource Brush_Background}">
+                <Grid Background="{DynamicResource DF_Background_Brush}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="220" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <Border
-                        Background="{DynamicResource Brush_Surface}"
-                        BorderBrush="{DynamicResource Brush_Border}"
+                        Background="{DynamicResource DF_Surface_Brush}"
+                        BorderBrush="{DynamicResource DF_Border_Brush}"
                         BorderThickness="0,0,1,0">
                         <StackPanel Margin="0,20,0,0">
                             <TextBlock
                                 Margin="20,0,0,10"
                                 FontSize="12"
                                 FontWeight="Bold"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="SETTINGS" />
                             <ListBox
                                 Background="Transparent"
@@ -1471,11 +1477,11 @@
                                 Margin="0,0,0,10"
                                 FontSize="28"
                                 FontWeight="Bold"
-                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                 Text="Account Settings" />
                             <TextBlock
                                 Margin="0,0,0,30"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="Manage your personal information and security." />
 
                             <controls:DFDivider
@@ -1500,14 +1506,14 @@
                                         <Button Margin="0,0,10,0" Content="Upload New Photo" />
                                         <Button
                                             Background="Transparent"
-                                            BorderBrush="{DynamicResource Brush_Border}"
+                                            BorderBrush="{DynamicResource DF_Border_Brush}"
                                             BorderThickness="1"
                                             Content="Remove"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}" />
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}" />
                                     </StackPanel>
                                     <TextBlock
                                         FontSize="12"
-                                        Foreground="{DynamicResource Brush_Text_Secondary}"
+                                        Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                         Text="Recommended size: 256x256px. JPG, PNG allowed." />
                                 </StackPanel>
                             </Grid>
@@ -1547,7 +1553,7 @@
                                         <TextBlock
                                             Margin="0,5,0,0"
                                             FontSize="12"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="Receive daily summary emails about activity" />
                                     </StackPanel>
                                     <controls:DFToggleSwitch Grid.Column="1" IsChecked="True" />
@@ -1563,7 +1569,7 @@
                                         <TextBlock
                                             Margin="0,5,0,0"
                                             FontSize="12"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="Add an extra layer of security to your account" />
                                     </StackPanel>
                                     <controls:DFToggleSwitch Grid.Column="1" IsChecked="False" />
@@ -1579,7 +1585,7 @@
                                         <TextBlock
                                             Margin="0,5,0,0"
                                             FontSize="12"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="Use dark theme for the application interface" />
                                     </StackPanel>
                                     <controls:DFToggleSwitch Grid.Column="1" IsChecked="{Binding ElementName=ThemeToggle, Path=IsChecked, Mode=TwoWay}" />
@@ -1597,7 +1603,7 @@
                                     Background="Transparent"
                                     BorderThickness="0"
                                     Content="Cancel"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}" />
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}" />
                             </DockPanel>
                         </StackPanel>
                     </ScrollViewer>
@@ -1629,7 +1635,7 @@
                                     FontSize="16"
                                     FontWeight="Bold"
                                     Text="Material Design Icons" />
-                                <TextBlock Foreground="{DynamicResource Brush_Text_Secondary}" Text="Click an icon to copy its XAML code." />
+                                <TextBlock Foreground="{DynamicResource DF_Text_Secondary_Brush}" Text="Click an icon to copy its XAML code." />
                             </StackPanel>
 
                             <TextBox
@@ -1719,7 +1725,7 @@
                         Width="50"
                         Height="50"
                         Margin="0,0,15,0"
-                        Background="{DynamicResource Brush_Primary}"
+                        Background="{DynamicResource DF_Primary_Brush}"
                         CornerRadius="25">
                         <TextBlock
                             HorizontalAlignment="Center"
@@ -1733,11 +1739,11 @@
                         <TextBlock
                             FontSize="16"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="Admin User" />
                         <TextBlock
                             FontSize="12"
-                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                             Text="admin@DongFeng.com" />
                     </StackPanel>
                 </StackPanel>
@@ -1745,7 +1751,7 @@
                 <Separator
                     Grid.Row="1"
                     Margin="0,0,0,20"
-                    Background="{DynamicResource Brush_Border}" />
+                    Background="{DynamicResource DF_Border_Brush}" />
 
                 <!--  Settings List  -->
                 <ScrollViewer
@@ -1757,7 +1763,7 @@
                         <TextBlock
                             Margin="0,0,0,10"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="Appearance" />
                         <controls:DFToggleSwitch
                             Margin="0,0,0,10"
@@ -1767,7 +1773,7 @@
 
                         <TextBlock
                             Margin="0,5,0,5"
-                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                             Text="Accent Color" />
                         <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
                             <Border
@@ -1803,12 +1809,12 @@
                         <TextBlock
                             Margin="0,0,0,10"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="General" />
 
                         <TextBlock
                             Margin="0,0,0,5"
-                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                             Text="Language" />
                         <ComboBox Margin="0,0,0,15" SelectedIndex="0">
                             <ComboBoxItem Content="English (US)" />
@@ -1819,7 +1825,7 @@
                         <TextBlock
                             Margin="0,5,0,10"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="Notifications" />
                         <controls:DFToggleSwitch
                             Margin="0,0,0,10"
@@ -1834,17 +1840,17 @@
                         <TextBlock
                             Margin="0,0,0,10"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="System" />
                         <DockPanel Margin="0,0,0,10" LastChildFill="False">
                             <TextBlock
                                 VerticalAlignment="Center"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="Version" />
                             <TextBlock
                                 VerticalAlignment="Center"
                                 DockPanel.Dock="Right"
-                                Foreground="{DynamicResource Brush_Text_Primary}"
+                                Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                 Text="v1.0.2" />
                         </DockPanel>
                         <Button Margin="0,0,0,10" Content="Check for Updates" />
@@ -1856,8 +1862,8 @@
                 <!--  Footer  -->
                 <StackPanel Grid.Row="3" Margin="0,20,0,0">
                     <Button
-                        Background="{DynamicResource Brush_Error}"
-                        BorderBrush="{DynamicResource Brush_Error}"
+                        Background="{DynamicResource DF_Error_Brush}"
+                        BorderBrush="{DynamicResource DF_Error_Brush}"
                         Content="Log Out"
                         Foreground="White"
                         Style="{DynamicResource DFPrimaryButton}" />
