@@ -5,7 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <!--  Dependencies moved to App.xaml for ThemeManager control  -->
-        
+
         <!--  Controls  -->
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Window.xaml" />
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/Controls/Button.xaml" />
@@ -63,6 +63,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!--  Global Styles to apply automatically  -->
+    <Style BasedOn="{StaticResource DFTextBlock}" TargetType="TextBlock" />
     <Style BasedOn="{StaticResource DFButton}" TargetType="Button" />
     <Style BasedOn="{StaticResource DFTextBox}" TargetType="TextBox" />
     <Style BasedOn="{StaticResource DFPasswordBox}" TargetType="PasswordBox" />

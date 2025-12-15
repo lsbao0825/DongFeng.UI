@@ -7,7 +7,18 @@
         Base Style for all Controls
         Provides consistent Spacing, Typography and Colors
     -->
+
+
     <Style x:Key="DFControlBase" TargetType="Control">
+        <Setter Property="Margin" Value="{DynamicResource DF_Margin_Default}" />
+        <Setter Property="FontSize" Value="{DynamicResource DF_FontSize_Normal}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Padding_Input}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <Style x:Key="DFTextBlock" TargetType="TextBlock">
         <Setter Property="Margin" Value="{DynamicResource DF_Margin_Default}" />
         <Setter Property="FontSize" Value="{DynamicResource DF_FontSize_Normal}" />
         <Setter Property="Padding" Value="{DynamicResource DF_Padding_Input}" />
