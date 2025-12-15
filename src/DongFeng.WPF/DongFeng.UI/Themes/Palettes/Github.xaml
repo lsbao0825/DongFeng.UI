@@ -1,0 +1,52 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  DF UI Color Palette: Github (Clean & Professional)  -->
+
+    <!--  Primary Blue  -->
+    <Color x:Key="DF_Color_Primary">#1f6feb</Color>
+    <Color x:Key="DF_Color_Primary_Hover">#438ef7</Color>
+    <Color x:Key="DF_Color_Primary_Pressed">#0e4ec6</Color>
+
+    <!--  Semantic Colors  -->
+    <Color x:Key="DF_Color_Success">#1a7f37</Color>
+    <Color x:Key="DF_Color_Info">#1f6feb</Color>
+    <Color x:Key="DF_Color_Warning">#9a6700</Color>
+    <Color x:Key="DF_Color_Error">#cf222e</Color>
+
+    <!--  Backgrounds  -->
+    <Color x:Key="DF_Color_Background_Light">#ffffff</Color>
+    <Color x:Key="DF_Color_Background_Dark">#0d1117</Color>
+    <Color x:Key="DF_Color_Surface_Light">#f6f8fa</Color>
+    <Color x:Key="DF_Color_Surface_Dark">#161b22</Color>
+
+    <!--  Control Fill  -->
+    <Color x:Key="DF_Color_Fill_Light">#f6f8fa</Color>
+    <Color x:Key="DF_Color_Fill_Dark">#21262d</Color>
+
+    <!--  Header Background  -->
+    <Color x:Key="DF_Color_Header_Light">#f6f8fa</Color>
+    <Color x:Key="DF_Color_Header_Dark">#161b22</Color>
+
+    <!--  Text  -->
+    <Color x:Key="DF_Color_Text_Primary_Light">#24292f</Color>
+    <Color x:Key="DF_Color_Text_Primary_Dark">#c9d1d9</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Light">#57606a</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Dark">#8b949e</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Light">#6e7781</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Dark">#484f58</Color>
+
+    <!--  Border  -->
+    <Color x:Key="DF_Color_Border_Light">#d0d7de</Color>
+    <Color x:Key="DF_Color_Border_Dark">#30363d</Color>
+
+    <!--  SolidColorBrushes (Legacy/Compat)  -->
+    <SolidColorBrush x:Key="DF_Primary_Brush" Color="{StaticResource DF_Color_Primary}" />
+    <SolidColorBrush x:Key="DF_Primary_Hover_Brush" Color="{StaticResource DF_Color_Primary_Hover}" />
+    <SolidColorBrush x:Key="DF_Primary_Pressed_Brush" Color="{StaticResource DF_Color_Primary_Pressed}" />
+
+    <SolidColorBrush x:Key="DF_Success_Brush" Color="{StaticResource DF_Color_Success}" />
+    <SolidColorBrush x:Key="DF_Info_Brush" Color="{StaticResource DF_Color_Info}" />
+    <SolidColorBrush x:Key="DF_Warning_Brush" Color="{StaticResource DF_Color_Warning}" />
+    <SolidColorBrush x:Key="DF_Error_Brush" Color="{StaticResource DF_Color_Error}" />
+
+</ResourceDictionary>
