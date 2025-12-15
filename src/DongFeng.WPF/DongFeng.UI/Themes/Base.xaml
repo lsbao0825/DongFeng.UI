@@ -7,10 +7,10 @@
 
     <!--  Base Control Style  -->
     <Style x:Key="DFControlBase" TargetType="Control">
-        <Setter Property="Margin" Value="{DynamicResource Margin_Default}" />
-        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Margin" Value="{DynamicResource DF_Margin_Default}" />
+        <Setter Property="FontSize" Value="{DynamicResource DF_FontSize_Normal}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="UseLayoutRounding" Value="True" />

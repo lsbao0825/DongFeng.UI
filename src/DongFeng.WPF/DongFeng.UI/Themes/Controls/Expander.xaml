@@ -41,7 +41,7 @@
                                 VerticalAlignment="Center"
                                 Data="M 1,1.5 L 4.5,5 L 8,1.5"
                                 SnapsToDevicePixels="false"
-                                Stroke="{DynamicResource Brush_Text_Secondary}"
+                                Stroke="{DynamicResource DF_Text_Secondary_Brush}"
                                 StrokeThickness="2" />
                             <ContentPresenter
                                 Grid.Column="1"
@@ -54,10 +54,10 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="true">
                             <Setter TargetName="arrow" Property="Data" Value="M 1,4.5  L 4.5,1  L 8,4.5" />
-                            <Setter TargetName="arrow" Property="Stroke" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="arrow" Property="Stroke" Value="{DynamicResource DF_Expander_Arrow_Stroke_Selected}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="arrow" Property="Stroke" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter TargetName="arrow" Property="Stroke" Value="{DynamicResource DF_Expander_Arrow_Stroke_Hover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -80,7 +80,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Medium}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Medium}"
                         SnapsToDevicePixels="true">
                         <DockPanel>
                             <ToggleButton
@@ -97,7 +97,7 @@
                                 DockPanel.Dock="Top"
                                 FocusVisualStyle="{StaticResource DFExpanderHeaderFocusVisual}"
                                 FontFamily="{TemplateBinding FontFamily}"
-                                FontSize="{TemplateBinding FontSize}"
+                                FontSize="{DynamicResource DF_FontSize_Large}"
                                 FontStretch="{TemplateBinding FontStretch}"
                                 FontStyle="{TemplateBinding FontStyle}"
                                 FontWeight="{TemplateBinding FontWeight}"

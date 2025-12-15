@@ -27,7 +27,7 @@
                             x:Name="Outline"
                             Width="{TemplateBinding Width}"
                             Height="{TemplateBinding Height}"
-                            Foreground="{DynamicResource Brush_Text_PlaceHolder}"
+                            Foreground="{DynamicResource DF_Text_Placeholder_Brush}"
                             Kind="StarOutline" />
 
                         <!--  Filled Star (Active)  -->
@@ -79,7 +79,7 @@
     <Style TargetType="{x:Type controls:DFRating}">
         <Setter Property="Background" Value="Transparent" />
         <!--  Default to Warning color (Gold) but allow override  -->
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Warning}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Warning_Brush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFRating}">

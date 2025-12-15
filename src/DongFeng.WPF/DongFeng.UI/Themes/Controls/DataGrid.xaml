@@ -9,10 +9,11 @@
 
     <!--  DataGridColumnHeader Style  -->
     <Style x:Key="DFDataGridColumnHeader" TargetType="DataGridColumnHeader">
-        <Setter Property="Background" Value="{DynamicResource Brush_Header}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Header_Background_Brush}" />
         <!--  Updated  -->
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
+        <Setter Property="FontSize" Value="{DynamicResource DF_Header_FontSize}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="Padding" Value="12,10" />
         <Setter Property="FontWeight" Value="Bold" />
@@ -38,7 +39,7 @@
     <!--  DataGridCell Style  -->
     <Style x:Key="DFDataGridCell" TargetType="DataGridCell">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="8,6" />
         <!--  Reduced Padding  -->
@@ -58,8 +59,8 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Brush_Primary}" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="{DynamicResource DF_Item_Background_Selected}" />
+                <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -111,13 +112,13 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Item_Background_Hover}" />
                             <!--  Using hover color with low opacity logic usually, here simplified  -->
                             <Setter TargetName="DGR_Border" Property="Opacity" Value="0.8" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Primary}" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Item_Background_Selected}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -138,8 +139,8 @@
         <Setter Property="AutoGenerateColumns" Value="False" />
         <Setter Property="HeadersVisibility" Value="Column" />
         <Setter Property="GridLinesVisibility" Value="Horizontal" />
-        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource Brush_Border}" />
-        <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DF_Border_Brush}" />
+        <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource DFDataGridColumnHeader}" />
         <Setter Property="RowStyle" Value="{StaticResource DFDataGridRow}" />
         <Setter Property="CellStyle" Value="{StaticResource DFDataGridCell}" />
@@ -152,7 +153,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Medium}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Medium}"
                         SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
                             <ScrollViewer.Template>

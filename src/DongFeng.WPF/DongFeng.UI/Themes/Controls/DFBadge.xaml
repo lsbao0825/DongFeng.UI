@@ -4,7 +4,7 @@
     xmlns:controls="clr-namespace:DongFeng.UI.Controls">
 
     <Style x:Key="DFDFBadge" TargetType="{x:Type controls:DFBadge}">
-        <Setter Property="DFBadgeBackground" Value="{DynamicResource Brush_Error}" />
+        <Setter Property="DFBadgeBackground" Value="{DynamicResource DF_Error_Brush}" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -26,7 +26,7 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             Background="{TemplateBinding DFBadgeBackground}"
-                            BorderBrush="{DynamicResource Brush_Surface}"
+                            BorderBrush="{DynamicResource DF_Surface_Brush}"
                             BorderThickness="1"
                             CornerRadius="10">
                             <Border.RenderTransform>

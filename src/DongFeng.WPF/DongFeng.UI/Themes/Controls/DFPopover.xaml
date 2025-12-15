@@ -35,10 +35,10 @@
                                 MaxWidth="400"
                                 Margin="8"
                                 Padding="12"
-                                Background="{DynamicResource Brush_Surface}"
-                                BorderBrush="{DynamicResource Brush_Border}"
+                                Background="{DynamicResource DF_Surface_Brush}"
+                                BorderBrush="{DynamicResource DF_Border_Brush}"
                                 BorderThickness="1"
-                                CornerRadius="{DynamicResource Radius_Default}">
+                                CornerRadius="{DynamicResource DF_CornerRadius_Default}">
                                 <Border.Effect>
                                     <DropShadowEffect
                                         BlurRadius="15"
@@ -50,7 +50,7 @@
                                     <TextBlock
                                         Margin="0,0,0,8"
                                         FontWeight="Bold"
-                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                         Text="{TemplateBinding Title}"
                                         Visibility="{TemplateBinding Title,
                                                                      Converter={StaticResource ObjectToVisibilityConverter}}" />

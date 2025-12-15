@@ -7,7 +7,7 @@
 
     <!--  BreadcrumbItem  -->
     <Style TargetType="{x:Type controls:BreadcrumbItem}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -33,7 +33,7 @@
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter Property="TextBlock.TextDecorations" Value="Underline" />
-                                            <Setter Property="TextBlock.Foreground" Value="{DynamicResource Brush_Primary}" />
+                                            <Setter Property="TextBlock.Foreground" Value="{DynamicResource DF_Breadcrumb_Foreground_Hover}" />
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -45,7 +45,7 @@
                             Margin="8,0"
                             VerticalAlignment="Center"
                             Content="{TemplateBinding Separator}"
-                            Foreground="{DynamicResource Brush_Text_PlaceHolder}"
+                            Foreground="{DynamicResource DF_Text_Placeholder_Brush}"
                             IsTabStop="False"
                             Visibility="{Binding ShowSeparator, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                     </StackPanel>

@@ -15,9 +15,9 @@
         x:Key="DFButton"
         BasedOn="{StaticResource DFBorderedControlBase}"
         TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource Brush_Header}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Button_Background_Base}" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="helpers:ControlAttach.HoverBackground" Value="{DynamicResource Brush_Primary_Hover}" />
+        <Setter Property="helpers:ControlAttach.HoverBackground" Value="{DynamicResource DF_Button_Background_Hover}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -64,12 +64,12 @@
                             <Setter TargetName="PART_Icon" Property="Margin" Value="0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Button_Foreground_Hover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary_Pressed}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary_Pressed}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border_Pressed}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Button_Foreground_Pressed}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />
@@ -84,9 +84,9 @@
         x:Key="DFPrimaryButton"
         BasedOn="{StaticResource DFButton}"
         TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource Brush_Primary}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{DynamicResource DF_Button_Primary_Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Button_Primary_Foreground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -133,12 +133,12 @@
                             <Setter TargetName="PART_Icon" Property="Margin" Value="0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Button_Primary_Background_Hover}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border_Hover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Primary_Pressed}" />
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary_Pressed}" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Button_Primary_Background_Pressed}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border_Pressed}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />
@@ -201,12 +201,12 @@
                             <Setter TargetName="contentPresenter" Property="Margin" Value="0" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Button_Foreground_Hover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource Brush_Primary_Pressed}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary_Pressed}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource DF_Button_Primary_Border_Pressed}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Button_Foreground_Pressed}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />
@@ -259,12 +259,12 @@
                             <Setter TargetName="contentPresenter" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Control_Fill_Brush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Button_Foreground_Hover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary_Pressed}" />
+                            <Setter Property="Background" Value="{DynamicResource DF_Border_Brush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Primary_Pressed_Brush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />

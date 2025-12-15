@@ -8,8 +8,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFDivider}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Border_Brush}" />
         <!--  Line Color  -->
         <Setter Property="BorderThickness" Value="1" />
         <!--  Line Thickness  -->

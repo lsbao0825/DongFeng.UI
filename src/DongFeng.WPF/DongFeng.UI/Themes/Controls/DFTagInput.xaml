@@ -13,14 +13,14 @@
         <Border
             Margin="0,2,4,2"
             Padding="8,4"
-            Background="{DynamicResource Brush_Surface}"
-            BorderBrush="{DynamicResource Brush_Border}"
+            Background="{DynamicResource DF_Surface_Brush}"
+            BorderBrush="{DynamicResource DF_Input_Border}"
             BorderThickness="1"
-            CornerRadius="{DynamicResource Radius_Rounded}">
+            CornerRadius="{DynamicResource DF_CornerRadius_Rounded}">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                 <TextBlock
                     VerticalAlignment="Center"
-                    Foreground="{DynamicResource Brush_Text_Primary}"
+                    Foreground="{DynamicResource DF_Text_Primary_Brush}"
                     Text="{Binding}" />
                 <Button
                     Margin="6,0,0,0"
@@ -30,7 +30,7 @@
                     Command="{x:Static controls:DFTagInput.RemoveTagCommand}"
                     CommandParameter="{Binding}"
                     Cursor="Hand"
-                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                     Style="{DynamicResource DFButton}">
                     <Path
                         Width="8"
@@ -53,7 +53,7 @@
             Background="Transparent"
             BorderThickness="0"
             FontSize="14"
-            Foreground="{DynamicResource Brush_Text_Primary}"
+            Foreground="{DynamicResource DF_Text_Primary_Brush}"
             Text="{Binding InputText, RelativeSource={RelativeSource AncestorType=controls:DFTagInput}, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.InputBindings>
                 <KeyBinding Key="Enter" Command="{x:Static controls:DFTagInput.AddTagCommand}" />
@@ -62,8 +62,8 @@
     </DataTemplate>
 
     <Style TargetType="{x:Type controls:DFTagInput}">
-        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Input_Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Input_Border}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="4" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -74,7 +74,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                         <Grid>
                             <!--  Clickable background to focus input  -->
                             <!--  Removed direct event handler in XAML to avoid ResourceDictionary x:Class error  -->

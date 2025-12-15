@@ -7,7 +7,7 @@
 
     <!--  DatePickerTextBox Style  -->
     <Style x:Key="DFDatePickerTextBox" TargetType="{x:Type DatePickerTextBox}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
@@ -17,7 +17,7 @@
                 <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
                     <Grid>
                         <Grid.Resources>
-                            <SolidColorBrush x:Key="WatermarkBrush" Color="{StaticResource Color_Text_PlaceHolder_Light}" />
+                            <SolidColorBrush x:Key="WatermarkBrush" Color="{StaticResource DF_Color_Text_PlaceHolder_Light}" />
                         </Grid.Resources>
                         <Border
                             x:Name="Border"
@@ -39,7 +39,7 @@
                                     <ContentControl
                                         Padding="2"
                                         Content="Select date..."
-                                        Foreground="{DynamicResource Brush_Text_PlaceHolder}"
+                                        Foreground="{DynamicResource DF_Input_Placeholder}"
                                         IsHitTestVisible="False"
                                         IsTabStop="False" />
                                 </Border>
@@ -83,13 +83,13 @@
 
     <!--  DatePicker Style  -->
     <Style x:Key="DFDatePicker" TargetType="{x:Type DatePicker}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Input_Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Input_Border}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsTodayHighlighted" Value="True" />
         <Setter Property="SelectedDateFormat" Value="Short" />
-        <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Padding_Input}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="CalendarStyle" Value="{StaticResource DFCalendar}" />
         <Setter Property="Template">
@@ -100,7 +100,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                         SnapsToDevicePixels="True">
                         <Grid
                             x:Name="PART_Root"
@@ -128,7 +128,7 @@
                                                 Width="14"
                                                 Height="14"
                                                 Data="M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
-                                                Fill="{DynamicResource Brush_Text_Secondary}"
+                                                Fill="{DynamicResource DF_Text_Secondary_Brush}"
                                                 Stretch="Uniform" />
                                         </Grid>
                                     </ControlTemplate>
@@ -152,10 +152,10 @@
                                 StaysOpen="False">
                                 <Border
                                     Padding="5"
-                                    Background="{DynamicResource Brush_Surface}"
-                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    Background="{DynamicResource DF_Popup_Background}"
+                                    BorderBrush="{DynamicResource DF_Input_Border}"
                                     BorderThickness="1"
-                                    CornerRadius="{DynamicResource Radius_Medium}">
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Medium}">
                                     <Border.Effect>
                                         <DropShadowEffect
                                             BlurRadius="8"
@@ -179,10 +179,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DF_Input_Border_Focus}" />
                         </Trigger>
                         <Trigger Property="IsDropDownOpen" Value="True">
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DF_Input_Border_Focus}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

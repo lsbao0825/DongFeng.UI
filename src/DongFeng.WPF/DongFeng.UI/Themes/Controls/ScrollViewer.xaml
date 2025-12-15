@@ -113,7 +113,7 @@
                         Width="{TemplateBinding Width}"
                         Height="{TemplateBinding Height}"
                         Margin="2"
-                        Background="{DynamicResource Brush_Text_PlaceHolder}"
+                        Background="{DynamicResource DF_Text_Placeholder_Brush}"
                         CornerRadius="4"
                         Opacity="0.6"
                         SnapsToDevicePixels="True" />
@@ -124,7 +124,7 @@
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
                             <Setter TargetName="rectangle" Property="Opacity" Value="1.0" />
-                            <Setter TargetName="rectangle" Property="Background" Value="{DynamicResource Brush_Text_Secondary}" />
+                            <Setter TargetName="rectangle" Property="Background" Value="{DynamicResource DF_Text_Secondary_Brush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -8,12 +8,12 @@
         x:Key="DFToolTip"
         BasedOn="{StaticResource DFControlBase}"
         TargetType="ToolTip">
-        <Setter Property="Background" Value="Black" />
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{DynamicResource DF_Popup_Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="8,4" />
-        <Setter Property="FontSize" Value="{DynamicResource FontSize_Small}" />
+        <Setter Property="FontSize" Value="{DynamicResource DF_FontSize_Small}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HasDropShadow" Value="True" />
@@ -22,10 +22,10 @@
                 <ControlTemplate TargetType="ToolTip">
                     <Border
                         Padding="{TemplateBinding Padding}"
-                        Background="#333333"
+                        Background="{DynamicResource DF_Popup_Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                         SnapsToDevicePixels="True">
                         <ContentPresenter
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

@@ -8,7 +8,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFTimelineItem}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Top" />
@@ -39,7 +39,7 @@
                                 Grid.Row="0"
                                 Width="2"
                                 HorizontalAlignment="Center"
-                                Fill="{DynamicResource Brush_Border}" />
+                                Fill="{DynamicResource DF_Border_Brush}" />
 
                             <!--  Bottom Line (connects to next)  -->
                             <Rectangle
@@ -47,7 +47,7 @@
                                 Grid.Row="1"
                                 Width="2"
                                 HorizontalAlignment="Center"
-                                Fill="{DynamicResource Brush_Border}" />
+                                Fill="{DynamicResource DF_Border_Brush}" />
 
                             <!--  Dot  -->
                             <Border
@@ -72,7 +72,7 @@
                                 Margin="0,0,0,4"
                                 ContentSource="Header"
                                 TextBlock.FontSize="12"
-                                TextBlock.Foreground="{DynamicResource Brush_Text_Secondary}" />
+                                TextBlock.Foreground="{DynamicResource DF_Text_Secondary_Brush}" />
                             <ContentPresenter
                                 x:Name="ContentPresenter"
                                 Content="{TemplateBinding Content}"
@@ -82,28 +82,28 @@
                     <ControlTemplate.Triggers>
                         <!--  Default Color if not set  -->
                         <Trigger Property="Color" Value="{x:Null}">
-                            <Setter TargetName="Dot" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Dot" Property="BorderBrush" Value="{DynamicResource DF_Timeline_Dot_Border}" />
                             <Setter TargetName="Dot" Property="Background" Value="Transparent" />
                         </Trigger>
 
                         <!--  Line Type: Dashed  -->
                         <Trigger Property="LineType" Value="Dashed">
                             <Setter TargetName="LineTop" Property="StrokeDashArray" Value="4 2" />
-                            <Setter TargetName="LineTop" Property="Stroke" Value="{DynamicResource Brush_Border}" />
+                            <Setter TargetName="LineTop" Property="Stroke" Value="{DynamicResource DF_Border_Brush}" />
                             <Setter TargetName="LineTop" Property="Fill" Value="Transparent" />
 
                             <Setter TargetName="LineBottom" Property="StrokeDashArray" Value="4 2" />
-                            <Setter TargetName="LineBottom" Property="Stroke" Value="{DynamicResource Brush_Border}" />
+                            <Setter TargetName="LineBottom" Property="Stroke" Value="{DynamicResource DF_Border_Brush}" />
                             <Setter TargetName="LineBottom" Property="Fill" Value="Transparent" />
                         </Trigger>
 
                         <Trigger Property="LineType" Value="Dotted">
                             <Setter TargetName="LineTop" Property="StrokeDashArray" Value="1 2" />
-                            <Setter TargetName="LineTop" Property="Stroke" Value="{DynamicResource Brush_Border}" />
+                            <Setter TargetName="LineTop" Property="Stroke" Value="{DynamicResource DF_Border_Brush}" />
                             <Setter TargetName="LineTop" Property="Fill" Value="Transparent" />
 
                             <Setter TargetName="LineBottom" Property="StrokeDashArray" Value="1 2" />
-                            <Setter TargetName="LineBottom" Property="Stroke" Value="{DynamicResource Brush_Border}" />
+                            <Setter TargetName="LineBottom" Property="Stroke" Value="{DynamicResource DF_Border_Brush}" />
                             <Setter TargetName="LineBottom" Property="Fill" Value="Transparent" />
                         </Trigger>
 

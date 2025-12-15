@@ -8,8 +8,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFSkeleton}">
-        <!--  Use Brush_Surface_Hover or specific PlaceHolder color for base  -->
-        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
+        <!--  Use DF_Surface_Brush_Hover or specific PlaceHolder color for base  -->
+        <Setter Property="Background" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Height" Value="16" />

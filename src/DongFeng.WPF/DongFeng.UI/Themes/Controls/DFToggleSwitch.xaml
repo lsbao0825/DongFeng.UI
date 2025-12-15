@@ -8,9 +8,9 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFToggleSwitch}">
-        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Control_Fill_Brush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Toggle_Border_Unchecked}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="Padding" Value="10,0" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Cursor" Value="Hand" />
@@ -41,7 +41,7 @@
                             <!--  Track  -->
                             <Border
                                 x:Name="Track"
-                                Background="{DynamicResource Brush_Border}"
+                                Background="{DynamicResource DF_Toggle_Border_Unchecked}"
                                 CornerRadius="11">
                                 <Border.Effect>
                                     <DropShadowEffect
@@ -75,7 +75,7 @@
                     <ControlTemplate.Triggers>
                         <!--  Checked State  -->
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Track" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Track" Property="Background" Value="{DynamicResource DF_Toggle_Background_Checked}" />
                             <Setter TargetName="Thumb" Property="RenderTransform">
                                 <Setter.Value>
                                     <TranslateTransform X="18" />

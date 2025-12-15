@@ -25,7 +25,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Large}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Large}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -71,7 +71,7 @@
                                 <TextBlock
                                     Grid.Column="1"
                                     VerticalAlignment="Center"
-                                    FontSize="{DynamicResource FontSize_Normal}"
+                                    FontSize="{DynamicResource DF_FontSize_Normal}"
                                     Text="{TemplateBinding MessageText}"
                                     TextWrapping="Wrap" />
                             </Grid>

@@ -23,7 +23,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                         SnapsToDevicePixels="true">
                         <ScrollViewer Padding="{TemplateBinding Padding}" Focusable="false">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
@@ -37,7 +37,7 @@
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Padding" Value="10,8" />
                     <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+                    <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
                     <!--  Added Explicit Foreground  -->
                     <Setter Property="BorderThickness" Value="0" />
                     <Setter Property="Template">
@@ -50,7 +50,7 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{DynamicResource Radius_Small}"
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                                     SnapsToDevicePixels="true">
                                     <ContentPresenter
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -59,12 +59,12 @@
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
-                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Item_Background_Hover}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary}" />
-                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Item_Background_Selected}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

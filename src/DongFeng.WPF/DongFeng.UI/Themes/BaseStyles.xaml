@@ -8,10 +8,10 @@
         Provides consistent Spacing, Typography and Colors
     -->
     <Style x:Key="DFControlBase" TargetType="Control">
-        <Setter Property="Margin" Value="{DynamicResource Margin_Default}" />
-        <Setter Property="FontSize" Value="{DynamicResource FontSize_Normal}" />
-        <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Margin" Value="{DynamicResource DF_Margin_Default}" />
+        <Setter Property="FontSize" Value="{DynamicResource DF_FontSize_Normal}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Padding_Input}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="UseLayoutRounding" Value="True" />
     </Style>
@@ -26,9 +26,9 @@
         BasedOn="{StaticResource DFControlBase}"
         TargetType="Control">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource Radius_Small}" />
+        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource DF_CornerRadius_Small}" />
     </Style>
 
     <!--
@@ -38,10 +38,10 @@
         x:Key="DFInputBase"
         BasedOn="{StaticResource DFBorderedControlBase}"
         TargetType="Control">
-        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-        <Setter Property="Padding" Value="{DynamicResource Padding_Input}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Control_Fill_Brush}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Padding_Input}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="helpers:ControlAttach.FocusBorderBrush" Value="{DynamicResource Brush_Primary}" />
+        <Setter Property="helpers:ControlAttach.FocusBorderBrush" Value="{DynamicResource DF_Primary_Brush}" />
     </Style>
 
 </ResourceDictionary>

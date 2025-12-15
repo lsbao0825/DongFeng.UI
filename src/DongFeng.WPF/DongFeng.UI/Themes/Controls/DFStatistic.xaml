@@ -11,7 +11,7 @@
     <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
 
     <Style TargetType="{x:Type controls:DFStatistic}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <!--  Add Background transparent to catch hits if needed, though StackPanel ignores it mostly  -->
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
@@ -22,7 +22,7 @@
                         <TextBlock
                             Margin="0,0,0,4"
                             FontSize="14"
-                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                             Text="{TemplateBinding Label}"
                             Visibility="{TemplateBinding Label,
                                                          Converter={StaticResource ObjectToVisibilityConverter}}" />

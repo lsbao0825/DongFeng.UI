@@ -33,7 +33,7 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="12,8" />
         <Setter Property="Template">
@@ -45,7 +45,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                         SnapsToDevicePixels="true">
                         <Grid VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
@@ -71,7 +71,7 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Background="Transparent"
-                                BorderBrush="{DynamicResource Brush_Primary}"
+                                BorderBrush="{DynamicResource DF_Item_Background_Selected}"
                                 BorderThickness="1"
                                 ClipToBounds="False"
                                 Visibility="Hidden">
@@ -80,7 +80,7 @@
                                     Width="9"
                                     Height="11"
                                     Data="M0,5.1L1.7,5.2 3.4,5.5 6,1.8 7.2,2.3 3.6,7.5 3.1,7.4 2.9,7.5Z"
-                                    Fill="{DynamicResource Brush_Primary}"
+                                    Fill="{DynamicResource DF_Item_Background_Selected}"
                                     FlowDirection="LeftToRight" />
                             </Border>
                             <ContentPresenter
@@ -109,10 +109,10 @@
                                     x:Name="SubmenuBorder"
                                     Margin="0,4,0,0"
                                     Padding="2"
-                                    Background="{DynamicResource Brush_Surface}"
-                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    Background="{DynamicResource DF_Popup_Background}"
+                                    BorderBrush="{DynamicResource DF_Popup_Border}"
                                     BorderThickness="1"
-                                    CornerRadius="{DynamicResource Radius_Small}">
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                                     <Border.Effect>
                                         <DropShadowEffect
                                             BlurRadius="8"
@@ -134,8 +134,8 @@
                             <Setter TargetName="Icon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter TargetName="templateRoot" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter TargetName="templateRoot" Property="Background" Value="{DynamicResource DF_Item_Background_Hover}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="templateRoot" Property="Opacity" Value="0.5" />
@@ -176,10 +176,10 @@
                     <Border
                         x:Name="Border"
                         Padding="4"
-                        Background="{DynamicResource Brush_Surface}"
-                        BorderBrush="{DynamicResource Brush_Border}"
+                        Background="{DynamicResource DF_Popup_Background}"
+                        BorderBrush="{DynamicResource DF_Popup_Border}"
                         BorderThickness="1"
-                        CornerRadius="{DynamicResource Radius_Medium}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Medium}">
                         <Border.Effect>
                             <DropShadowEffect
                                 BlurRadius="10"

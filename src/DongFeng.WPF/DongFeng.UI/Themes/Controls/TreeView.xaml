@@ -23,15 +23,15 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Data="M 4 0 L 8 4 L 4 8 Z"
-                            Fill="{DynamicResource Brush_Text_Secondary}" />
+                            Fill="{DynamicResource DF_Text_Secondary_Brush}" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="ExpandPath" Property="Data" Value="M 8 4 L 4 8 L 0 4 Z" />
-                            <Setter TargetName="ExpandPath" Property="Fill" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="ExpandPath" Property="Fill" Value="{DynamicResource DF_Item_Background_Selected}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ExpandPath" Property="Fill" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter TargetName="ExpandPath" Property="Fill" Value="{DynamicResource DF_Item_Background_Hover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -47,7 +47,7 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
 
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -72,7 +72,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{DynamicResource Radius_Small}"
+                            CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                             SnapsToDevicePixels="true" />
 
                         <ToggleButton
@@ -104,23 +104,23 @@
                             <Setter TargetName="Expander" Property="Visibility" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Item_Background_Hover}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true" />
                                 <Condition Property="IsSelectionActive" Value="false" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Item_Background_Hover}" />
                             <!--  Inactive selection  -->
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Text_PlaceHolder}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Text_Placeholder_Brush}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Background_Light}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Background_Brush_Light}" />
                             <!--  Subtle hover if not selected  -->
                             <!--  Note: Logic here can be complex for 'hover over unselected', simplified for demo  -->
                         </Trigger>
@@ -129,7 +129,7 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="IsSelected" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Border}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Border_Brush}" />
                             <Setter TargetName="Bd" Property="Opacity" Value="0.2" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
@@ -156,7 +156,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Medium}"
+                        CornerRadius="{DynamicResource DF_CornerRadius_Medium}"
                         SnapsToDevicePixels="true">
                         <ScrollViewer
                             x:Name="_tv_scrollviewer_"

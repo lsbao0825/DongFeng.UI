@@ -13,8 +13,8 @@
         BasedOn="{StaticResource DFControlBase}"
         TargetType="TabItem">
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Tab_Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Tab_Foreground}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="16,10" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -27,7 +27,7 @@
                             x:Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
-                            BorderBrush="{DynamicResource Brush_Primary}"
+                            BorderBrush="{DynamicResource DF_Tab_Foreground_Selected}"
                             BorderThickness="0">
                             <ContentPresenter
                                 x:Name="ContentSite"
@@ -42,17 +42,17 @@
                             Height="2"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Bottom"
-                            Background="{DynamicResource Brush_Primary}"
+                            Background="{DynamicResource DF_Tab_Foreground_Selected}"
                             BorderThickness="0"
                             Visibility="Collapsed" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Tab_Foreground_Selected}" />
                             <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Tab_Foreground_Hover}" />
                         </Trigger>
 
                         <!--  Left Placement Support  -->
@@ -75,7 +75,7 @@
         x:Key="DFTabControl"
         BasedOn="{StaticResource DFControlBase}"
         TargetType="TabControl">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{DynamicResource DF_Tab_Background}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource DFTabItem}" />

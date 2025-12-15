@@ -9,7 +9,7 @@
         <Setter Property="Height" Value="16" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFIcon}">

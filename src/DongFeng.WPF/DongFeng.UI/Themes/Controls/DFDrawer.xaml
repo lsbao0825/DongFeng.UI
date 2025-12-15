@@ -8,8 +8,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFDrawer}">
-        <Setter Property="Background" Value="{DynamicResource Brush_Surface}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Surface_Brush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Panel.ZIndex" Value="1000" />
         <!--  Default to collapsed so it doesn't block interaction  -->
@@ -42,7 +42,7 @@
                                 <!--  Header  -->
                                 <Border
                                     Grid.Row="0"
-                                    Padding="{DynamicResource Padding_Input}"
+                                    Padding="{DynamicResource DF_Padding_Input}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="0,0,0,1">
                                     <Grid>
@@ -50,9 +50,9 @@
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             Content="{TemplateBinding Header}"
-                                            TextBlock.FontSize="{DynamicResource FontSize_Large}"
+                                            TextBlock.FontSize="{DynamicResource DF_FontSize_Large}"
                                             TextBlock.FontWeight="Bold"
-                                            TextBlock.Foreground="{DynamicResource Brush_Text_Primary}" />
+                                            TextBlock.Foreground="{DynamicResource DF_Text_Primary_Brush}" />
                                         <!--  Optional Close Button could go here if needed  -->
                                         <Button
                                             x:Name="PART_CloseButton"
@@ -64,7 +64,7 @@
                                             BorderThickness="0"
                                             Command="{x:Static controls:DFDrawer.CloseCommand}"
                                             Cursor="Hand"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}">
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}">
                                             <Path
                                                 Width="12"
                                                 Height="12"

@@ -8,7 +8,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFStepBarItem}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="MinWidth" Value="80" />
@@ -34,7 +34,7 @@
                                 Grid.Column="0"
                                 Height="2"
                                 VerticalAlignment="Center"
-                                Background="{DynamicResource Brush_Border}" />
+                                Background="{DynamicResource DF_Border_Brush}" />
 
                             <!--  Connecting Line (Right)  -->
                             <Border
@@ -42,7 +42,7 @@
                                 Grid.Column="2"
                                 Height="2"
                                 VerticalAlignment="Center"
-                                Background="{DynamicResource Brush_Border}" />
+                                Background="{DynamicResource DF_Border_Brush}" />
 
                             <!--  Circle Indicator  -->
                             <Border
@@ -51,10 +51,10 @@
                                 Width="30"
                                 Height="30"
                                 Panel.ZIndex="1"
-                                Background="{DynamicResource Brush_Surface}"
-                                BorderBrush="{DynamicResource Brush_Border}"
+                                Background="{DynamicResource DF_Surface_Brush}"
+                                BorderBrush="{DynamicResource DF_Border_Brush}"
                                 BorderThickness="2"
-                                CornerRadius="{DynamicResource Radius_Circular}"
+                                CornerRadius="{DynamicResource DF_CornerRadius_Circular}"
                                 Cursor="Hand">
                                 <TextBlock
                                     x:Name="IndexText"
@@ -89,23 +89,23 @@
 
                         <!--  Status: Active  -->
                         <Trigger Property="Status" Value="Active">
-                            <Setter TargetName="Indicator" Property="Background" Value="{DynamicResource Brush_Primary}" />
-                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Indicator" Property="Background" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
+                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
                             <Setter TargetName="IndexText" Property="Foreground" Value="#FFFFFF" />
-                            <Setter TargetName="LineLeft" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="LineLeft" Property="Background" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
                         </Trigger>
 
                         <!--  Status: Complete  -->
                         <Trigger Property="Status" Value="Complete">
                             <Setter TargetName="Indicator" Property="Background" Value="Transparent" />
-                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
-                            <Setter TargetName="IndexText" Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
+                            <Setter TargetName="IndexText" Property="Foreground" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
                             <!--  Replace number with checkmark  -->
                             <Setter TargetName="IndexText" Property="Text" Value="✔" />
-                            <Setter TargetName="LineLeft" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="LineLeft" Property="Background" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
                             <!--  Fill right line only if next item is active or complete (not strictly checking next here, but usually if I am complete, I fill right)  -->
                             <!--  Actually, usually complete fills the line to the NEXT step.  -->
-                            <Setter TargetName="LineRight" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="LineRight" Property="Background" Value="{DynamicResource DF_Step_Indicator_Background_Active}" />
                         </Trigger>
 
                     </ControlTemplate.Triggers>

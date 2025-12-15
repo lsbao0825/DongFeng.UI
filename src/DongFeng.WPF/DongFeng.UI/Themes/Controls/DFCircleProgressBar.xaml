@@ -10,8 +10,8 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
     <Style x:Key="DFDFCircleProgressBar" TargetType="{x:Type controls:DFCircleProgressBar}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Progress_Fill}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Track_Background}" />
         <Setter Property="Width" Value="120" />
         <Setter Property="Height" Value="120" />
         <Setter Property="StrokeThickness" Value="10" />
@@ -42,7 +42,7 @@
                             VerticalAlignment="Center"
                             FontSize="20"
                             FontWeight="Bold"
-                            Foreground="{DynamicResource Brush_Text_Primary}"
+                            Foreground="{DynamicResource DF_Text_Primary_Brush}"
                             Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Value, StringFormat={}{0:0}%}" />
                     </Grid>
                     <ControlTemplate.Triggers>

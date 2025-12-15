@@ -7,7 +7,7 @@
     <!--  CalendarButton Style (Month/Year navigation)  -->
     <Style x:Key="CalendarButtonStyle" TargetType="CalendarButton">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="MinWidth" Value="40" />
         <Setter Property="MinHeight" Value="40" />
         <Setter Property="FontSize" Value="12" />
@@ -21,7 +21,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                         <ContentPresenter
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -29,11 +29,11 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Surface}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Calendar_Header_Button_Hover}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Calendar_Day_Selected_Background}" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource DF_Calendar_Day_Selected_Background}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -49,7 +49,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CalendarDayButton">
@@ -58,7 +58,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                         <ContentPresenter
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -66,28 +66,28 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary}" />
-                            <Setter Property="Foreground" Value="#FFFFFF" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Calendar_Day_Selected_Background}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Calendar_Day_Selected_Foreground}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Surface}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Calendar_Header_Button_Hover}" />
                         </Trigger>
                         <Trigger Property="IsToday" Value="True">
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource DF_Calendar_Day_Selected_Background}" />
                             <Setter TargetName="Bd" Property="BorderThickness" Value="1" />
                         </Trigger>
                         <Trigger Property="IsBlackedOut" Value="True">
                             <Setter Property="Opacity" Value="0.3" />
                         </Trigger>
                         <Trigger Property="IsInactive" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Calendar_Day_Hover}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -110,7 +110,7 @@
                                 FontFamily="Verdana"
                                 FontSize="12"
                                 FontWeight="Bold"
-                                Foreground="{DynamicResource Brush_Text_Secondary}"
+                                Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Text="{Binding}" />
                         </DataTemplate>
                     </ControlTemplate.Resources>
@@ -123,7 +123,7 @@
                             Grid.Row="0"
                             Margin="5"
                             Background="Transparent"
-                            BorderBrush="{DynamicResource Brush_Border}"
+                            BorderBrush="{DynamicResource DF_Border_Brush}"
                             BorderThickness="0,0,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -144,7 +144,7 @@
                                         Width="6"
                                         Height="10"
                                         Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
-                                        Fill="{DynamicResource Brush_Text_Primary}"
+                                        Fill="{DynamicResource DF_Text_Primary_Brush}"
                                         Stretch="Uniform" />
                                 </Button>
                                 <Button
@@ -156,7 +156,7 @@
                                     BorderThickness="0"
                                     Focusable="False"
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Text_Primary}" />
+                                    Foreground="{DynamicResource DF_Text_Primary_Brush}" />
                                 <Button
                                     x:Name="PART_NextButton"
                                     Grid.Column="2"
@@ -170,7 +170,7 @@
                                         Width="6"
                                         Height="10"
                                         Data="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
-                                        Fill="{DynamicResource Brush_Text_Primary}"
+                                        Fill="{DynamicResource DF_Text_Primary_Brush}"
                                         Stretch="Uniform" />
                                 </Button>
                             </Grid>
@@ -228,9 +228,9 @@
 
     <!--  Default Calendar Style  -->
     <Style x:Key="DFCalendar" TargetType="{x:Type Calendar}">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Surface}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Calendar_Header_Button_Hover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Calendar_Border}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CalendarButtonStyle" Value="{StaticResource CalendarButtonStyle}" />
         <Setter Property="CalendarDayButtonStyle" Value="{StaticResource CalendarDayButtonStyle}" />
@@ -261,7 +261,7 @@
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
-            CornerRadius="{DynamicResource Radius_Small}"
+            CornerRadius="{DynamicResource DF_CornerRadius_Small}"
             SnapsToDevicePixels="true">
             <ContentPresenter
                 x:Name="contentPresenter"
@@ -273,10 +273,10 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Fill}" />
+                <Setter TargetName="border" Property="Background" Value="{DynamicResource DF_Calendar_Header_Button_Hover}" />
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Border}" />
+                <Setter TargetName="border" Property="Background" Value="{DynamicResource DF_Calendar_Border}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

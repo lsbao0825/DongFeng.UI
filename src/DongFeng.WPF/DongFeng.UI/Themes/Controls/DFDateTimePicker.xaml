@@ -10,7 +10,7 @@
 
     <!--  Shared ListBox Style for Time Picker  -->
     <Style x:Key="TimeListBoxItem" TargetType="ListBoxItem">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
@@ -28,10 +28,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Surface}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Popup_Background}" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Input_Border_Focus}" />
                             <Setter Property="Foreground" Value="#FFFFFF" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -51,7 +51,7 @@
                 <ControlTemplate TargetType="ListBox">
                     <Border
                         Name="Bd"
-                        Margin="{DynamicResource Margin_Small}"
+                        Margin="{DynamicResource DF_Margin_Small}"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -68,9 +68,9 @@
 
     <Style BasedOn="{StaticResource DFInputBase}" TargetType="{x:Type controls:DFDateTimePicker}">
         <Setter Property="MinHeight" Value="0" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Fill}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Input_Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Input_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Popup_Foreground}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -80,7 +80,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                         <Grid>
                             <!--  Input Box  -->
                             <Button
@@ -96,7 +96,7 @@
                                             Background="{TemplateBinding Background}"
                                             BorderBrush="{TemplateBinding BorderBrush}"
                                             BorderThickness="{TemplateBinding BorderThickness}"
-                                            CornerRadius="{DynamicResource Radius_Small}">
+                                            CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                                             <Grid Margin="{TemplateBinding Padding}" Background="Transparent">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
@@ -116,7 +116,7 @@
                                                     Height="12"
                                                     Margin="0"
                                                     Data="M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"
-                                                    Fill="{DynamicResource Brush_Text_Secondary}"
+                                                    Fill="{DynamicResource DF_Text_Secondary_Brush}"
                                                     Stretch="Uniform" />
                                             </Grid>
                                         </Border>
@@ -132,10 +132,10 @@
                                 StaysOpen="False">
                                 <Border
                                     Margin="5"
-                                    Background="{DynamicResource Brush_Surface}"
-                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    Background="{DynamicResource DF_Popup_Background}"
+                                    BorderBrush="{DynamicResource DF_Input_Border}"
                                     BorderThickness="1"
-                                    CornerRadius="{DynamicResource Radius_Medium}"
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Medium}"
                                     Effect="{DynamicResource Shadow_Depth1}">
                                     <Grid>
                                         <Grid.RowDefinitions>
@@ -156,7 +156,7 @@
                                             Background="Transparent"
                                             BorderThickness="0"
                                             FontSize="{TemplateBinding FontSize}"
-                                            Foreground="{DynamicResource Brush_Text_Primary}" />
+                                            Foreground="{DynamicResource DF_Popup_Foreground}" />
 
                                         <!--  Time Picker Section  -->
                                         <Border
@@ -164,7 +164,7 @@
                                             Grid.Column="1"
                                             Height="{Binding ElementName=PART_Calendar, Path=ActualHeight}"
                                             Margin="0,5,5,5"
-                                            BorderBrush="{DynamicResource Brush_Border}"
+                                            BorderBrush="{DynamicResource DF_Input_Border}"
                                             BorderThickness="1,0,0,0">
                                             <Grid Margin="5,0,0,0">
                                                 <Grid.RowDefinitions>
@@ -173,7 +173,7 @@
                                                 </Grid.RowDefinitions>
                                                 <TextBlock
                                                     HorizontalAlignment="Center"
-                                                    Foreground="{DynamicResource Brush_Text_Primary}"
+                                                    Foreground="{DynamicResource DF_Popup_Foreground}"
                                                     Text="Time" />
 
                                                 <Grid Grid.Row="1" Margin="0,5,0,0">

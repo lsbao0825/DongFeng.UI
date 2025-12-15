@@ -26,7 +26,7 @@
                             ContentTemplate="{TemplateBinding ContentTemplate}" />
 
                         <Grid x:Name="PART_DFLoadingOverlay" Visibility="{Binding IsDFLoading, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
-                            <Border Background="{DynamicResource Brush_Surface}" Opacity="0.7" />
+                            <Border Background="{DynamicResource DF_Surface_Brush}" Opacity="0.7" />
 
 
                             <StackPanel
@@ -41,7 +41,7 @@
                                         Height="32"
                                         Data="M16,2 A14,14 0 0,0 2,16"
                                         RenderTransformOrigin="0.5,0.5"
-                                        Stroke="{DynamicResource Brush_Primary}"
+                                        Stroke="{DynamicResource DF_Loading_Foreground}"
                                         StrokeThickness="3">
                                         <Path.RenderTransform>
                                             <RotateTransform x:Name="SpinnerTransform" Angle="0" />
@@ -51,7 +51,7 @@
                                         x:Name="TxtDFLoading"
                                         Margin="0,10,0,0"
                                         HorizontalAlignment="Center"
-                                        Foreground="{DynamicResource Brush_Text_Primary}"
+                                        Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                         Text="{TemplateBinding DFLoadingText}"
                                         Visibility="{Binding DFLoadingText, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}" />
                                 </StackPanel>
@@ -82,10 +82,10 @@
                                                     </ControlTemplate>
                                                 </Setter.Value>
                                             </Setter>
-                                            <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource DF_Loading_Foreground}" />
                                                 </Trigger>
                                             </Style.Triggers>
                                         </Style>

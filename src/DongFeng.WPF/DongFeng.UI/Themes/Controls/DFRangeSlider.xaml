@@ -19,7 +19,7 @@
                             Height="4"
                             Margin="9,0"
                             VerticalAlignment="Center"
-                            Background="{DynamicResource Brush_Border}"
+                            Background="{DynamicResource DF_Track_Background}"
                             CornerRadius="2" />
                         <!--  Margin 9 to accommodate half thumb width (18/2=9)  -->
 
@@ -37,7 +37,7 @@
                                 x:Name="PART_Selection"
                                 Canvas.Top="13"
                                 Height="4"
-                                Background="{DynamicResource Brush_Primary}"
+                                Background="{DynamicResource DF_Thumb_Border}"
                                 CornerRadius="2" />
                             <!--  (30 - 4)/2 = 13  -->
 

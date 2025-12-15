@@ -3,54 +3,55 @@
     <!--  DF UI Color Palette  -->
 
     <!--  Primary Green  -->
-    <Color x:Key="Color_Primary">#18a058</Color>
-    <Color x:Key="Color_Primary_Hover">#36ad6a</Color>
-    <Color x:Key="Color_Primary_Pressed">#0c7a43</Color>
+    <Color x:Key="DF_Color_Primary">#18a058</Color>
+    <Color x:Key="DF_Color_Primary_Hover">#36ad6a</Color>
+    <Color x:Key="DF_Color_Primary_Pressed">#0c7a43</Color>
 
     <!--  Semantic Colors  -->
-    <Color x:Key="Color_Success">#18a058</Color>
-    <Color x:Key="Color_Info">#2080f0</Color>
-    <Color x:Key="Color_Warning">#f0a020</Color>
-    <Color x:Key="Color_Error">#d03050</Color>
+    <Color x:Key="DF_Color_Success">#18a058</Color>
+    <Color x:Key="DF_Color_Info">#2080f0</Color>
+    <Color x:Key="DF_Color_Warning">#f0a020</Color>
+    <Color x:Key="DF_Color_Error">#d03050</Color>
 
     <!--  Backgrounds  -->
-    <Color x:Key="Color_Background_Light">#FFFFFF</Color>
-    <Color x:Key="Color_Background_Dark">#101014</Color>
-    <Color x:Key="Color_Surface_Light">#FFFFFF</Color>
-    <Color x:Key="Color_Surface_Dark">#18181c</Color>
+    <Color x:Key="DF_Color_Background_Light">#FFFFFF</Color>
+    <Color x:Key="DF_Color_Background_Dark">#101014</Color>
+    <Color x:Key="DF_Color_Surface_Light">#FFFFFF</Color>
+    <Color x:Key="DF_Color_Surface_Dark">#18181c</Color>
 
     <!--  Control Fill (Inputs, etc.)  -->
-    <Color x:Key="Color_Fill_Light">#00FFFFFF</Color>
+    <Color x:Key="DF_Color_Fill_Light">#00FFFFFF</Color>
     <!--  Transparent by default in Light  -->
-    <Color x:Key="Color_Fill_Dark">#0FFFFFFF</Color>
+    <Color x:Key="DF_Color_Fill_Dark">#0FFFFFFF</Color>
     <!--  Slight white tint in Dark  -->
 
     <!--  Header Background (DataGrid, Table)  -->
-    <Color x:Key="Color_Header_Light">#FAFAFC</Color>
-    <Color x:Key="Color_Header_Dark">#1F1F22</Color>
+    <Color x:Key="DF_Color_Header_Light">#FAFAFC</Color>
+    <Color x:Key="DF_Color_Header_Dark">#1F1F22</Color>
 
     <!--  Text  -->
-    <Color x:Key="Color_Text_Primary_Light">#333639</Color>
-    <Color x:Key="Color_Text_Primary_Dark">#E6FFFFFF</Color>
-    <Color x:Key="Color_Text_Secondary_Light">#B33C3C3C</Color>
-    <Color x:Key="Color_Text_Secondary_Dark">#99FFFFFF</Color>
-    <Color x:Key="Color_Text_PlaceHolder_Light">#c2c2c2</Color>
-    <Color x:Key="Color_Text_PlaceHolder_Dark">#666666</Color>
+    <Color x:Key="DF_Color_Text_Primary_Light">#333639</Color>
+    <Color x:Key="DF_Color_Text_Primary_Dark">#E6FFFFFF</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Light">#B33C3C3C</Color>
+    <Color x:Key="DF_Color_Text_Secondary_Dark">#99FFFFFF</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Light">#c2c2c2</Color>
+    <Color x:Key="DF_Color_Text_PlaceHolder_Dark">#666666</Color>
     <!--  Slightly lighter for better visibility  -->
 
     <!--  Border  -->
-    <Color x:Key="Color_Border_Light">#e0e0e6</Color>
-    <Color x:Key="Color_Border_Dark">#26FFFFFF</Color>
+    <Color x:Key="DF_Color_Border_Light">#e0e0e6</Color>
+    <Color x:Key="DF_Color_Border_Dark">#26FFFFFF</Color>
     <!--  Boosted from 9% to 15% for better visibility  -->
 
     <!--  SolidColorBrushes  -->
-    <SolidColorBrush x:Key="Brush_Primary" Color="{StaticResource Color_Primary}" />
-    <SolidColorBrush x:Key="Brush_Primary_Hover" Color="{StaticResource Color_Primary_Hover}" />
-    <SolidColorBrush x:Key="Brush_Primary_Pressed" Color="{StaticResource Color_Primary_Pressed}" />
+    <!--  Kept here for direct color access if needed, but Themes usually override Brushes  -->
+    <SolidColorBrush x:Key="DF_Primary_Brush" Color="{StaticResource DF_Color_Primary}" />
+    <SolidColorBrush x:Key="DF_Primary_Hover_Brush" Color="{StaticResource DF_Color_Primary_Hover}" />
+    <SolidColorBrush x:Key="DF_Primary_Pressed_Brush" Color="{StaticResource DF_Color_Primary_Pressed}" />
 
-    <SolidColorBrush x:Key="Brush_Success" Color="{StaticResource Color_Success}" />
-    <SolidColorBrush x:Key="Brush_Info" Color="{StaticResource Color_Info}" />
-    <SolidColorBrush x:Key="Brush_Warning" Color="{StaticResource Color_Warning}" />
-    <SolidColorBrush x:Key="Brush_Error" Color="{StaticResource Color_Error}" />
+    <SolidColorBrush x:Key="DF_Success_Brush" Color="{StaticResource DF_Color_Success}" />
+    <SolidColorBrush x:Key="DF_Info_Brush" Color="{StaticResource DF_Color_Info}" />
+    <SolidColorBrush x:Key="DF_Warning_Brush" Color="{StaticResource DF_Color_Warning}" />
+    <SolidColorBrush x:Key="DF_Error_Brush" Color="{StaticResource DF_Color_Error}" />
 
 </ResourceDictionary>

@@ -11,11 +11,11 @@
         x:Key="DFProgressBar"
         BasedOn="{StaticResource DFControlBase}"
         TargetType="ProgressBar">
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
-        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Progress_Fill}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Track_Background}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Height" Value="6" />
-        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource Radius_Small}" />
+        <Setter Property="helpers:ControlAttach.CornerRadius" Value="{DynamicResource DF_CornerRadius_Small}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">

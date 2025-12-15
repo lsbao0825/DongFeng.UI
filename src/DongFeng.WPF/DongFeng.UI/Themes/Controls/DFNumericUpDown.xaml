@@ -10,9 +10,9 @@
 
     <Style BasedOn="{StaticResource DFBorderedControlBase}" TargetType="{x:Type controls:DFNumericUpDown}">
 
-        <Setter Property="Background" Value="{DynamicResource Brush_Surface}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Surface_Brush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Input_Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -22,7 +22,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Small}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -32,7 +32,7 @@
                             <Grid.Resources>
                                 <Style x:Key="SpinButtonStyle" TargetType="RepeatButton">
                                     <Setter Property="Background" Value="Transparent" />
-                                    <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Primary}" />
+                                    <Setter Property="Foreground" Value="{DynamicResource DF_Text_Primary_Brush}" />
                                     <Setter Property="BorderThickness" Value="0" />
                                     <Setter Property="IsTabStop" Value="False" />
                                     <Setter Property="Cursor" Value="Hand" />
@@ -44,11 +44,11 @@
                                                 </Border>
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter Property="Background" Value="{DynamicResource Brush_Border}" />
-                                                        <Setter Property="Foreground" Value="{DynamicResource Brush_Primary}" />
+                                                        <Setter Property="Background" Value="{DynamicResource DF_Input_Border}" />
+                                                        <Setter Property="Foreground" Value="{DynamicResource DF_Input_Border_Focus}" />
                                                     </Trigger>
                                                     <Trigger Property="IsPressed" Value="True">
-                                                        <Setter Property="Background" Value="{DynamicResource Brush_Primary}" />
+                                                        <Setter Property="Background" Value="{DynamicResource DF_Input_Border_Focus}" />
                                                         <Setter Property="Foreground" Value="#FFFFFF" />
                                                     </Trigger>
                                                     <Trigger Property="IsEnabled" Value="False">

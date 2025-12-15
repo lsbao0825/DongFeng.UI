@@ -48,10 +48,10 @@
                                 <Border
                                     x:Name="DropDownBorder"
                                     Margin="0,2,0,0"
-                                    Background="{DynamicResource Brush_Surface}"
-                                    BorderBrush="{DynamicResource Brush_Border}"
+                                    Background="{DynamicResource DF_Popup_Background}"
+                                    BorderBrush="{DynamicResource DF_Input_Border}"
                                     BorderThickness="1"
-                                    CornerRadius="{DynamicResource Radius_Small}">
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Small}">
                                     <Border.Effect>
                                         <DropShadowEffect
                                             BlurRadius="5"
@@ -70,7 +70,7 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ToggleButton" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="ToggleButton" Property="BorderBrush" Value="{DynamicResource DF_Input_Border_Focus}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -87,12 +87,12 @@
                             <ControlTemplate TargetType="ComboBoxItem">
                                 <Border
                                     x:Name="Bd"
-                                    Margin="{DynamicResource Margin_Small}"
+                                    Margin="{DynamicResource DF_Margin_Small}"
                                     Padding="{TemplateBinding Padding}"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{DynamicResource Radius_Small}"
+                                    CornerRadius="{DynamicResource DF_CornerRadius_Small}"
                                     SnapsToDevicePixels="true">
                                     <ContentPresenter
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -101,12 +101,12 @@
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
-                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Input_Border_Hover}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush_Primary}" />
-                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DF_Input_Border_Focus}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource DF_Item_Foreground_Selected}" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

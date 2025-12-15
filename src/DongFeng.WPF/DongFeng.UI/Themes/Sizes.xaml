@@ -4,31 +4,31 @@
     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <!--  Spacing / Margin / Padding  -->
-    <Thickness x:Key="Spacing_Tiny">4</Thickness>
-    <Thickness x:Key="Spacing_Small">8</Thickness>
-    <Thickness x:Key="Spacing_Medium">16</Thickness>
-    <Thickness x:Key="Spacing_Large">24</Thickness>
+    <Thickness x:Key="DF_Spacing_Tiny">4</Thickness>
+    <Thickness x:Key="DF_Spacing_Small">8</Thickness>
+    <Thickness x:Key="DF_Spacing_Medium">16</Thickness>
+    <Thickness x:Key="DF_Spacing_Large">24</Thickness>
 
     <!--  Common Layout Thickness  -->
-    <Thickness x:Key="Padding_Input">4,4</Thickness>
-    <Thickness x:Key="Padding_Button">8,4</Thickness>
+    <Thickness x:Key="DF_Padding_Input">4,4</Thickness>
+    <Thickness x:Key="DF_Padding_Button">8,4</Thickness>
 
     <!--  Standard Control Margins  -->
-    <Thickness x:Key="Margin_Small">2</Thickness>
-    <Thickness x:Key="Margin_Default">4</Thickness>
-    <Thickness x:Key="Margin_Large">8</Thickness>
+    <Thickness x:Key="DF_Margin_Small">2</Thickness>
+    <Thickness x:Key="DF_Margin_Default">4</Thickness>
+    <Thickness x:Key="DF_Margin_Large">8</Thickness>
 
     <!--  Corner Radius  -->
-    <CornerRadius x:Key="Radius_Small">3</CornerRadius>
-    <CornerRadius x:Key="Radius_Medium">4</CornerRadius>
-    <CornerRadius x:Key="Radius_Large">8</CornerRadius>
-    <CornerRadius x:Key="Radius_Rounded">12</CornerRadius>
-    <CornerRadius x:Key="Radius_Circular">100</CornerRadius>
+    <CornerRadius x:Key="DF_CornerRadius_Small">3</CornerRadius>
+    <CornerRadius x:Key="DF_CornerRadius_Medium">4</CornerRadius>
+    <CornerRadius x:Key="DF_CornerRadius_Large">8</CornerRadius>
+    <CornerRadius x:Key="DF_CornerRadius_Rounded">12</CornerRadius>
+    <CornerRadius x:Key="DF_CornerRadius_Circular">100</CornerRadius>
 
     <!--  Font Sizes  -->
-    <system:Double x:Key="FontSize_Small">12</system:Double>
-    <system:Double x:Key="FontSize_Normal">14</system:Double>
-    <system:Double x:Key="FontSize_Large">16</system:Double>
-    <system:Double x:Key="FontSize_Header">20</system:Double>
+    <system:Double x:Key="DF_FontSize_Small">12</system:Double>
+    <system:Double x:Key="DF_FontSize_Normal">14</system:Double>
+    <system:Double x:Key="DF_FontSize_Large">16</system:Double>
+    <system:Double x:Key="DF_Header_FontSize">20</system:Double>
 
 </ResourceDictionary>

@@ -40,7 +40,7 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Content="{Binding Path=(helpers:ControlAttach.Icon), RelativeSource={RelativeSource TemplatedParent}}"
-                                TextElement.Foreground="{DynamicResource Brush_Text_Secondary}"
+                                TextElement.Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                 Visibility="{Binding Path=(helpers:ControlAttach.Icon), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}" />
 
                             <Grid Grid.Column="1">
@@ -49,7 +49,7 @@
                                     Margin="{TemplateBinding Padding}"
                                     HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    Foreground="{DynamicResource Brush_Text_PlaceHolder}"
+                                    Foreground="{DynamicResource DF_Input_Placeholder}"
                                     IsHitTestVisible="False"
                                     Text="{Binding Path=(helpers:ControlAttach.Watermark), RelativeSource={RelativeSource TemplatedParent}}"
                                     Visibility="Collapsed" />
@@ -73,7 +73,7 @@
                             <Setter TargetName="Watermark" Property="Visibility" Value="Visible" />
                         </MultiTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource DF_Input_Border_Focus}" />
                             <Setter Property="Opacity" Value="0.8" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">

@@ -28,7 +28,7 @@
                             Height="18"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="{DynamicResource Brush_Border}"
+                            BorderBrush="{DynamicResource DF_Toggle_Border_Unchecked}"
                             BorderThickness="1"
                             CornerRadius="9">
                             <Ellipse
@@ -49,19 +49,19 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Primary}" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource DF_Toggle_Background_Checked}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource DF_Toggle_Background_Checked}" />
                             <Setter TargetName="dot" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Brush_Primary}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource DF_Toggle_Background_Checked}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsChecked" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="border" Property="Background" Value="{DynamicResource Brush_Primary_Hover}" />
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource DF_Toggle_Background_Hover}" />
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />

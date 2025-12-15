@@ -15,7 +15,7 @@
     <Style TargetType="{x:Type controls:DFEmpty}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Foreground" Value="{DynamicResource Brush_Text_Secondary}"/>
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}"/>
         <Setter Property="Template">
              <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFEmpty}">
@@ -26,7 +26,7 @@
                             <icon:PackIconMaterial Kind="InboxOutline" 
                                                    Width="{TemplateBinding ImageWidth}" 
                                                    Height="{TemplateBinding ImageHeight}"
-                                                   Foreground="{DynamicResource Brush_Border}"
+                                                   Foreground="{DynamicResource DF_Border_Brush}"
                                                    x:Name="DefaultIcon"
                                                    Visibility="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverterInverted}}"/>
                             

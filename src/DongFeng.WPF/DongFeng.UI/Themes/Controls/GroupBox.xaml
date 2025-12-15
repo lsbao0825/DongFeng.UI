@@ -8,7 +8,7 @@
         x:Key="DFGroupBox"
         BasedOn="{StaticResource DFBorderedControlBase}"
         TargetType="GroupBox">
-        <Setter Property="Padding" Value="{DynamicResource Spacing_Medium}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Spacing_Medium}" />
         <Setter Property="Margin" Value="0,0,0,10" />
         <Setter Property="Template">
             <Setter.Value>
@@ -25,7 +25,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{DynamicResource Radius_Medium}" />
+                            CornerRadius="{DynamicResource DF_CornerRadius_Medium}" />
 
                         <!--  Header Background to mask border  -->
                         <Border
@@ -34,7 +34,7 @@
                             Margin="10,0,0,0"
                             Padding="4,0"
                             HorizontalAlignment="Left"
-                            Background="{DynamicResource Brush_Surface}">
+                            Background="{DynamicResource DF_Surface_Brush}">
                             <ContentPresenter
                                 ContentSource="Header"
                                 RecognizesAccessKey="True"
@@ -56,7 +56,8 @@
                     <TextBlock
                         Margin="0,8,0,8"
                         FontWeight="Bold"
-                        Foreground="{DynamicResource Brush_Text_Primary}"
+                        FontSize="{DynamicResource DF_FontSize_Large}"
+                        Foreground="{DynamicResource DF_Header_Foreground_Brush}"
                         Text="{Binding}" />
                 </DataTemplate>
             </Setter.Value>

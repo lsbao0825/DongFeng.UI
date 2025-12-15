@@ -9,8 +9,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type controls:DFCodeExample}">
-        <Setter Property="Background" Value="{DynamicResource Brush_Surface}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Brush_Border}" />
+        <Setter Property="Background" Value="{DynamicResource DF_Surface_Brush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DF_Border_Brush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Margin" Value="0,0,0,20" />
         <Setter Property="Template">
@@ -20,7 +20,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource Radius_Medium}">
+                        CornerRadius="{DynamicResource DF_CornerRadius_Medium}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -35,7 +35,7 @@
                                 BorderThickness="0,0,0,1">
                                 <TextBlock
                                     FontWeight="Bold"
-                                    Foreground="{DynamicResource Brush_Text_Primary}"
+                                    Foreground="{DynamicResource DF_Text_Primary_Brush}"
                                     Text="{TemplateBinding Header}" />
                             </Border>
 
@@ -48,7 +48,7 @@
                             <Expander
                                 Grid.Row="2"
                                 Padding="0"
-                                Background="{DynamicResource Brush_Header}"
+                                Background="{DynamicResource DF_Header_Background_Brush}"
                                 BorderThickness="0">
                                 <Expander.Header>
                                     <StackPanel Orientation="Horizontal">
@@ -56,23 +56,23 @@
                                             Width="14"
                                             Height="14"
                                             VerticalAlignment="Center"
-                                            Foreground="{DynamicResource Brush_Primary}"
+                                            Foreground="{DynamicResource DF_Code_Foreground}"
                                             Kind="CodeTags" />
                                         <TextBlock
                                             Margin="8,0,0,0"
                                             VerticalAlignment="Center"
-                                            Foreground="{DynamicResource Brush_Text_Secondary}"
+                                            Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                             Text="Show Code" />
                                     </StackPanel>
                                 </Expander.Header>
                                 <TextBox
                                     MaxHeight="300"
                                     Padding="15"
-                                    Background="{DynamicResource Brush_Header}"
+                                    Background="{DynamicResource DF_Header_Background_Brush}"
                                     BorderThickness="0,1,0,0"
                                     FontFamily="Consolas"
                                     FontSize="12"
-                                    Foreground="{DynamicResource Brush_Text_Secondary}"
+                                    Foreground="{DynamicResource DF_Text_Secondary_Brush}"
                                     IsReadOnly="True"
                                     Text="{TemplateBinding Code}"
                                     TextWrapping="Wrap"
