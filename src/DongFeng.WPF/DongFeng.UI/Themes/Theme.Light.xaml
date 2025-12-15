@@ -57,10 +57,10 @@
     <SolidColorBrush x:Key="DF_Toggle_Background_Hover" Color="{DynamicResource DF_Color_Primary_Hover}" />
 
     <!--  Control Specifics: Item (ListBox, Menu, ComboBoxItem)  -->
-    <SolidColorBrush x:Key="DF_Item_Background_Hover" Color="{DynamicResource DF_Color_Primary_Hover}" />
-    <SolidColorBrush x:Key="DF_Item_Foreground_Hover" Color="White" />
-    <SolidColorBrush x:Key="DF_Item_Background_Selected" Color="{DynamicResource DF_Color_Primary}" />
-    <SolidColorBrush x:Key="DF_Item_Foreground_Selected" Color="White" />
+    <SolidColorBrush x:Key="DF_Item_Background_Hover" Color="{DynamicResource DF_Color_Primary_Hover}" Opacity="0.15" />
+    <SolidColorBrush x:Key="DF_Item_Foreground_Hover" Color="{DynamicResource DF_Color_Text_Primary_Light}" />
+    <SolidColorBrush x:Key="DF_Item_Background_Selected" Color="{DynamicResource DF_Color_Primary}" Opacity="0.2" />
+    <SolidColorBrush x:Key="DF_Item_Foreground_Selected" Color="{DynamicResource DF_Color_Text_Primary_Light}" />
     <SolidColorBrush x:Key="DF_Item_Border_Selected" Color="{DynamicResource DF_Color_Primary}" />
 
     <!--  Control Specifics: Progress / Slider  -->

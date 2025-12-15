@@ -34,7 +34,7 @@
                             Margin="10,0,0,0"
                             Padding="4,0"
                             HorizontalAlignment="Left"
-                            Background="{DynamicResource DF_Surface_Brush}">
+                            Background="{DynamicResource DF_Background_Brush}">
                             <ContentPresenter
                                 ContentSource="Header"
                                 RecognizesAccessKey="True"
@@ -55,8 +55,8 @@
                 <DataTemplate>
                     <TextBlock
                         Margin="0,8,0,8"
-                        FontWeight="Bold"
                         FontSize="{DynamicResource DF_FontSize_Large}"
+                        FontWeight="Bold"
                         Foreground="{DynamicResource DF_Header_Foreground_Brush}"
                         Text="{Binding}" />
                 </DataTemplate>
