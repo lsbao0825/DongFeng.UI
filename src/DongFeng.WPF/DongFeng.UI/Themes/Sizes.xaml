@@ -10,7 +10,7 @@
     <Thickness x:Key="DF_Spacing_Large">24</Thickness>
 
     <!--  Common Layout Thickness  -->
-    <Thickness x:Key="DF_Padding_Input">4,4</Thickness>
+    <Thickness x:Key="DF_Padding_Input">4,2</Thickness>
     <Thickness x:Key="DF_Padding_Button">8,4</Thickness>
 
     <!--  Standard Control Margins  -->

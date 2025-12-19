@@ -17,7 +17,7 @@
         TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource DF_Button_Background_Base}" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Padding" Value="{DynamicResource DF_Margin_Large}" />
+        <Setter Property="Padding" Value="{DynamicResource DF_Margin_Default}" />
         <Setter Property="helpers:ControlAttach.HoverBackground" Value="{DynamicResource DF_Button_Background_Hover}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -295,9 +295,9 @@
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{Binding Path=(helpers:ControlAttach.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
                         <ContentPresenter
+                            Margin="{TemplateBinding Padding}"
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Margin="{TemplateBinding Padding}"
                             RecognizesAccessKey="True" />
                     </Border>
                     <ControlTemplate.Triggers>
