@@ -2,8 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:DongFeng.UI.Controls"
-    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers"
-    xmlns:converters="clr-namespace:DongFeng.UI.Converters">
+    xmlns:converters="clr-namespace:DongFeng.UI.Converters"
+    xmlns:helpers="clr-namespace:DongFeng.UI.Helpers">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/DongFeng.UI;component/Themes/BaseStyles.xaml" />
@@ -125,7 +125,7 @@
                                             Width="16"
                                             Height="16"
                                             Source="{TemplateBinding Icon}"
-                                            Visibility="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}"/>
+                                            Visibility="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}" />
 
                                     </Grid>
 

@@ -13,44 +13,47 @@
     <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverterInverted" IsInverted="True" />
 
     <Style TargetType="{x:Type controls:DFEmpty}">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="{DynamicResource DF_Text_Secondary_Brush}" />
         <Setter Property="Template">
-             <Setter.Value>
+            <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DFEmpty}">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <!-- Image Area -->
-                        <Grid HorizontalAlignment="Center" Margin="0,0,0,16">
-                            <!-- Default Icon -->
-                            <icon:PackIconMaterial Kind="InboxOutline" 
-                                                   Width="{TemplateBinding ImageWidth}" 
-                                                   Height="{TemplateBinding ImageHeight}"
-                                                   Foreground="{DynamicResource DF_Border_Brush}"
-                                                   x:Name="DefaultIcon"
-                                                   Visibility="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverterInverted}}"/>
-                            
-                            <!-- ImageSource -->
-                            <Image Source="{TemplateBinding ImageSource}"
-                                   Width="{TemplateBinding ImageWidth}"
-                                   Height="{TemplateBinding ImageHeight}"
-                                   Stretch="Uniform"
-                                   x:Name="CustomImage"
-                                   Visibility="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}"/>
+                        <!--  Image Area  -->
+                        <Grid Margin="0,0,0,16" HorizontalAlignment="Center">
+                            <!--  Default Icon  -->
+                            <icon:PackIconMaterial
+                                x:Name="DefaultIcon"
+                                Width="{TemplateBinding ImageWidth}"
+                                Height="{TemplateBinding ImageHeight}"
+                                Foreground="{DynamicResource DF_Border_Brush}"
+                                Kind="InboxOutline"
+                                Visibility="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverterInverted}}" />
+
+                            <!--  ImageSource  -->
+                            <Image
+                                x:Name="CustomImage"
+                                Width="{TemplateBinding ImageWidth}"
+                                Height="{TemplateBinding ImageHeight}"
+                                Source="{TemplateBinding ImageSource}"
+                                Stretch="Uniform"
+                                Visibility="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ObjectToVisibilityConverter}}" />
                         </Grid>
 
-                        <!-- Description -->
-                        <ContentPresenter ContentSource="Description"
-                                          TextBlock.Foreground="{TemplateBinding Foreground}"
-                                          TextBlock.FontSize="14"
-                                          HorizontalAlignment="Center"
-                                          Margin="0,0,0,16"/>
+                        <!--  Description  -->
+                        <ContentPresenter
+                            Margin="0,0,0,16"
+                            HorizontalAlignment="Center"
+                            ContentSource="Description"
+                            TextBlock.FontSize="14"
+                            TextBlock.Foreground="{TemplateBinding Foreground}" />
 
-                        <!-- Action Content -->
-                        <ContentPresenter HorizontalAlignment="Center"/>
+                        <!--  Action Content  -->
+                        <ContentPresenter HorizontalAlignment="Center" />
                     </StackPanel>
                 </ControlTemplate>
-             </Setter.Value>
+            </Setter.Value>
         </Setter>
     </Style>
 </ResourceDictionary>

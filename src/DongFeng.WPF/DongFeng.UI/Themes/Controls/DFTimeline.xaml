@@ -17,67 +17,69 @@
                 <ControlTemplate TargetType="{x:Type controls:DFTimelineItem}">
                     <Grid Background="{TemplateBinding Background}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" MinWidth="24" />
+                            <ColumnDefinition Width="24" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" MinHeight="24" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                        <!--  Indicator Column  -->
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="8" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-
+                        <!--  Indicator Lines  -->
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center">
                             <!--  Top Line (connects to previous)  -->
-                            <!--  For simplicity we use Border for lines. If Dashed needed we could use Line or Rectangle with StrokeDashArray  -->
-                            <!--
-                                But border is easiest for solid. To support dashed efficiently without heavy changes, we can use a VisualBrush or similar,
-                                but simpler to just switch to Rectangle if Dashed.
-                            -->
                             <Rectangle
                                 x:Name="LineTop"
-                                Grid.Row="0"
                                 Width="2"
-                                HorizontalAlignment="Center"
+                                Height="12"
+                                VerticalAlignment="Top"
                                 Fill="{DynamicResource DF_Border_Brush}" />
 
                             <!--  Bottom Line (connects to next)  -->
                             <Rectangle
                                 x:Name="LineBottom"
-                                Grid.Row="1"
                                 Width="2"
-                                HorizontalAlignment="Center"
+                                Margin="0,12,0,0"
                                 Fill="{DynamicResource DF_Border_Brush}" />
-
-                            <!--  Dot  -->
-                            <Border
-                                x:Name="Dot"
-                                Grid.Row="0"
-                                Grid.RowSpan="2"
-                                Width="10"
-                                Height="10"
-                                Margin="0,3,0,0"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Top"
-                                Background="{TemplateBinding Color}"
-                                BorderBrush="{TemplateBinding Color}"
-                                BorderThickness="2"
-                                CornerRadius="5" />
                         </Grid>
 
-                        <!--  Content Column  -->
-                        <StackPanel Grid.Column="1" Margin="12,0,0,24">
-                            <ContentPresenter
-                                x:Name="HeaderPresenter"
-                                Margin="0,0,0,4"
-                                ContentSource="Header"
-                                TextBlock.FontSize="12"
-                                TextBlock.Foreground="{DynamicResource DF_Text_Secondary_Brush}" />
-                            <ContentPresenter
-                                x:Name="ContentPresenter"
-                                Content="{TemplateBinding Content}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}" />
-                        </StackPanel>
+                        <!--  Dot (Centered with Header Row)  -->
+                        <Border
+                            x:Name="Dot"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="10"
+                            Height="10"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="{TemplateBinding Color}"
+                            BorderBrush="{TemplateBinding Color}"
+                            BorderThickness="2"
+                            CornerRadius="5" />
+
+                        <!--  Header  -->
+                        <ContentPresenter
+                            x:Name="HeaderPresenter"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="12,0,0,0"
+                            VerticalAlignment="Center"
+                            ContentSource="Header"
+                            TextBlock.FontSize="12"
+                            TextBlock.FontWeight="SemiBold"
+                            TextBlock.Foreground="{DynamicResource DF_Text_Secondary_Brush}" />
+
+                        <!--  Content  -->
+                        <ContentPresenter
+                            x:Name="ContentPresenter"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="12,4,0,24"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <!--  Default Color if not set  -->
