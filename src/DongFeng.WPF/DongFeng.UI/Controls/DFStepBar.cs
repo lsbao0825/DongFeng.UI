@@ -31,6 +31,7 @@ namespace DongFeng.UI.Controls
                  // Determine index
                  int index = this.ItemContainerGenerator.IndexFromContainer(element);
                  stepItem.Index = index + 1;
+                 stepItem.IsFirst = index == 0;
                  stepItem.IsLast = index == this.Items.Count - 1;
                  stepItem.Click += StepItem_Click;
                  UpdateItemState(stepItem);
@@ -76,6 +77,7 @@ namespace DongFeng.UI.Controls
                 var container = this.ItemContainerGenerator.ContainerFromIndex(i) as DFStepBarItem;
                 if (container != null)
                 {
+                    container.IsFirst = (i == 0);
                     container.IsLast = (i == this.Items.Count - 1);
                     UpdateItemState(container);
                 }
@@ -141,6 +143,14 @@ namespace DongFeng.UI.Controls
         }
         public static readonly DependencyProperty IsLastProperty =
             DependencyProperty.Register("IsLast", typeof(bool), typeof(DFStepBarItem), new PropertyMetadata(false));
+
+        public bool IsFirst
+        {
+            get { return (bool)GetValue(IsFirstProperty); }
+            set { SetValue(IsFirstProperty, value); }
+        }
+        public static readonly DependencyProperty IsFirstProperty =
+            DependencyProperty.Register("IsFirst", typeof(bool), typeof(DFStepBarItem), new PropertyMetadata(false));
 
         public StepStatus Status
         {

@@ -76,10 +76,9 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <!--  First Item: Hide Left Line  -->
-                        <!--  We check if previous data is null. If so, it's first.  -->
-                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
+                        <Trigger Property="IsFirst" Value="True">
                             <Setter TargetName="LineLeft" Property="Visibility" Value="Hidden" />
-                        </DataTrigger>
+                        </Trigger>
 
                         <!--  Last Item: Hide Right Line  -->
                         <!--  Use the IsLast property we added  -->
